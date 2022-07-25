@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+}
+
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    background-image: linear-gradient(to right ,white, red, orange, yellow, blue, purple);
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 10%;
+    background-image: linear-gradient(to right ,white, red, orange, yellow, blue, purple);
+}
+
+#h_logo {
+    margin-left: 5%;
+    position: fixed;
+    background-image: url('../image/logo.JPG');
+    background-repeat: no-repeat;
+    height: 10%;
+    width: 30%;
+    overflow: hidden;
+}
+
+#f_logo {
+    margin-left: 5%;
+    position: fixed;
+    background-image: url('../image/logo.JPG');
+    background-repeat: no-repeat;
+    height: 10%;
+    width: 30%;
+}
+
+nav {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+nav li {
+    display: inline;
+    margin-right: 30px;
+}
+
+nav a {
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 10px 10px;
+}
+
+nav select {
+    background: black;
+    color: white;
+    padding: 10px 10px;
+}
+
+nav a select option {
+    background-color: black;
+    color: white;
+}
+
+nav li a:hover {
+    background-color: rgb(231, 56, 12);
+}
+
+li select:hover {
+    text-decoration: underline;
+}
+
+
+main {
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    margin-top: 8%;
+}
+
+#searchDiv {
+    display: inline-block;
+    width: 40%;
+    margin-left: 45%;
+}
+
+#searchSubmit {
+    padding: 8px;
+}
+
+#searchEngine {
+    margin-top: 10%;
+    height: 30px;
+    width: 60%;
+}
+
