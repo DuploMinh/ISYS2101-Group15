@@ -1,3 +1,23 @@
+:root {
+    --color_dark: hsl(252, 30%, 27%);
+    --color_white: hsl(252, 30%, 100%);
+    --color_light: hsl(252, 30%, 95%);
+    --color_gray: hsl(252, 15%, 65%);
+    --color_primary: rgb(179, 0, 0);
+    --color_secondary: hsl(252, 100%, 90%);
+    --color_success: hsl(120, 95%, 65%);
+    --color_danger: hsl(0, 95%, 65%);
+    --color_black: hsl(252, 30%, 10%);
+
+    --border_radius: 2rem;
+    --card_border_radius: 1rem;
+    --btn_padding: 0.4rem 1.2rem;
+    --card_padding: 1rem;
+
+    --sticky_top_left: 5.4rem;
+    --sticky_top_right: -18rem;
+}
+
 /* GLOBAL */
 *{
     margin: 0;
@@ -53,14 +73,35 @@ body{
 .voucher{
     width: 70%;
     margin: 20px auto;
+    display: flex;
+    gap: 1rem;
 }
 
 .voucher__content1{
     background-image: url(../img/voucher.jpg);
+    background-size: 100% 100%;
     height: 300px;
-    background-size: contain;
+    width: 100%;
     background-repeat: no-repeat;
-    border-radius: ;
+    border-radius: var(--border_radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--card_padding);
+}
+
+.voucher__apply {
+    background-color: white;
+    color: var(--color_primary);
+    border-radius: var(--border_radius);
+    padding: var(--btn_padding);
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+}
+.voucher__content2 {
+
 }
 /* MENU DISHES */
 .menu{
