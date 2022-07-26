@@ -53,14 +53,26 @@ body{
 .voucher{
     width: 70%;
     margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
 }
 
 .voucher__content1{
     background-image: url(../img/voucher.jpg);
     height: 300px;
-    background-size: contain;
+    width: 600px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    border-radius: ;
+    border-radius: 25px;
+}
+
+.voucher__content2{
+    background-image: url(../img/white.jpg);
+    height: 300px;
+    width: 250px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 25px;
 }
 /* MENU DISHES */
 .menu{
