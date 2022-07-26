@@ -3,13 +3,13 @@
     --color_white: hsl(252, 30%, 100%);
     --color_light: hsl(252, 30%, 95%);
     --color_gray: hsl(252, 15%, 65%);
-    --color_primary: rgb(179, 0, 0);
+    --color_primary: rgba(96, 28, 40, 0.849);
     --color_secondary: hsl(252, 100%, 90%);
     --color_success: hsl(120, 95%, 65%);
     --color_danger: hsl(0, 95%, 65%);
     --color_black: hsl(252, 30%, 10%);
 
-    --border_radius: 2rem;
+    --border_radius: 15px;
     --card_border_radius: 1rem;
     --btn_padding: 0.4rem 1.2rem;
     --card_padding: 1rem;
@@ -35,7 +35,7 @@ html{
 
 body{
     color: #212529;
-    background-color: #fff;
+    background-color: var(--color_primary);
     letter-spacing: 1px;
 }
 
@@ -49,7 +49,7 @@ body{
     background-position: center;
     color: white;
     text-align: center;
-
+    opacity: 0.7;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,21 +84,38 @@ body{
     width: 600px;
     background-repeat: no-repeat;
     border-radius: var(--border_radius);
-        /* display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start; */
     padding: var(--card_padding);
+    position: relative;
+    opacity: 0.9;
 }
 
-.voucher__apply {
+.voucher__content1 > h3 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--color_primary);
+}
+
+.voucher__btn {
     background-color: white;
     color: var(--color_primary);
     border-radius: var(--border_radius);
     padding: var(--btn_padding);
     font-weight: bold;
-    border: none;
-    font-size: 1rem;
+    border: none;  
+    cursor: pointer;  
+    transition: all 0.5s;
+}
+
+.voucher__btn:hover {
+    background-color: var(--color_primary);
+    color: white;
+}
+
+.voucher__apply {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 6rem;
 }
 
 
@@ -109,6 +126,17 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.voucher__content2 > div{
+    text-align: center;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
 }
 /* MENU DISHES */
 .menu{
