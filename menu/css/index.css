@@ -1,0 +1,110 @@
+/* GLOBAL */
+*{
+    margin: 0;
+    padding: 0;
+    /* xóa những mặc định trình duyệt mà web tự thêm */
+    box-sizing: border-box;
+    /* giúp các thẻ margin padding vẫn đủ kích thước */
+}
+
+html{
+    font-size: 16px;
+    /* neu ko khai bao font sixe thi mawc dinh trinh duyet laf 16px 
+    1 rem = 16px */
+}
+
+body{
+    color: #212529;
+    background-color: #fff;
+    letter-spacing: 1px;
+}
+
+
+/* CAROUSEL */
+.carousel{
+    background-image: url(../img/menu-page.jpg);
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__content h1{
+    font-size: 3.5rem;
+    padding-bottom: 20px;
+}
+
+.carousel__content a{
+    text-decoration: none;
+    color: #fff;
+    padding: 20px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+/* MENU DISHES */
+.menu{
+    padding: 50px 0;
+}
+.menu__description{
+    text-align: center;
+    padding: 80px 0;
+}
+.menu__description h1{
+    padding: 20px 0;
+    font-weight: 500px;
+    font-size: 2.5rem;
+}
+.menu__description p{
+    padding-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.menu__content{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /* grid-gap: ;  khoong neen dung nx*/
+}
+
+.menu__content img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.menu__text{
+    padding: 20px 25px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.purchase{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.purchase span{
+    color: yellowgreen;
+}
+.purchase button{
+    background-color: white;
+    border: 1px solid black;
+    color: white;
+    padding:  10px 15px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.purchase button a{
+    text-decoration: none;
+    color: #212529;
+}
