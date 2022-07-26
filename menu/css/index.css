@@ -3,7 +3,7 @@
     --color_white: hsl(252, 30%, 100%);
     --color_light: hsl(252, 30%, 95%);
     --color_gray: hsl(252, 15%, 65%);
-    --color_primary: rgb(179, 0, 0);
+    --color_primary: rgba(188, 69, 69, 0.408);
     --color_secondary: hsl(252, 100%, 90%);
     --color_success: hsl(120, 95%, 65%);
     --color_danger: hsl(0, 95%, 65%);
@@ -35,7 +35,7 @@ html{
 
 body{
     color: #212529;
-    background-color: #fff;
+    background-color: var(--color_primary);
     letter-spacing: 1px;
 }
 
@@ -49,7 +49,7 @@ body{
     background-position: center;
     color: white;
     text-align: center;
-
+    opacity: 0.8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +72,7 @@ body{
 /* VOUCHER */
 .voucher{
     width: 70%;
-    margin: 20px auto;
+    margin: 70px auto;
     display: flex;
     justify-content: space-around;
 }
@@ -110,13 +110,12 @@ body{
     background-repeat: no-repeat;
     border-radius: 25px;
 }
-/* MENU DISHES */
+/* MENU NEW DISHES */
 .menu{
-    padding: 50px 0;
+    padding-bottom: 50px;
 }
 .menu__description{
     text-align: center;
-    padding: 80px 0;
 }
 .menu__description h1{
     padding: 20px 0;
