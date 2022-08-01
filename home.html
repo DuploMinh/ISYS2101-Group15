@@ -15,29 +15,30 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm bg-dark fixed-top">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>                    
-            <div class="container-fluid" id="navBar">
+        <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="home.html" id="h_logo">
                     <img src="image/logo.JPG" alt="logo" class="rounded-circle">
                 </a>
-
-                <form class="d-flex mx-auto" id="search">
-                    <input class="form-control me-2" type="text" placeholder="Search...">
-                    <button class="btn btn-primary" type="button">Search</button>
-                </form>
-                <ul class="nav nav-pills">
-                    <li class="nav-item"> <a class="nav-link" href="#">Menu</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Trending</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Delivery</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Reservation</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Login</a> </li>
-                </ul>                 
-           
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navBar">
+                    <form class="d-flex mx-auto" id="search">
+                        <input class="form-control me-2" type="text" placeholder="Search...">
+                        <button class="btn btn-primary" type="button">Search</button>
+                    </form>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"> <a class="nav-link" href="#">Menu</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Trending</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Delivery</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Reservation</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Login</a> </li>
+                    </ul>     
+                </div>
             </div>
         </nav>
+    
     </header>
 
     <main>
@@ -46,7 +47,7 @@
 
 
     <footer>
-        <nav class="navbar navbar-expand-sm fixed-bottom mb-10 bg-dark">
+        <nav class="navbar navbar-expand-sm fixed-bottom mb-10 bg-light">
             <div class="container-fluid">                
                 <a class="navbar-brand" href="home.html" id="f_logo">
                     <img src="image/logo.JPG" alt="logo" class="rounded-circle">
