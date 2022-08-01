@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -16,53 +16,125 @@
 </head>
 <body>
     <!-- Header--> 
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="home.html" id="h_logo">
-                    <img src="image/logo.JPG" alt="logo" class="rounded-circle">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarHead" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navBarHead">
-                    <form class="d-flex mx-auto" id="search">
-                        <input class="form-control me-2" type="search" placeholder="Search...">
-                        <button class="btn btn-primary" type="submit">Search</button>
-                    </form>
-                    <ul class="nav nav-pills m-md-auto justify-content-center">
-                        <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Menu</a> </li>
-                        <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Delivery</a> </li>
-                        <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Reservation</a> </li>
-                        <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Login</a> </li>
-                    </ul>     
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html" id="h_logo">
+                <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarHead" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navBarHead">
+                <form class="d-flex mx-auto" id="search">
+                    <input class="form-control me-2" type="search" placeholder="Search...">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+                <ul class="nav nav-pills m-md-auto justify-content-center">
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Menu</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Delivery</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Reservation</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Login</a> </li>
+                </ul>     
+            </div>
+        </div>
+    </nav>
+
+    <main role="main"> 
+        <!--Welcome DashBoard-->
+        <div class="row position-relative pt-md-4 pt-sm-2 mt-sm-2 mt-md-4">
+            <div class="col-md-8 col-sm-6 bg-info">
+                <h1 class="h1">
+                    This div will be used to introduce the restaurant, mainly with pictures.
+                </h1>
+            </div>
+            <div class="col-md-4 col-sm-6 bg-danger">
+                <h1 class="h1">
+                    This div will be used to put some text that describes the restaurant
+                </h1>
+            </div>
+        </div>
+
+        <!--Seasonal Dishes-->
+
+        <div class="row position-relative pt-md-5 pt-sm-3 mt-sm-2 mt-md-4" style="height: 300px; width: 90%; margin-left: 5%;">
+            <div class="col-md-3 col-sm-3 bg-info">
+                <h1 class="h2">
+                    <a href="#"> Seasonal Dishes + Background Picture </a>
+                </h1>
+            </div>
+            <div class="col-md-3 col-sm-3 bg-success">
+                <h1 class="h2">
+                    <a href="#"> Seasonal Dishes + Background Picture </a>
+                </h1>
+            </div>            
+            <div class="col-md-3 col-sm-3 bg-warning">
+                <h1 class="h2">
+                    <a href="#"> Seasonal Dishes + Background Picture </a>
+                </h1>
+            </div>            
+            <div class="col-md-3 col-sm-3 bg-danger">
+                <h1 class="h2">
+                    <a href="#"> Seasonal Dishes + Background Picture </a>
+                </h1>
+            </div>
+        </div>
+
+        <!--Restaurant History-->
+        <div class="row position-relative pt-md-5 pt-sm-3 mt-sm-2 mt-md-4"  style="height: 300px; width: 90%; margin-left: 5%;">
+            <div class="container bg-info">
+                <h1 class="h1 bg-info">This div will be used to write inspirational history of the restaurant</h1>
+            </div>
+        </div>
+
+
+        <!--Sub-Menu-->
+        <div class="row position-relative pt-md-5 pt-sm-3 mt-sm-2 mt-md-4"  style="height: 300px; width: 90%; margin-left: 5%;">
+            <div class="container bg-dark">
+                <h1 class="h1 text-white"> This will be sub-menus, aka Food, Beverage, Vegies, Specials</h1>
+                <div class="navbar-header text-center text-break text-uppercase" style="font-weight: bold;">
+                    <a href="#" class="d-inline-block navbar-brand m-md-auto m-sm-auto">Our Menu</a>
+                </div>
+                <ul class="nav nav-pills m-md-auto m-sm-auto justify-content-center">
+                    <li class="nav-item text-uppercase text-break"> <a href="#">Link To Some Where</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a href="#">Link To Some Where</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a href="#">Link To Some Where</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a href="#">Link To Some Where</a> </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Google Map-->
+
+        <div class="row position-relative pt-md-5 pt-sm-3 mt-sm-2 mt-md-4"  style="height: 300px; width: 90%; margin-left: 5%;">
+            <div class="container bg-info">
+                <h1 class="h1 text-white"> Maybe Google Map Over Here</h1>
+                <div class="navbar-header text-center text-break text-uppercase" style="font-weight: bold;">
+                    <a href="#" class="d-inline-block navbar-brand m-md-auto m-sm-auto">Our Menu</a>
                 </div>
             </div>
-        </nav>
-
-    <main>
-
+        </div>
     </main>
 
 
     <!--Footer-->
-        <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-bottom">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="home.html" id="h_logo">
-                    <img src="image/logo.JPG" alt="logo" class="rounded-circle">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFoot">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse justify-content-end" id="navBarFoot">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item"> <a class="nav-link" href="#">Feedback</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Privacy</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
-                    </ul>         
-                </div>       
-            </div>
-        </nav>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-bottom position-relative mt-md-4 mt-sm-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html" id="h_logo">
+                <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFoot">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navBarFoot">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"> <a class="nav-link" href="#">Feedback</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Privacy</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
+                </ul>         
+            </div>       
+        </div>
+    </nav>
 </body>
 </html>
