@@ -13,12 +13,12 @@ nav {
     position: fixed;
 }
 
-#logo {
+#h_logo {
     margin-left: 5%;
 }
 
 #search {
-    width: 40%;
+    width: 30%;
 }
 
 .nav-item {
@@ -26,6 +26,12 @@ nav {
 }
 
 .nav-item:hover {
-    background-color: rgb(29, 170, 163);
+    background-color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
+.nav-item:active {
+    background-color: white;
+    color: black;
     text-decoration: underline;
 }
