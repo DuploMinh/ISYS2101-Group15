@@ -1,0 +1,28 @@
+#chatBox {
+    position: fixed;
+    margin-top: 30%;
+    width: 100px;
+    height: 100px;
+    margin-left: 95%;
+    z-index: 9999;
+}
+
+#chatBox_btn {
+    position: relative;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    background-color: white;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../image/msg.JPG');
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+#chatBox_btn:hover {
+    background-color: aqua;
+}
