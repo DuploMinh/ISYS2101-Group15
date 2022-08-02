@@ -39,6 +39,36 @@ body{
     letter-spacing: 1px;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--btn_padding);
+    font-weight: 500;
+    border-radius: var(--border_radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn_primary {
+    background: white;
+    color: var(--color_primary);
+    white-space: nowrap;
+}
+
+.btn_primary:hover {
+    background: var(--color_primary);
+    color: white;
+    white-space: nowrap;
+}
 
 /* CAROUSEL */
 .carousel{
@@ -99,10 +129,16 @@ body{
 
 /* VOUCHER */
 .voucher{
+<<<<<<< HEAD
     width: 70%;
     margin: 40px auto;
+=======
+    width: 80%;
+    margin: 70px auto;
+>>>>>>> 1ca522e4db0ecf6c29cd05261f273235f26e4de6
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 3rem;
 }
 
 .voucher__content1{
@@ -123,27 +159,16 @@ body{
     color: var(--color_primary);
 }
 
-.voucher__btn {
-    background-color: white;
-    color: var(--color_primary);
-    border-radius: var(--border_radius);
-    padding: var(--btn_padding);
-    font-weight: bold;
-    border: none;  
-    cursor: pointer;  
-    transition: all 0.5s;
-}
-
-.voucher__btn:hover {
-    background-color: var(--color_primary);
-    color: white;
-}
-
 .voucher__apply {
     font-size: 1.5rem;
     position: absolute;
-    bottom: 1.5rem;
-    left: 6rem;
+    bottom: 2rem;
+    left: 16%;
+    font-weight:bold;
+    border: none;  
+    cursor: pointer;  
+    width: 30%;
+    padding: 10px;
 }
 
 
@@ -158,6 +183,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     padding: 1rem;
+    box-shadow: 5px 5px 15px #888888;
 }
 
 .voucher__content2 > div{
@@ -166,6 +192,184 @@ body{
     letter-spacing: 1px;
     line-height: 1.5rem;
 }
+
+/* ADDRESS FORM */
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    transition: all 0.5s ease;
+    display: grid;
+    place-items: center;
+    display: none;
+}
+
+#address_form {
+    width: 39.5%;
+    border-radius: var(--card_border_radius);
+    background: var(--color_white);
+    align-items: center;
+    padding: var(--card_padding);
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.upload_address .form_title {
+    border-bottom: 2px solid var(--color_light);
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.upload_address .form_title #close_btn {
+    position: absolute;
+    right: 0.2rem;
+    top: 0.1rem;
+}
+
+.upload_address input[type="text"] {
+    justify-self: start;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    color: var(--color_dark);
+    margin-right: 1rem;
+    border-radius: var(--card_border_radius);
+}
+
+.upload_address .caption {
+    margin: 1rem 0;
+}
+
+.address_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_address {
+    justify-content: center;
+}
+
+/* DESCRIPTION FORM */
+#overlay2 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    transition: all 0.5s ease;
+    display: grid;
+    place-items: center;
+    display: none;
+}
+
+#description_form {
+    width: 39.5%;
+    border-radius: var(--card_border_radius);
+    background: var(--color_white);
+    align-items: center;
+    padding: var(--card_padding);
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.upload_description .form_title {
+    border-bottom: 2px solid var(--color_light);
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.upload_description .form_title #close_btn_2 {
+    position: absolute;
+    right: 0.2rem;
+    top: 0.1rem;
+}
+
+.upload_description .caption {
+    margin: 1rem 0;
+}
+
+.form_content {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    height: fit-content;
+}
+
+.dish_des {
+    width: 40%;
+}
+
+.custom_dish {
+    width: 40%;
+}
+
+.description_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_address {
+    justify-content: center;
+}
+
+/* Categories */
+.category__title {
+    text-align: center;
+    margin: 1rem;
+}
+.menu__categories {
+    height: 10rem;
+    /* background-color: white; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.category {
+    height: 100%;
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: var(--card_border_radius);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px #888888;
+}
+
+.category:hover {
+    border: 4px solid red;
+}
+
+.category > img {
+    height: 100%;
+}
+
+.category > h3 {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 20%;
+    display: block;
+    text-align: center;
+}
+
 /* MENU NEW DISHES */
 .menu{
     padding-bottom: 50px;
@@ -347,4 +551,25 @@ body{
     text-align: center;
     line-height: 36px;
     border-radius: 50%;
+.cart_logo {
+    background-color: white;
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart_logo:hover {
+    background-color: var(--color_gray);
+}
+
+.cart_logo > img {
+    width: 24px;
+    height: 24px;
 }
