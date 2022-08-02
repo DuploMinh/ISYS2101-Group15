@@ -129,13 +129,8 @@ body{
 
 /* VOUCHER */
 .voucher{
-<<<<<<< HEAD
-    width: 70%;
-    margin: 40px auto;
-=======
     width: 80%;
     margin: 70px auto;
->>>>>>> 1ca522e4db0ecf6c29cd05261f273235f26e4de6
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -550,11 +545,12 @@ body{
     font-size: 2rem;
     text-align: center;
     line-height: 36px;
-    border-radius: 50%;
+    border-radius: 50%;}
+
 .cart_logo {
     background-color: white;
     position: fixed;
-    bottom: 5%;
+    top: 5%;
     right: 3%;
     width: 3rem;
     height: 3rem;
@@ -563,6 +559,8 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .cart_logo:hover {
@@ -573,3 +571,7 @@ body{
     width: 24px;
     height: 24px;
 }
+
+.cd-top1--is-visible {
+    visibility: visible;
+    opacity: 1;}
