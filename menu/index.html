@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Page</title>
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="./css/index.css">
@@ -22,7 +24,29 @@
         </div>
     </section>
 
-      <!-- VOUCHER -->
+    <!-- NUMBERS -->
+    <section class="number">
+        <div class="number__content">
+            <div class="number__item">
+                <p class="num">35000</p>
+                <p>Dishes Served</p>
+            </div>
+            <div class="number__item">
+                <p class="num">1000</p>
+                <p>Happy Clients</p>
+            </div>
+            <div class="number__item">
+                <p class="num">4.5</p>
+                <p>Rating</p>
+            </div>
+            <div class="number__item">
+                <p class="num">1023</p>
+                <p>Expert Employees</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOUCHER -->
       <section class="voucher">
         <div class="voucher__content1">
             <h3>Restaurant Online Ordering System</h3>
@@ -41,7 +65,7 @@
     <!-- MENU NEW DISHES -->
     <section class="menu">
         <div class="menu__description">
-            <h1>OUR MENU DISHES</h1>
+            <h1>NEW DISHES</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, molestias ad. Quas corrupti similique
                 maiores.</p>
         </div>
@@ -197,6 +221,25 @@
             </div>
         </div>
     </section>
+
+    <!-- BACK TO TOP -->
+    <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- jquery waypoint -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <!-- countup JS -->
+    <script src="./js/jquery.countup.js"></script>
+    <script>
+        $('.num').countUp();
+    </script>
+
+    <!-- Back to Top JS -->
+    <script src="./js/util.js"></script>
+    <script src="./js/main-backToTop.js"></script>
 </body>
 
 </html>
