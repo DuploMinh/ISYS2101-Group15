@@ -6,13 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Page</title>
-<<<<<<< HEAD
-
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-=======
     <script src="https://kit.fontawesome.com/6edaa7891d.js" crossorigin="anonymous"></script>
->>>>>>> 1ca522e4db0ecf6c29cd05261f273235f26e4de6
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="./css/index.css">
@@ -30,7 +24,6 @@
         </section>
         <div class="container">
 
-<<<<<<< HEAD
     <!-- NUMBERS -->
     <section class="number">
         <div class="number__content">
@@ -54,7 +47,7 @@
     </section>
 
     <!-- VOUCHER -->
-      <section class="voucher">
+    <section class="voucher">
         <div class="voucher__content1">
             <h3>Restaurant Online Ordering System</h3>
             <button class="voucher__btn voucher__apply">Apply Now</button>
@@ -65,9 +58,33 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, vitae aspernatur. Minima sapiente magni at.</p>
             </div>
             
-            <button class="voucher__btn">Input Your Address Please</button>
+            <button class="voucher__btn" id="post_address_btn" >Input Your Address Please</button>
         </div>
     </section>
+
+            <!--ADD ADDRESS FORM-->
+
+            <div id="overlay">
+                <form action="index.html" method="POST" class="upload_address" id="address_form">
+                    <div class="form_title">
+                        <h3>Enter your address</h3>
+                        <i class="fa-regular fa-circle-xmark" id="close_btn"></i>
+                    </div>
+
+                    <div class="caption">
+                        <input id="search_input" type="text" name="text" placeholder="Enter address here!">
+                    </div>
+
+                    <div id="map"></div>
+
+                    <div class="address_btn">
+                        <input type="button" onclick="" value="Continue as guest" name="post_address" class="btn btn_primary post_address">
+                        <p>or</p>
+                        <input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address">
+                    </div>
+                    
+                </form>
+            </div>
 
     <!-- MENU NEW DISHES -->
     <section class="menu">
@@ -86,6 +103,48 @@
                     <button><a href="#">Order</a></button>
                 </p>
             </div>
+
+            
+                    <!--DISH DESCRIPTION-->
+                    <div id="overlay2">
+                        <form action="index.html" method="POST" class="upload_description" id="description_form">
+                            <div class="form_title">
+                                <h3>Description</h3>
+                                <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
+                            </div>
+
+                            <div class="form_content">
+                                <div class="dish_des">
+                                    <h2>Beef Stake</h2>
+                                    <img src="img/appe1.jpg" alt="">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore qui, animi est?</p>
+                                </div>
+                                <div class="custom_dish">
+                                    <h2>Size</h2>
+                                    <input type="radio" id="m" name="sizes" value="M">
+                                    <label for="m">M</label><br>
+                                    <input type="radio" id="l" name="sizes" value="L">
+                                    <label for="l">L</label><br>
+                                    <input type="radio" id="xl" name="sizes" value="XL">
+                                    <label for="xl">XL</label>
+
+                                    <h2>Add topping</h2>
+                                    <input type="checkbox" id="cheese" name="cheese" value="Cheese">
+                                    <label for="cheese"> Cheese</label><br>
+                                    <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
+                                    <label for="basil_sauce"> Basil sauce</label><br>
+                                    <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
+                                    <label for="milk_cream"> Milk cream</label>
+                                </div>
+                            </div>
+
+                            <div class="description_btn">
+                                <input type="button" onclick="" value="Add to cart >>>" name="post_address" class="btn btn_primary post_address">
+                            </div>
+                            
+                        </form>
+                    </div>
+
             <div class="menu__item"><img src="./img/appe10.jpg" alt="Chicken"></div>
             <div class="menu__item menu__text">
                 <h3>Beef Stake</h3>
@@ -133,46 +192,6 @@
             </div>
         </div>
     </section>
-=======
-            <!-- VOUCHER -->
-            <section class="voucher">
-                <div class="voucher__content1">
-                    <h3>Restaurant Online Ordering System</h3>
-                    <button class="btn btn_primary voucher__apply">Apply Now</button>
-                </div>
-                <div class="voucher__content2">
-                    <div>
-                        <h3>Welcome To ROOS</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, vitae aspernatur. Minima sapiente magni at.</p>
-                    </div>
-                    <button class="btn btn_primary" id="post_address_btn">Input Your Address Please</button>
-                </div>
-            </section>
-
-            <!--ADD ADDRESS FORM-->
->>>>>>> 1ca522e4db0ecf6c29cd05261f273235f26e4de6
-
-            <div id="overlay">
-                <form action="index.html" method="POST" class="upload_address" id="address_form">
-                    <div class="form_title">
-                        <h3>Enter your address</h3>
-                        <i class="fa-regular fa-circle-xmark" id="close_btn"></i>
-                    </div>
-
-                    <div class="caption">
-                        <input id="search_input" type="text" name="text" placeholder="Enter address here!">
-                    </div>
-
-                    <div id="map"></div>
-
-                    <div class="address_btn">
-                        <input type="button" onclick="" value="Continue as guest" name="post_address" class="btn btn_primary post_address">
-                        <p>or</p>
-                        <input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address">
-                    </div>
-                    
-                </form>
-            </div>
 
 
             <!-- CATEGORIES -->
@@ -200,112 +219,7 @@
                 </div>
             </div>
 
-            <!-- MENU NEW DISHES -->
-            <section class="menu">
-                <div class="menu__description">
-                    <h1>OUR MENU DISHES</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, molestias ad. Quas corrupti similique
-                        maiores.</p>
-                </div>
-                <div class="menu__content">
-                    <div class="menu__item"><img src="./img/appe1.jpg" alt="Beef Stake"></div>
-                    <div class="menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-
-                    <!--DISH DESCRIPTION-->
-                    <div id="overlay2">
-                        <form action="index.html" method="POST" class="upload_description" id="description_form">
-                            <div class="form_title">
-                                <h3>Description</h3>
-                                <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
-                            </div>
-
-                            <div class="form_content">
-                                <div class="dish_des">
-                                    <h2>Beef Stake</h2>
-                                    <img src="img/appe1.jpg" alt="">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore qui, animi est?</p>
-                                </div>
-                                <div class="custom_dish">
-                                    <h2>Size</h2>
-                                    <input type="radio" id="m" name="sizes" value="M">
-                                    <label for="m">M</label><br>
-                                    <input type="radio" id="l" name="sizes" value="L">
-                                    <label for="l">L</label><br>
-                                    <input type="radio" id="xl" name="sizes" value="XL">
-                                    <label for="xl">XL</label>
-
-                                    <h2>Add topping</h2>
-                                    <input type="checkbox" id="cheese" name="cheese" value="Cheese">
-                                    <label for="cheese"> Cheese</label><br>
-                                    <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
-                                    <label for="basil_sauce"> Basil sauce</label><br>
-                                    <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
-                                    <label for="milk_cream"> Milk cream</label>
-                                </div>
-                            </div>
-
-                            <div class="description_btn">
-                                <input type="button" onclick="" value="Add to cart >>>" name="post_address" class="btn btn_primary post_address">
-                            </div>
-                            
-                        </form>
-                    </div>
-
-                    <div class="menu__item"><img src="./img/appe10.jpg" alt="Chicken"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="Fish"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="Oysters"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="Shrimp"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="spaghetti"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                </div>
-            </section>
-
+ 
             <!-- RECOMMENDATION -->
             <section class="recommendation">
                 <h1>RECOMMENDATIONS</h1>
@@ -401,8 +315,9 @@
                 </div>
             </section>
         </div>
-<<<<<<< HEAD
     </section>
+    <div class="cart_logo"><img src="img/shopping-cart.png" alt="cart_logo"></div>
+    </main>
 
     <!-- BACK TO TOP -->
     <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
@@ -422,13 +337,10 @@
     <!-- Back to Top JS -->
     <script src="./js/util.js"></script>
     <script src="./js/main-backToTop.js"></script>
-=======
-        <div class="cart_logo"><img src="img/shopping-cart.png" alt="cart_logo"></div>
-    </main>
+        
 
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpjeHEMJ0UlaQHFwGOZ9R8gqLID5eJlFo&callback=initMap" async defer></script>
     <script src="js/menu.js"></script>
->>>>>>> 1ca522e4db0ecf6c29cd05261f273235f26e4de6
 </body>
 
 </html>
