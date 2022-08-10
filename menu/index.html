@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Page</title>
 
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -15,6 +19,29 @@
 </head>
 
 <body>
+    <!-- Header--> 
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html" id="h_logo">
+                <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarHead" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navBarHead">
+                <form class="d-flex mx-auto" id="search">
+                    <input class="form-control me-2" type="search" placeholder="Search...">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+                <ul class="nav nav-pills m-md-auto justify-content-center">
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Menu</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Delivery</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Reservation</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Login</a> </li>
+                </ul>     
+            </div>
+        </div>
+    </nav>
     <main>
         <!-- CAROUSEL -->
         <section class="carousel">
@@ -298,37 +325,38 @@
                     </div>
                 </div>
             </section>
-        </div>
-        </section>
 
-        <!-- CATEGORIES -->
-        <section>
-            <div class="category__title">
-                <h1>Categories</h1>
-            </div>
-            <div class="menu__categories">
-                <div class="category">
-                    <img src="img/appe1.jpg" alt="appe_1">
-                    <h3>Appetizer</h3>
+            <!-- CATEGORIES -->
+            <section>
+                <div class="category__title">
+                    <h1>Categories</h1>
                 </div>
-                <div class="category">
-                    <img src="img/main-dish1.jpg" alt="main_dish_1">
-                    <h3>Main dishes</h3>
+                <div class="menu__categories">
+                    <div class="category">
+                        <img src="img/appe1.jpg" alt="appe_1">
+                        <h3>Appetizer</h3>
+                    </div>
+                    <div class="category">
+                        <img src="img/main-dish1.jpg" alt="main_dish_1">
+                        <h3>Main dishes</h3>
+                    </div>
+                    <div class="category">
+                        <img src="img/salad1.jpg" alt="appe_1">
+                        <h3>Salad</h3>
+                    </div>
+                    <div class="category">
+                        <img src="img/des1.jpg" alt="appe_1">
+                        <h3>Dessert</h3>
+                    </div>
+                    <div class="category">
+                        <img src="img/drink1.jpg" alt="appe_1">
+                        <h3>Drinks</h3>
+                    </div>
                 </div>
-                <div class="category">
-                    <img src="img/salad1.jpg" alt="appe_1">
-                    <h3>Salad</h3>
-                </div>
-                <div class="category">
-                    <img src="img/des1.jpg" alt="appe_1">
-                    <h3>Dessert</h3>
-                </div>
-                <div class="category">
-                    <img src="img/drink1.jpg" alt="appe_1">
-                    <h3>Drinks</h3>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
+
+        
 
         <!-- BACK TO TOP -->
         <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
@@ -352,6 +380,27 @@
         <script src="./js/main-backToTop.js"></script>
         <script src="./js/shoppingCart.js"></script>
     </main>
+
+    <!--Footer-->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-bottom position-relative mt-md-4 mt-sm-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html" id="h_logo">
+                <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFoot">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navBarFoot">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"> <a class="nav-link" href="#">Feedback</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Privacy</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
+                </ul>         
+            </div>       
+        </div>
+    </nav>
 
     <script
         src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpjeHEMJ0UlaQHFwGOZ9R8gqLID5eJlFo&callback=initMap"
