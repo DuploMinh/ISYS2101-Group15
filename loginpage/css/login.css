@@ -1,5 +1,8 @@
 #form {
+    width: 22%;
     font-weight: bold;
+    border-radius: 2px;
+    border-style: groove;
 }
 hr {
     color: black;
