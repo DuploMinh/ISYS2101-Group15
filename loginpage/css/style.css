@@ -1,0 +1,18 @@
+#form {
+    font-weight: bold;
+}
+hr {
+    color: black;
+    width: 15%;
+}
+
+#checkBoxLabel {
+    margin-left: 5%;
+}
+#checkBox {
+    margin-left: 5%;
+}
+
+#submit {
+    margin-left: 30%;
+}
