@@ -33,7 +33,7 @@ html{
     1 rem = 16px */
 }
 
-body{
+.body {
     color: #212529;
     background-color: rgba(245, 222, 179, 0.503);
     letter-spacing: 1px;
@@ -43,4 +43,9 @@ body{
     top: -15px;
     width: 100%;
     text-align: center;
+}
+
+.voucher__name {
+    box-shadow: 0 0 20px 9px #ff61241f;
+    font-size: 80%;
 }

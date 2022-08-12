@@ -93,3 +93,9 @@ function initMap() {
         infowindow.open(map, marker);
     });
 }
+
+function goToVoucher() {
+    window.location = "../voucher/voucher.html";
+    window.location.href = "../voucher/voucher.html";
+    window.location.assign("../voucher/voucher.html");
+}
