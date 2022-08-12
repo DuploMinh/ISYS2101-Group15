@@ -7,9 +7,9 @@
             "categories": "appetizer",
             "description": "Stuffed with ricotta, garlic, and all sorts of other deliciousness, these Stuffed Artichokes are a fun and tasty appetizer. Serve these at your next dinner party, and you are sure to receive rave reviews. As a bonus, the artichokes are full of nutrients",
             "price": "7",
-            "new": true,
+            "new": false,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 2,
@@ -18,9 +18,9 @@
             "categories": "appetizer",
             "description": "With a filling that can be made ahead of time and a quick fry time, these jalapeno popper wontons are a quick and easy appetizer. A great finger food as well, these poppers are perfect for parties and game days. Also, if you enjoy a little spice, these wontons are an ideal fit.",
             "price": "10",
-            "new": true,
+            "new": false,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 3,
@@ -29,9 +29,9 @@
             "categories": "appetizer",
             "description": "Perfect for sharing (or hoarding for yourself!), these hot ham and cheese party rolls are one of the best appetizers and are delicious perfection. The ham, cheese, and pizza dough combine in the oven for a melty, yet crispy ensemble. Best of all, this sandwich recipe, complete with the glaze, can be assembled ahead of time and then baked later.",
             "price": "12",
-            "new": true,
+            "new": false,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 4,
@@ -40,9 +40,9 @@
             "categories": "appetizer",
             "description": "A spin on the traditional meatball, these meatball stuffed buns are warm and filling. For down-home comfort, these stuffed buns are a great choice. Trust us – your entire family will be thanking you for making this appetizer.",
             "price": "8",
-            "new": true,
+            "new": false,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 5,
@@ -51,9 +51,9 @@
             "categories": "appetizer",
             "description": "Comprised of just a few simple ingredients, these sweet potato bites with avocado and bacon are a healthier appetizer. The sweet potatoes are thinly sliced and baked into chips and then topped with guacamole and crisp bacon. For a more refined approach to finger foods, this may be one of the best appetizers for you.",
             "price": "7",
-            "new": true,
+            "new": false,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 6,
@@ -62,9 +62,9 @@
             "categories": "appetizer",
             "description": "Coated in a tasty marinade of honey, soy sauce, vinegar, ginger, and garlic, these skewers are full of flavor. You also have the option of either baking or grilling them as well. If you are looking for a more substantial appetizer, this is the perfect option.",
             "price": "11",
-            "new": true,
+            "new": false,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 7,
@@ -75,7 +75,7 @@
             "price": "12",
             "new": true,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 8,
@@ -84,9 +84,9 @@
             "categories": "appetizer",
             "description": "Fried food is almost always delicious and a crowd favorite. These fried parmesan-crusted tortellini bites take it to the next level, though. They consist of delicious bite-sized tortellini that is filled with cheese, fried, and then dipped in marinara.",
             "price": "8",
-            "new": true,
-            "recommend": false,
-            "openSpot": true
+            "new": false,
+            "recommend": true,
+            "openSpot": false
         },
         {
             "id": 9,
@@ -97,7 +97,7 @@
             "price": "8",
             "new": true,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 10,
@@ -106,9 +106,9 @@
             "categories": "appetizer",
             "description": "Fry up some ground sausage, fold in some cream cheese, and then sandwich between two layers of crescent rolls.",
             "price": "8",
-            "new": true,
-            "recommend": false,
-            "openSpot": true
+            "new": false,
+            "recommend": true,
+            "openSpot": false
         },
         {
             "id": 11,
@@ -119,7 +119,7 @@
             "price": "10",
             "new": true,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 12,
@@ -128,9 +128,9 @@
             "categories": "appetizer",
             "description": "Sweet, savory, and spicy, these firecracker chicken meatballs are one of the best appetizers and sure to impress.",
             "price": "8",
-            "new": true,
-            "recommend": false,
-            "openSpot": true
+            "new": false,
+            "recommend": true,
+            "openSpot": false
         },
         {
             "id": 13,
@@ -141,7 +141,7 @@
             "price": "7",
             "new": true,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 14,
@@ -150,9 +150,9 @@
             "categories": "appetizer",
             "description": "Allow you to experience all the yummy goodness of a bacon cheeseburger in dip form! Perfect for chilly nights",
             "price": "9",
-            "new": true,
-            "recommend": false,
-            "openSpot": true
+            "new": false,
+            "recommend": true,
+            "openSpot": false
         },
         {
             "id": 15,
@@ -161,9 +161,9 @@
             "categories": "appetizer",
             "description": "Mac and cheese bites are a great finger food to serve, If you love it, you should try it.",
             "price": "9",
-            "new": true,
+            "new": false,
             "recommend": false,
-            "openSpot": true
+            "openSpot": false
         },
         {
             "id": 16,
