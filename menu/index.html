@@ -19,8 +19,9 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="./css/index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -57,31 +58,29 @@
                 <a href="#">MENU</a>
             </div>
         </section>
-        <div class="container">
-
-            <!-- NUMBERS -->
-            <section class="number">
-                <div class="number__content">
-                    <div class="number__item">
-                        <p class="num">35000</p>
-                        <p>Dishes Served</p>
-                    </div>
-                    <div class="number__item">
-                        <p class="num">1000</p>
-                        <p>Happy Clients</p>
-                    </div>
-                    <div class="number__item">
-                        <p class="num">4.5</p>
-                        <p>Rating</p>
-                    </div>
-                    <div class="number__item">
-                        <p class="num">1023</p>
-                        <p>Expert Employees</p>
-                    </div>
+        <!-- NUMBERS -->
+        <section class="number">
+            <div class="number__content">
+                <div class="number__item">
+                    <p class="num">35000</p>
+                    <p>Dishes Served</p>
                 </div>
-            </section>
-
-            <!-- VOUCHER -->
+                <div class="number__item">
+                    <p class="num">1000</p>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="number__item">
+                    <p class="num">4.5</p>
+                    <p>Rating</p>
+                </div>
+                <div class="number__item">
+                    <p class="num">1023</p>
+                    <p>Expert Employees</p>
+                </div>
+            </div>
+        </section>
+        <!-- VOUCHER -->
+        <div class="container">
             <section class="voucher">
                 <div class="voucher__content1">
                     <h3>Restaurant Online Ordering System</h3>
@@ -96,150 +95,148 @@
                     <button class="btn btn_primary" id="post_address_btn">Input Your Address Please</button>
                 </div>
             </section>
+        </div>
+        <!--ADD ADDRESS FORM-->
+        <div id="overlay">
+            <form action="index.html" method="POST" class="upload_address" id="address_form">
+                <div class="form_title">
+                    <h3>Enter your address</h3>
+                    <i class="fa-regular fa-circle-xmark" id="close_btn"></i>
+                </div>
 
-            <!--ADD ADDRESS FORM-->
+                <div class="caption">
+                    <input id="search_input" type="text" name="text" placeholder="Enter address here!">
+                </div>
 
-            <div id="overlay">
-                <form action="index.html" method="POST" class="upload_address" id="address_form">
-                    <div class="form_title">
-                        <h3>Enter your address</h3>
-                        <i class="fa-regular fa-circle-xmark" id="close_btn"></i>
-                    </div>
+                <div id="map"></div>
 
-                    <div class="caption">
-                        <input id="search_input" type="text" name="text" placeholder="Enter address here!">
-                    </div>
+                <div class="address_btn">
+                    <input type="button" onclick="" value="Continue as guest" name="post_address"
+                        class="btn btn_primary post_address">
+                    <p>or</p>
+                    <input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address">
+                </div>
 
-                    <div id="map"></div>
-
-                    <div class="address_btn">
-                        <input type="button" onclick="" value="Continue as guest" name="post_address"
-                            class="btn btn_primary post_address">
-                        <p>or</p>
-                        <input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address">
-                    </div>
-
-                </form>
+            </form>
+        </div>
+        <!-- MENU NEW DISHES -->
+        <section class="menu">
+            <div class="menu__description">
+                <h1>OUR MENU DISHES</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, molestias ad. Quas corrupti
+                    similique
+                    maiores.</p>
             </div>
-
-            <!-- MENU NEW DISHES -->
-            <section class="menu">
-                <div class="menu__description">
-                    <h1>OUR MENU DISHES</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, molestias ad. Quas corrupti
-                        similique
-                        maiores.</p>
+            <div class="menu__content">
+                <div class="menu__item"><img src="./img/appe1.jpg" alt="Beef Stake"></div>
+                <div class="menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
                 </div>
-                <div class="menu__content">
-                    <div class="menu__item"><img src="./img/appe1.jpg" alt="Beef Stake"></div>
-                    <div class="menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
 
-                    <!--DISH DESCRIPTION-->
-                    <div id="overlay2">
-                        <form action="index.html" method="POST" class="upload_description" id="description_form">
-                            <div class="form_title">
-                                <h3>Description</h3>
-                                <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
+                <!--DISH DESCRIPTION-->
+                <div id="overlay2">
+                    <form action="index.html" method="POST" class="upload_description" id="description_form">
+                        <div class="form_title">
+                            <h3>Description</h3>
+                            <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
+                        </div>
+
+                        <div class="form_content">
+                            <div class="dish_des">
+                                <h2>Beef Stake</h2>
+                                <img src="img/appe1.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo
+                                    reiciendis tempore qui, animi est?</p>
                             </div>
+                            <div class="custom_dish">
+                                <h2>Size</h2>
+                                <input type="radio" id="m" name="sizes" value="M">
+                                <label for="m">M</label><br>
+                                <input type="radio" id="l" name="sizes" value="L">
+                                <label for="l">L</label><br>
+                                <input type="radio" id="xl" name="sizes" value="XL">
+                                <label for="xl">XL</label>
 
-                            <div class="form_content">
-                                <div class="dish_des">
-                                    <h2>Beef Stake</h2>
-                                    <img src="img/appe1.jpg" alt="">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo
-                                        reiciendis tempore qui, animi est?</p>
-                                </div>
-                                <div class="custom_dish">
-                                    <h2>Size</h2>
-                                    <input type="radio" id="m" name="sizes" value="M">
-                                    <label for="m">M</label><br>
-                                    <input type="radio" id="l" name="sizes" value="L">
-                                    <label for="l">L</label><br>
-                                    <input type="radio" id="xl" name="sizes" value="XL">
-                                    <label for="xl">XL</label>
-
-                                    <h2>Add topping</h2>
-                                    <input type="checkbox" id="cheese" name="cheese" value="Cheese">
-                                    <label for="cheese"> Cheese</label><br>
-                                    <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
-                                    <label for="basil_sauce"> Basil sauce</label><br>
-                                    <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
-                                    <label for="milk_cream"> Milk cream</label>
-                                </div>
+                                <h2>Add topping</h2>
+                                <input type="checkbox" id="cheese" name="cheese" value="Cheese">
+                                <label for="cheese"> Cheese</label><br>
+                                <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
+                                <label for="basil_sauce"> Basil sauce</label><br>
+                                <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
+                                <label for="milk_cream"> Milk cream</label>
                             </div>
+                        </div>
 
-                            <div class="description_btn">
-                                <input type="button" onclick="" value="Add to cart >>>" name="post_address"
-                                    class="btn btn_primary post_address">
-                            </div>
+                        <div class="description_btn">
+                            <input type="button" onclick="" value="Add to cart >>>" name="post_address"
+                                class="btn btn_primary post_address">
+                        </div>
 
-                        </form>
-                    </div>
-
-                    <div class="menu__item"><img src="./img/appe10.jpg" alt="Chicken"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="Fish"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="Oysters"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="Shrimp"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="spaghetti"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
+                    </form>
                 </div>
-            </section>
 
-            <!-- RECOMMENDATION -->
-            <section class="recommendation">
-                <h1>RECOMMENDATIONS</h1>
+                <div class="menu__item"><img src="./img/appe10.jpg" alt="Chicken"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+                <div class="menu__item "><img src="./img/appe1.jpg" alt="Fish"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+                <div class="menu__item "><img src="./img/appe1.jpg" alt="Oysters"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+                <div class="menu__item "><img src="./img/appe1.jpg" alt="Shrimp"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+                <div class="menu__item "><img src="./img/appe1.jpg" alt="spaghetti"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- RECOMMENDATION -->
+        <section class="recommendation">
+            <h1>RECOMMENDATIONS</h1>
+            <div class="container-fluid">
                 <div class="recommend__content">
                     <div class="recommend__item">
                         <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
@@ -250,7 +247,7 @@
                         <div class="recommend__detail">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
                         </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
                     </div>
                     <div class="recommend__item">
                         <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
@@ -261,7 +258,7 @@
                         <div class="recommend__detail">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
                         </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
                     </div>
                     <div class="recommend__item">
                         <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
@@ -272,7 +269,7 @@
                         <div class="recommend__detail">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
                         </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
                     </div>
                     <div class="recommend__item">
                         <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
@@ -283,7 +280,7 @@
                         <div class="recommend__detail">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
                         </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
                     </div>
                     <div class="recommend__item">
                         <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
@@ -294,7 +291,7 @@
                         <div class="recommend__detail">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
                         </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
                     </div>
                     <div class="recommend__item">
                         <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
@@ -305,7 +302,7 @@
                         <div class="recommend__detail">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
                         </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
                     </div>
                     <div class="recommend__item">
                         <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
@@ -316,7 +313,7 @@
                         <div class="recommend__detail">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
                         </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
                     </div>
                     <div class="recommend__item">
                         <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
@@ -327,51 +324,141 @@
                         <div class="recommend__detail">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
                         </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- CATEGORIES -->
-            <section>
-                <div class="category__title">
-                    <h1>Categories</h1>
+        </section>
+        <!-- CATEGORIES -->
+        <section>
+            <div class="category__title">
+                <h1>Categories</h1>
+            </div>
+            <div class="menu__categories">
+                <div class="category">
+                    <img src="img/appe1.jpg" alt="appe_1">
+                    <h3>Appetizer</h3>
                 </div>
-                <div class="menu__categories">
-                    <div class="category active" id="appetizer">
-                        <img src="img/appe1.jpg" alt="appe_1">
-                        <h3>Appetizer</h3>
-                    </div>
-                    <div class="category" id="main-dish">
-                        <img src="img/main-dish1.jpg" alt="main_dish_1">
-                        <h3>Main dishes</h3>
-                    </div>
-                    <div class="category" id="salad">
-                        <img src="img/salad1.jpg" alt="appe_1">
-                        <h3>Salad</h3>
-                    </div>
-                    <div class="category" id="dessert">
-                        <img src="img/des1.jpg" alt="appe_1">
-                        <h3>Dessert</h3>
-                    </div>
-                    <div class="category" id="drink">
-                        <img src="img/drink1.jpg" alt="appe_1">
-                        <h3>Drinks</h3>
-                    </div>
+                <!-- <<<<<<< HEAD -->
+                <div class="category">
+                    <img src="img/main-dish1.jpg" alt="main_dish_1">
+                    <h3>Main dishes</h3>
                 </div>
-            </section>
+                <div class="category">
+                    <img src="img/salad1.jpg" alt="appe_1">
+                    <h3>Salad</h3>
+                </div>
+                <div class="category">
+                    <img src="img/des1.jpg" alt="appe_1">
+                    <h3>Dessert</h3>
+                </div>
+                <div class="category">
+                    <img src="img/drink1.jpg" alt="appe_1">
+                    <h3>Drinks</h3>
+                </div>
+            </div>
+        </section>
+        <!-- ======= -->
+        <div class="menu__categories">
+            <div class="category active" id="appetizer">
+                <img src="img/appe1.jpg" alt="appe_1">
+                <h3>Appetizer</h3>
+            </div>
+            <div class="category" id="main-dish">
+                <img src="img/main-dish1.jpg" alt="main_dish_1">
+                <h3>Main dishes</h3>
+            </div>
+            <div class="category" id="salad">
+                <img src="img/salad1.jpg" alt="appe_1">
+                <h3>Salad</h3>
+            </div>
+            <div class="category" id="dessert">
+                <img src="img/des1.jpg" alt="appe_1">
+                <h3>Dessert</h3>
+            </div>
+            <div class="category" id="drink">
+                <img src="img/drink1.jpg" alt="appe_1">
+                <h3>Drinks</h3>
+            </div>
+        </div>
+        </section>
+        <!--Section categories items-->
+        <section>
+            <div class="row p-5 items__category">
+                <div class="col-3">Hello</div>
+                <div id="item__category" class="row col">
 
-            <!--Section categories items-->
-            <section>
-                <div class="row p-5 items__category">
-                    <div class="col-3">Hello</div>
-                    <div id="item__category" class="row col">
-                        
-                    </div>
-                    
                 </div>
-            </section>
-            
+
+            </div>
+        </section>
+        </div>
+        <!-- FEEDBACK -->
+        <section class="feedback">
+            <div class="feedback__content">
+                <p>How satisfied are you with our customer support Performance ?</p>
+                <div class="feedback__icon">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="fa-regular fa-face-grin-hearts"></i></a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="fa-regular fa-face-grin"></i></a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="fa-regular fa-face-grimace"></i></a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="fa-regular fa-face-frown"></i></a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="fa-regular fa-face-sad-tear"></i></a>
+                </div>
+            </div>
+        </section>
+        <!--Footer-->
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-bottom position-relative mt-md-4 mt-sm-2">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home.html" id="h_logo">
+                    <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFoot">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end" id="navBarFoot">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"> <a class="nav-link" href="#">Feedback</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Privacy</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- >>>>>>> 65491731084e87ae8d245232002e25699fabf090 -->
+
+        <!-- MODAL -->
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="modal-title" id="exampleModalLabel">We are always be here to listen your sharing. So, please allow us to know more about you. Thank you very much.</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="feedback__form">
+                            <form action="">
+                                <input type="text" placeholder="Name">
+                                <input type="email" placeholder="Email">
+                                <textarea cols="30" rows="10" placeholder="What is your suggestion?..."></textarea>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -379,6 +466,7 @@
         <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
         <!-- SHOPPING CART LOGO -->
         <a href="#" class="cart_logo cd-top1 text-replace js-cd-top1"><i class="fa fa-shopping-cart"></i></a>
+<<<<<<< HEAD
     </main>
 
     <!--Footer-->
@@ -416,6 +504,28 @@
     <script src="./js/main-backToTop.js"></script>
     <script src="./js/shoppingCart.js"></script>
 
+=======
+
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <!-- jquery waypoint -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+        <!-- countup JS -->
+        <script src="./js/jquery.countup.js"></script>
+        <script>
+            $('.num').countUp();
+        </script>
+        <!-- ======= -->
+        <!-- >>>>>>> 65491731084e87ae8d245232002e25699fabf090 -->
+        <!-- Back to Top JS -->
+        <script src="./js/util.js"></script>
+        <script src="./js/main-backToTop.js"></script>
+        <script src="./js/shoppingCart.js"></script>
+    </main>
+
+>>>>>>> f69d4632d0e14d55204d3a6e87f242a7f292072b
     <script
         src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpjeHEMJ0UlaQHFwGOZ9R8gqLID5eJlFo&callback=initMap"
         async defer></script>
@@ -423,22 +533,22 @@
 
 
     <script>
-        $(function() {
+        $(function () {
             var menu = [];
-            $(".category").click(function() {
+            $(".category").click(function () {
                 $(".category").removeClass("active")
                 $("#item__category").empty()
                 $(this).addClass("active")
-                $.getJSON('menu.json', function(data) {
-                    $.each(data.dishes, function(i, v) {
+                $.getJSON('menu.json', function (data) {
+                    $.each(data.dishes, function (i, v) {
                         // console.log(v.categories)
                         // console.log($(".category.active").attr("id"))
-                        if(v.categories === $(".category.active").attr("id")) {
-                            var item = 
-                            '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
-                                    '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-                                    '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
-                                    '<p>Price: $' + v.price + '</p>' +
+                        if (v.categories === $(".category.active").attr("id")) {
+                            var item =
+                                '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
+                                '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
+                                '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
+                                '<p>Price: $' + v.price + '</p>' +
                                 '</div>'
                             $("#item__category").append(item);
                         }
@@ -446,14 +556,14 @@
                 });
             })
 
-            $.getJSON('menu.json', function(data) {
-                $.each(data.dishes, function(i, v) {
-                    if(v.categories === "appetizer") {
-                        var item = 
-                        '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
-                                '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-                                '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
-                                '<p>Price: $' + v.price + '</p>' +
+            $.getJSON('menu.json', function (data) {
+                $.each(data.dishes, function (i, v) {
+                    if (v.categories === "appetizer") {
+                        var item =
+                            '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
+                            '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
+                            '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
+                            '<p>Price: $' + v.price + '</p>' +
                             '</div>'
                         $("#item__category").append(item);
                     }
