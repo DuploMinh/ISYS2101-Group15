@@ -49,3 +49,14 @@ html{
     box-shadow: 0 0 20px 9px #ff61241f;
     font-size: 80%;
 }
+
+.voucher__term{
+    padding: 3rem 3rem 0 3rem;
+}
+.voucher__term h3{
+    font-weight: bold;
+    margin: 1rem 0;
+}
+.voucher__term li{
+    margin-top: 0.7rem;
+}
