@@ -55,31 +55,30 @@
                 <a href="#">MENU</a>
             </div>
         </section>
-        <div class="container">
-
-            <!-- NUMBERS -->
-            <section class="number">
-                <div class="number__content">
-                    <div class="number__item">
-                        <p class="num">35000</p>
-                        <p>Dishes Served</p>
-                    </div>
-                    <div class="number__item">
-                        <p class="num">1000</p>
-                        <p>Happy Clients</p>
-                    </div>
-                    <div class="number__item">
-                        <p class="num">4.5</p>
-                        <p>Rating</p>
-                    </div>
-                    <div class="number__item">
-                        <p class="num">1023</p>
-                        <p>Expert Employees</p>
-                    </div>
+        <!-- NUMBERS -->
+        <section class="number">
+            <div class="number__content">
+                <div class="number__item">
+                    <p class="num">35000</p>
+                    <p>Dishes Served</p>
                 </div>
-            </section>
+                <div class="number__item">
+                    <p class="num">1000</p>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="number__item">
+                    <p class="num">4.5</p>
+                    <p>Rating</p>
+                </div>
+                <div class="number__item">
+                    <p class="num">1023</p>
+                    <p>Expert Employees</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- VOUCHER -->
+        <!-- VOUCHER -->
+        <div class="container">
             <section class="voucher">
                 <div class="voucher__content1">
                     <h3>Restaurant Online Ordering System</h3>
@@ -94,447 +93,273 @@
                     <button class="btn btn_primary" id="post_address_btn">Input Your Address Please</button>
                 </div>
             </section>
+        </div>
+        
 
-            <!--ADD ADDRESS FORM-->
-
-            <div id="overlay">
-                <form action="index.html" method="POST" class="upload_address" id="address_form">
-                    <div class="form_title">
-                        <h3>Enter your address</h3>
-                        <i class="fa-regular fa-circle-xmark" id="close_btn"></i>
-                    </div>
-
-                    <div class="caption">
-                        <input id="search_input" type="text" name="text" placeholder="Enter address here!">
-                    </div>
-
-                    <div id="map"></div>
-
-                    <div class="address_btn">
-                        <input type="button" onclick="" value="Continue as guest" name="post_address"
-                            class="btn btn_primary post_address">
-                        <p>or</p>
-                        <input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address">
-                    </div>
-
-                </form>
-            </div>
-
-            <!-- MENU NEW DISHES -->
-            <section class="menu">
-                <div class="menu__description">
-                    <h1>OUR MENU DISHES</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, molestias ad. Quas corrupti
-                        similique
-                        maiores.</p>
+        <!--ADD ADDRESS FORM-->
+        <div id="overlay">
+            <form action="index.html" method="POST" class="upload_address" id="address_form">
+                <div class="form_title">
+                    <h3>Enter your address</h3>
+                    <i class="fa-regular fa-circle-xmark" id="close_btn"></i>
                 </div>
-                <div class="menu__content">
-                    <div class="menu__item"><img src="./img/appe1.jpg" alt="Beef Stake"></div>
-                    <div class="menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
 
-                    <!--DISH DESCRIPTION-->
-                    <div id="overlay2">
-                        <form action="index.html" method="POST" class="upload_description" id="description_form">
-                            <div class="form_title">
-                                <h3>Description</h3>
-                                <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
+                <div class="caption">
+                    <input id="search_input" type="text" name="text" placeholder="Enter address here!">
+                </div>
+
+                <div id="map"></div>
+
+                <div class="address_btn">
+                    <input type="button" onclick="" value="Continue as guest" name="post_address"
+                        class="btn btn_primary post_address">
+                    <p>or</p>
+                    <input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address">
+                </div>
+
+            </form>
+        </div>
+
+        <!-- MENU NEW DISHES -->
+        <section class="menu">
+            <div class="menu__description">
+                <h1>OUR MENU DISHES</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, molestias ad. Quas corrupti
+                    similique
+                    maiores.</p>
+            </div>
+            <div class="menu__content">
+                <div class="menu__item"><img src="./img/appe1.jpg" alt="Beef Stake"></div>
+                <div class="menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+
+                <!--DISH DESCRIPTION-->
+                <div id="overlay2">
+                    <form action="index.html" method="POST" class="upload_description" id="description_form">
+                        <div class="form_title">
+                            <h3>Description</h3>
+                            <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
+                        </div>
+
+                        <div class="form_content">
+                            <div class="dish_des">
+                                <h2>Beef Stake</h2>
+                                <img src="img/appe1.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo
+                                    reiciendis tempore qui, animi est?</p>
                             </div>
+                            <div class="custom_dish">
+                                <h2>Size</h2>
+                                <input type="radio" id="m" name="sizes" value="M">
+                                <label for="m">M</label><br>
+                                <input type="radio" id="l" name="sizes" value="L">
+                                <label for="l">L</label><br>
+                                <input type="radio" id="xl" name="sizes" value="XL">
+                                <label for="xl">XL</label>
 
-                            <div class="form_content">
-                                <div class="dish_des">
-                                    <h2>Beef Stake</h2>
-                                    <img src="img/appe1.jpg" alt="">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo
-                                        reiciendis tempore qui, animi est?</p>
-                                </div>
-                                <div class="custom_dish">
-                                    <h2>Size</h2>
-                                    <input type="radio" id="m" name="sizes" value="M">
-                                    <label for="m">M</label><br>
-                                    <input type="radio" id="l" name="sizes" value="L">
-                                    <label for="l">L</label><br>
-                                    <input type="radio" id="xl" name="sizes" value="XL">
-                                    <label for="xl">XL</label>
-
-                                    <h2>Add topping</h2>
-                                    <input type="checkbox" id="cheese" name="cheese" value="Cheese">
-                                    <label for="cheese"> Cheese</label><br>
-                                    <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
-                                    <label for="basil_sauce"> Basil sauce</label><br>
-                                    <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
-                                    <label for="milk_cream"> Milk cream</label>
-                                </div>
+                                <h2>Add topping</h2>
+                                <input type="checkbox" id="cheese" name="cheese" value="Cheese">
+                                <label for="cheese"> Cheese</label><br>
+                                <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
+                                <label for="basil_sauce"> Basil sauce</label><br>
+                                <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
+                                <label for="milk_cream"> Milk cream</label>
                             </div>
+                        </div>
 
-                            <div class="description_btn">
-                                <input type="button" onclick="" value="Add to cart >>>" name="post_address"
-                                    class="btn btn_primary post_address">
-                            </div>
+                        <div class="description_btn">
+                            <input type="button" onclick="" value="Add to cart >>>" name="post_address"
+                                class="btn btn_primary post_address">
+                        </div>
 
-                        </form>
-                    </div>
+                    </form>
+                </div>
 
-                    <div class="menu__item"><img src="./img/appe10.jpg" alt="Chicken"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="Fish"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="Oysters"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="Shrimp"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
-                    <div class="menu__item "><img src="./img/appe1.jpg" alt="spaghetti"></div>
-                    <div class="menu__item menu__text">
-                        <h3>Beef Stake</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                            qui, animi est?</p>
-                        <p class="purchase">
-                            <span>$3.05</span>
-                            <button><a href="#">Order</a></button>
-                        </p>
-                    </div>
+                <div class="menu__item"><img src="./img/appe10.jpg" alt="Chicken"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
                 </div>
-            </section>
+                <div class="menu__item "><img src="./img/appe1.jpg" alt="Fish"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+                <div class="menu__item "><img src="./img/appe1.jpg" alt="Oysters"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+                <div class="menu__item "><img src="./img/appe1.jpg" alt="Shrimp"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+                <div class="menu__item "><img src="./img/appe1.jpg" alt="spaghetti"></div>
+                <div class="menu__item menu__text">
+                    <h3>Beef Stake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
+                        qui, animi est?</p>
+                    <p class="purchase">
+                        <span>$3.05</span>
+                        <button><a href="#">Order</a></button>
+                    </p>
+                </div>
+            </div>
+        </section>
 
-            <!-- RECOMMENDATION -->
-            <section class="recommendation">
-                <h1>RECOMMENDATIONS</h1>
-                <div class="recommend__content">
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+        <!-- RECOMMENDATION -->
+        <section class="recommendation">
+            <h1>RECOMMENDATIONS</h1>
+            <div class="container-fluid"><div class="recommend__content">
+                <div class="recommend__item">
+                    <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                    <div class="recommend__title">
+                        <h3>Stuffed Artichokes</h3>
+                        <span>$7.00</span>
                     </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
+                    <div class="recommend__detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
                     </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><img src="img\add.png" alt="plus_icon"></button>
-                    </div>
+                    <button class="plus_icon"><i class="fa fa-plus"></i></button>
                 </div>
-            </section>
+                <div class="recommend__item">
+                    <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                    <div class="recommend__title">
+                        <h3>Stuffed Artichokes</h3>
+                        <span>$7.00</span>
+                    </div>
+                    <div class="recommend__detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
+                    </div>
+                    <button class="plus_icon"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="recommend__item">
+                    <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                    <div class="recommend__title">
+                        <h3>Stuffed Artichokes</h3>
+                        <span>$7.00</span>
+                    </div>
+                    <div class="recommend__detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
+                    </div>
+                    <button class="plus_icon"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="recommend__item">
+                    <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                    <div class="recommend__title">
+                        <h3>Stuffed Artichokes</h3>
+                        <span>$7.00</span>
+                    </div>
+                    <div class="recommend__detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
+                    </div>
+                    <button class="plus_icon"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="recommend__item">
+                    <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                    <div class="recommend__title">
+                        <h3>Stuffed Artichokes</h3>
+                        <span>$7.00</span>
+                    </div>
+                    <div class="recommend__detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
+                    </div>
+                    <button class="plus_icon"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="recommend__item">
+                    <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                    <div class="recommend__title">
+                        <h3>Stuffed Artichokes</h3>
+                        <span>$7.00</span>
+                    </div>
+                    <div class="recommend__detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
+                    </div>
+                    <button class="plus_icon"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="recommend__item">
+                    <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                    <div class="recommend__title">
+                        <h3>Stuffed Artichokes</h3>
+                        <span>$7.00</span>
+                    </div>
+                    <div class="recommend__detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
+                    </div>
+                    <button class="plus_icon"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="recommend__item">
+                    <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                    <div class="recommend__title">
+                        <h3>Stuffed Artichokes</h3>
+                        <span>$7.00</span>
+                    </div>
+                    <div class="recommend__detail">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
+                    </div>
+                    <button class="plus_icon"><i class="fa fa-plus"></i></button>
+                </div>
+            </div></div>
+            
+        </section>
 
-            <!-- CATEGORIES -->
-            <section>
-                <div class="category__title">
-                    <h1>Categories</h1>
+        <!-- CATEGORIES -->
+        <section>
+            <div class="category__title">
+                <h1>Categories</h1>
+            </div>
+            <div class="menu__categories">
+                <div class="category">
+                    <img src="img/appe1.jpg" alt="appe_1">
+                    <h3>Appetizer</h3>
                 </div>
-                <div class="menu__categories">
-                    <div class="category">
-                        <img src="img/appe1.jpg" alt="appe_1">
-                        <h3>Appetizer</h3>
-                    </div>
-                    <div class="category">
-                        <img src="img/main-dish1.jpg" alt="main_dish_1">
-                        <h3>Main dishes</h3>
-                    </div>
-                    <div class="category">
-                        <img src="img/salad1.jpg" alt="appe_1">
-                        <h3>Salad</h3>
-                    </div>
-                    <div class="category">
-                        <img src="img/des1.jpg" alt="appe_1">
-                        <h3>Dessert</h3>
-                    </div>
-                    <div class="category">
-                        <img src="img/drink1.jpg" alt="appe_1">
-                        <h3>Drinks</h3>
-                    </div>
+                <div class="category">
+                    <img src="img/main-dish1.jpg" alt="main_dish_1">
+                    <h3>Main dishes</h3>
                 </div>
-            </section>
-        </div>
+                <div class="category">
+                    <img src="img/salad1.jpg" alt="appe_1">
+                    <h3>Salad</h3>
+                </div>
+                <div class="category">
+                    <img src="img/des1.jpg" alt="appe_1">
+                    <h3>Dessert</h3>
+                </div>
+                <div class="category">
+                    <img src="img/drink1.jpg" alt="appe_1">
+                    <h3>Drinks</h3>
+                </div>
+            </div>
+        </section>
 
-        <!-- List group -->
-<div class="list-group" id="myList" role="tablist">
-    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
-    <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
-    <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
-    <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
-  </div>
-  
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div class="tab-pane fade show active" id="home" role="tabpanel">
-        <div class="container">
-            <div class="row">
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel">
-        <div class="row">
-            <div class="col-3 offer__col">
-                <div class="offer__item">
-                    <i class="fa fa-graduation-cap"></i>
-                    <h3>UNDERGRADUATE STUDY</h3>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                </div>
-            </div>
-            <div class="col-3 offer__col">
-                <div class="offer__item">
-                    <i class="fa fa-graduation-cap"></i>
-                    <h3>UNDERGRADUATE STUDY</h3>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                </div>
-            </div>
-            <div class="col-3 offer__col">
-                <div class="offer__item">
-                    <i class="fa fa-graduation-cap"></i>
-                    <h3>UNDERGRADUATE STUDY</h3>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                </div>
-            </div>
-            <div class="col-3 offer__col">
-                <div class="offer__item">
-                    <i class="fa fa-graduation-cap"></i>
-                    <h3>UNDERGRADUATE STUDY</h3>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                </div>
-            </div>
-            <div class="col-3 offer__col">
-                <div class="offer__item">
-                    <i class="fa fa-graduation-cap"></i>
-                    <h3>UNDERGRADUATE STUDY</h3>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                </div>
-            </div>
-            <div class="col-3 offer__col">
-                <div class="offer__item">
-                    <i class="fa fa-graduation-cap"></i>
-                    <h3>UNDERGRADUATE STUDY</h3>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                </div>
-            </div>
-            <div class="col-3 offer__col">
-                <div class="offer__item">
-                    <i class="fa fa-graduation-cap"></i>
-                    <h3>UNDERGRADUATE STUDY</h3>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane fade" id="messages" role="tabpanel">
-        <div class="container">
-            <div class="row">
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-                <div class="col-3 offer__col">
-                    <div class="offer__item">
-                        <i class="fa fa-graduation-cap"></i>
-                        <h3>UNDERGRADUATE STUDY</h3>
-                        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</P>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane fade" id="settings" role="tabpanel">...</div>
-  </div>
 
         <!-- BACK TO TOP -->
         <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
@@ -555,15 +380,20 @@
 
         <script>
             $('#myList a').on('click', function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
+                e.preventDefault()
+                $(this).tab('show')
+            })
         </script>
         <script>
             $('#myList a[href="#profile"]').tab('show') // Select tab by name
             $('#myList a:first-child').tab('show') // Select first tab
             $('#myList a:last-child').tab('show') // Select last tab
             $('#myList a:nth-child(3)').tab('show') // Select third tab
+        </script>
+        <script>
+            $(function () {
+                $('#myList a:last-child').tab('show')
+            })
         </script>
         <!-- Back to Top JS -->
         <script src="./js/util.js"></script>

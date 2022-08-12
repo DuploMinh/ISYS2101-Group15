@@ -323,82 +323,6 @@ body{
     justify-content: center;
 }
 
-/* Categories */
-.category__title {
-    text-align: center;
-    margin: 1rem;
-}
-.menu__categories {
-    height: 10rem;
-    /* background-color: white; */
-    display: flex;
-    justify-content: space-between;
-}
-
-.category {
-    height: 100%;
-    width: 18%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border-radius: var(--card_border_radius);
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 5px 5px 15px #888888;
-}
-
-.category:hover {
-    border: 4px solid red;
-}
-
-.category > img {
-    height: 100%;
-}
-
-.category > h3 {
-    position: absolute;
-    bottom: 0;
-    background-color: white;
-    width: 100%;
-    height: 20%;
-    display: block;
-    text-align: center;
-}
-
-.tab-content .offer__col{
-    display: inline-block;
-    padding: 15px;
-}
-
-.offer__item {
-    box-shadow: 0px 1px 8px 0px rgba(158, 158, 158, 0.75);
-    padding: 25px 40px;
-    text-align: center;
-    background-color: white;
-    transition: all .5s;
-}
-
-.offer__item:hover {
-    background-color: #12ccc3;
-}
-
-.offer__item i {
-    color: #ff4f81;
-    font-size: 40px;
-}
-
-.offer__item h3 {
-    font-size: 20px;
-    color: black;
-    margin: 25px 0 20px;
-}
-
-.offer__item p {
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    color: #6b6b6b;
-}
-
 /* MENU NEW DISHES */
 .menu{
     padding-bottom: 50px;
@@ -425,25 +349,23 @@ body{
 
 .menu__content img{
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: block;
 }
 
 .menu__item {
-    border-radius: var(--card_border_radius);
+    border-radius: 0;
     overflow: hidden;
-    margin: 10px;
 }
 
 .menu__text{
-    padding: 20px 25px;
+    padding: 20px 20px;
     letter-spacing: 1px;
     line-height: 1.5;
-    text-align: justify;
+    text-align: left;
 }
 
 .purchase{
-    padding-top: 20px;
     text-align: center;
 }
 
@@ -557,6 +479,48 @@ body{
     background-color: var(--color_gray);
 }
 
+/* Categories */
+.category__title {
+    text-align: center;
+    margin: 1rem;
+}
+.menu__categories {
+    height: 10rem;
+    /* background-color: white; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.category {
+    height: 100%;
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: var(--card_border_radius);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px #888888;
+}
+
+.category:hover {
+    border: 4px solid red;
+}
+
+.category > img {
+    height: 100%;
+}
+
+.category > h3 {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 20%;
+    display: block;
+    text-align: center;
+}
+
 /* BACK TO TOP */
 .backToTop {
     position: fixed;
@@ -610,3 +574,157 @@ body{
     visibility: visible;
     opacity: 1;
 }
+
+
+/* *************RESPONSIVE************** */
+@media screen and (max-width:768px) {
+    .carousel__content h1, .menu__description h1, .recommendation h1, .category__title h1{
+        font-size: 4vw;
+    }        
+}
+/* CARROUSEL */
+@media screen and (max-width:768px) {   
+    .carousel__content a{
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width:390px) {
+    .carousel{
+        height: 60vh;
+    }
+}
+
+/* NUMBERS */
+@media screen and (max-width:768px) {
+    .number{
+        padding-top: 2rem;
+    }
+    .number__content .number__item{
+        margin: 0 1rem;
+    }
+    .number__content .number__item p{
+        font-size: 3vw;
+        padding: 0;
+    }
+}
+
+/* VOUCHERS */
+@media screen and (max-width:768px) {
+    .voucher{
+        padding: 0;
+        margin: 0;
+        margin-left: 2rem;
+        display: block;
+    }
+    .voucher__content1{
+        height: 35vh;
+        width: 70vw;
+        padding: 0 90px;
+        margin: 0;
+    }
+    .voucher__content2{
+        margin-top: 1rem;
+        width: 70vw;
+        height: 35vh; 
+        padding: 0;
+    }
+    .voucher__content1 h3, .voucher__apply{
+        visibility: hidden;
+    }
+    .voucher__content2 h3{
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width:390px){
+    .voucher{
+        padding: 0;
+        margin: 0;
+        margin-left: .8rem;
+        display: block;
+    }
+    .voucher__content1{
+        height: 20vh;
+        width: 70vw;
+        padding: 0 90px;
+        margin: 0;
+    }
+    .voucher__content2{
+        margin-top: 1rem;
+        width: 70vw;
+        height: 20vh; 
+        padding: 0;
+    }
+    .voucher__content1 h3, .voucher__apply{
+        visibility: hidden;
+    }
+    .voucher__content2 h3{
+        font-size: 3vw;
+    }
+}
+
+/* NEW DISHES */
+@media screen and (max-width:768px){
+    .menu{
+        padding-bottom: 0;
+    }
+    .menu__description p{
+        font-size: 2vw;
+        padding-bottom: 0;
+    }
+    .menu__content img{
+        height: 25vh;
+    }
+    .menu__text{
+        padding: 0;
+    }
+    .menu__text h3{
+        font-size: 2.5vw;
+    }
+    .menu__text p{
+        font-size: 1vw;
+        text-align: left;
+        padding: 0;
+    }
+    .menu__text button{
+        padding: 0;
+        font-size: 2vw;
+    }
+}
+
+/* RECOMMEDATION */
+@media screen and (max-width:768px) {
+    .recommendation, .recommendation h1{
+        padding: 0;
+    }
+    .recommend__content{
+        gap: 30px 10px;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 40vh 40vh;
+    }
+    .recommend__content img{
+        height: 30vh;
+    }
+    .recommend__item{
+        height: 250px;
+    }
+    .recommend__content .recommend__title{
+        height: 20vh;
+    }
+    .recommend__content .recommend__title h3{
+        font-size: 2vw;
+    }
+    .recommend__content .recommend__detail{
+        height: 40vh;
+        padding: 0;
+    }
+    .recommend__content .recommend__detail p{
+        font-size: 2vw;
+        margin: 0;
+    }
+    .recommend__content .recommend__detail button img{
+        background-size: 10px;
+    }
+}
+
