@@ -50,6 +50,10 @@ html{
     font-size: 80%;
 }
 
+.voucher__item img{
+    cursor: pointer;
+}
+
 .voucher__term{
     padding: 3rem 3rem 0 3rem;
 }
@@ -59,4 +63,9 @@ html{
 }
 .voucher__term li{
     margin-top: 0.7rem;
+}
+@media screen and (max-width:768px){
+    .voucher__term li{
+        font-size: 2vw;
+    }
 }
