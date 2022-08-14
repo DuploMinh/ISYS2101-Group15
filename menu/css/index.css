@@ -607,7 +607,7 @@ body{
 .feedback__content{
     border: 1px solid black;
     border-radius: 5px;
-    width: 35%;
+    width: 35vw;
     margin-left: 50px;
     background-color: rgba(255, 255, 255, 0.9);
 }
@@ -741,7 +741,7 @@ body{
 /* <<<<<<< HEAD */
 
 /* *************RESPONSIVE************** */
-@media screen and (max-width:768px) {
+@media screen and (max-width:1245px) {
     .carousel__content h1, .menu__description h1, .recommendation h1, .category__title h1{
         font-size: 4vw;
     }
@@ -838,11 +838,8 @@ body{
     .recommend__content .recommend__detail button img{
         background-size: 10px;
     }
-    .feedback__content{
-        width: 80vw;
-    }
     .feedback__content p{
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
     .feedback__content .feedback__icon{
         padding:0;
@@ -876,6 +873,12 @@ body{
     }
     .voucher__content2 h3{
         font-size: 3vw;
+    }
+    .feedback__content{
+        width: 60vw;
+    }
+    .feedback__content .feedback__icon i{
+        font-size: 5vw;
     }
 }
 
