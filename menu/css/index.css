@@ -744,23 +744,10 @@ body{
 @media screen and (max-width:768px) {
     .carousel__content h1, .menu__description h1, .recommendation h1, .category__title h1{
         font-size: 4vw;
-    }        
-}
-/* CARROUSEL */
-@media screen and (max-width:768px) {   
+    }
     .carousel__content a{
         font-size: 3vw;
-    }
-}
-
-@media screen and (max-width:390px) {
-    .carousel{
-        height: 60vh;
-    }
-}
-
-/* NUMBERS */
-@media screen and (max-width:768px) {
+    }   
     .number{
         padding-top: 2rem;
     }
@@ -771,10 +758,6 @@ body{
         font-size: 3vw;
         padding: 0;
     }
-}
-
-/* VOUCHERS */
-@media screen and (max-width:768px) {
     .voucher{
         padding: 0;
         margin: 0;
@@ -799,37 +782,6 @@ body{
     .voucher__content2 h3{
         font-size: 3vw;
     }
-}
-
-@media screen and (max-width:390px){
-    .voucher{
-        padding: 0;
-        margin: 0;
-        margin-left: .8rem;
-        display: block;
-    }
-    .voucher__content1{
-        height: 20vh;
-        width: 70vw;
-        padding: 0 90px;
-        margin: 0;
-    }
-    .voucher__content2{
-        margin-top: 1rem;
-        width: 70vw;
-        height: 20vh; 
-        padding: 0;
-    }
-    .voucher__content1 h3, .voucher__apply{
-        visibility: hidden;
-    }
-    .voucher__content2 h3{
-        font-size: 3vw;
-    }
-}
-
-/* NEW DISHES */
-@media screen and (max-width:768px){
     .menu{
         padding-bottom: 0;
     }
@@ -855,10 +807,6 @@ body{
         padding: 0;
         font-size: 2vw;
     }
-}
-
-/* RECOMMEDATION */
-@media screen and (max-width:768px) {
     .recommendation, .recommendation h1{
         padding: 0;
     }
@@ -890,9 +838,47 @@ body{
     .recommend__content .recommend__detail button img{
         background-size: 10px;
     }
+    .feedback__content{
+        width: 80vw;
+    }
+    .feedback__content p{
+        font-size: 2vw;
+    }
+    .feedback__content .feedback__icon{
+        padding:0;
+    }
 }
 
-/* ======= */
+@media screen and (max-width:390px) {
+    .carousel{
+        height: 60vh;
+    }
+    .voucher{
+        padding: 0;
+        margin: 0;
+        margin-left: .8rem;
+        display: block;
+    }
+    .voucher__content1{
+        height: 20vh;
+        width: 70vw;
+        padding: 0 90px;
+        margin: 0;
+    }
+    .voucher__content2{
+        margin-top: 1rem;
+        width: 70vw;
+        height: 20vh; 
+        padding: 0;
+    }
+    .voucher__content1 h3, .voucher__apply{
+        visibility: hidden;
+    }
+    .voucher__content2 h3{
+        font-size: 3vw;
+    }
+}
+
 .items__category {
     width: 140%;
     margin-left: -20%;
