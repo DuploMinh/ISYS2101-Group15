@@ -95,276 +95,143 @@
                     <button class="btn btn_primary" id="post_address_btn">Input Your Address Please</button>
                 </div>
             </section>
-        </div>
-        <!--ADD ADDRESS FORM-->
-        <div id="overlay">
-            <form action="index.html" method="POST" class="upload_address" id="address_form">
-                <div class="form_title">
-                    <h3>Enter your address</h3>
-                    <i class="fa-regular fa-circle-xmark" id="close_btn"></i>
-                </div>
+        
+            <!--ADD ADDRESS FORM-->
+            <div id="overlay">
+                <form action="index.html" method="POST" class="upload_address" id="address_form">
+                    <div class="form_title">
+                        <h3>Enter your address</h3>
+                        <i class="fa-regular fa-circle-xmark" id="close_btn"></i>
+                    </div>
 
-                <div class="caption">
-                    <input id="search_input" type="text" name="text" placeholder="Enter address here!">
-                </div>
+                    <div class="caption">
+                        <input id="search_input" type="text" name="text" placeholder="Enter address here!">
+                    </div>
 
-                <div id="map"></div>
+                    <div id="map"></div>
 
-                <div class="address_btn">
-                    <input type="button" onclick="" value="Continue as guest" name="post_address"
-                        class="btn btn_primary post_address">
-                    <p>or</p>
-                    <input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address">
-                </div>
+                    <div class="address_btn">
+                        <input type="button" onclick="" value="Continue as guest" name="post_address"
+                            class="btn btn_primary post_address">
+                        <p>or</p>
+                        <input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address">
+                    </div>
 
-            </form>
-        </div>
-        <!-- MENU NEW DISHES -->
-        <section class="menu">
-            <div class="menu__description">
-                <h1>OUR MENU DISHES</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, molestias ad. Quas corrupti
-                    similique
-                    maiores.</p>
+                </form>
             </div>
-            <div class="menu__content">
-                <div class="menu__item"><img src="./img/appe1.jpg" alt="Beef Stake"></div>
-                <div class="menu__text">
-                    <h3>Beef Stake</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                        qui, animi est?</p>
-                    <p class="purchase">
-                        <span>$3.05</span>
-                        <button><a href="#">Order</a></button>
-                    </p>
+
+            <!-- MENU NEW DISHES -->
+            <section class="menu">
+                <div class="menu__description">
+                    <h1>NEW DISHES</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, molestias ad. Quas corrupti
+                        similique
+                        maiores.</p>
                 </div>
 
-                <!--DISH DESCRIPTION-->
-                <div id="overlay2">
-                    <form action="index.html" method="POST" class="upload_description" id="description_form">
-                        <div class="form_title">
-                            <h3>Description</h3>
-                            <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
-                        </div>
-
-                        <div class="form_content">
-                            <div class="dish_des">
-                                <h2>Beef Stake</h2>
-                                <img src="img/appe1.jpg" alt="">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo
-                                    reiciendis tempore qui, animi est?</p>
+                <div class="menu__content">
+                    <!-- <div id="menu__new__dishes">
+                        
+                    </div> -->
+                    
+                    <!--DISH DESCRIPTION-->
+                    <div id="overlay2">
+                        <form action="index.html" method="POST" class="upload_description" id="description_form">
+                            <div class="form_title">
+                                <h3>Description</h3>
+                                <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
                             </div>
-                            <div class="custom_dish">
-                                <h2>Size</h2>
-                                <input type="radio" id="m" name="sizes" value="M">
-                                <label for="m">M</label><br>
-                                <input type="radio" id="l" name="sizes" value="L">
-                                <label for="l">L</label><br>
-                                <input type="radio" id="xl" name="sizes" value="XL">
-                                <label for="xl">XL</label>
 
-                                <h2>Add topping</h2>
-                                <input type="checkbox" id="cheese" name="cheese" value="Cheese">
-                                <label for="cheese"> Cheese</label><br>
-                                <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
-                                <label for="basil_sauce"> Basil sauce</label><br>
-                                <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
-                                <label for="milk_cream"> Milk cream</label>
+                            <div class="form_content">
+                                <div class="dish_des">
+                                    <h2>Beef Stake</h2>
+                                    <img src="img/appe1.jpg" alt="">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo
+                                        reiciendis tempore qui, animi est?</p>
+                                </div>
+                                <div class="custom_dish">
+                                    <h2>Size</h2>
+                                    <input type="radio" id="m" name="sizes" value="M">
+                                    <label for="m">M</label><br>
+                                    <input type="radio" id="l" name="sizes" value="L">
+                                    <label for="l">L</label><br>
+                                    <input type="radio" id="xl" name="sizes" value="XL">
+                                    <label for="xl">XL</label>
+
+                                    <h2>Add topping</h2>
+                                    <input type="checkbox" id="cheese" name="cheese" value="Cheese">
+                                    <label for="cheese"> Cheese</label><br>
+                                    <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
+                                    <label for="basil_sauce"> Basil sauce</label><br>
+                                    <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
+                                    <label for="milk_cream"> Milk cream</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="description_btn">
-                            <input type="button" onclick="" value="Add to cart >>>" name="post_address"
-                                class="btn btn_primary post_address">
-                        </div>
+                            <div class="description_btn">
+                                <input type="button" onclick="" value="Add to cart >>>" name="post_address"
+                                    class="btn btn_primary post_address">
+                            </div>
 
-                    </form>
+                        </form>
+                    </div>
                 </div>
+            </section>
 
-                <div class="menu__item"><img src="./img/appe10.jpg" alt="Chicken"></div>
-                <div class="menu__item menu__text">
-                    <h3>Beef Stake</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                        qui, animi est?</p>
-                    <p class="purchase">
-                        <span>$3.05</span>
-                        <button><a href="#">Order</a></button>
-                    </p>
-                </div>
-                <div class="menu__item "><img src="./img/appe1.jpg" alt="Fish"></div>
-                <div class="menu__item menu__text">
-                    <h3>Beef Stake</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                        qui, animi est?</p>
-                    <p class="purchase">
-                        <span>$3.05</span>
-                        <button><a href="#">Order</a></button>
-                    </p>
-                </div>
-                <div class="menu__item "><img src="./img/appe1.jpg" alt="Oysters"></div>
-                <div class="menu__item menu__text">
-                    <h3>Beef Stake</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                        qui, animi est?</p>
-                    <p class="purchase">
-                        <span>$3.05</span>
-                        <button><a href="#">Order</a></button>
-                    </p>
-                </div>
-                <div class="menu__item "><img src="./img/appe1.jpg" alt="Shrimp"></div>
-                <div class="menu__item menu__text">
-                    <h3>Beef Stake</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                        qui, animi est?</p>
-                    <p class="purchase">
-                        <span>$3.05</span>
-                        <button><a href="#">Order</a></button>
-                    </p>
-                </div>
-                <div class="menu__item "><img src="./img/appe1.jpg" alt="spaghetti"></div>
-                <div class="menu__item menu__text">
-                    <h3>Beef Stake</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo reiciendis tempore
-                        qui, animi est?</p>
-                    <p class="purchase">
-                        <span>$3.05</span>
-                        <button><a href="#">Order</a></button>
-                    </p>
-                </div>
-            </div>
-        </section>
-        <!-- RECOMMENDATION -->
-        <section class="recommendation">
-            <h1>RECOMMENDATIONS</h1>
-            <div class="container-fluid">
-                <div class="recommend__content">
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
+            <!-- RECOMMENDATION -->
+            <section class="recommendation">
+                <h1>RECOMMENDATIONS</h1>
+                <div class="container-fluid">
+                    <div class="recommend__content">
+                        <!-- <div class="recommend__item">
+                            <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                            <div class="recommend__title">
+                                <h3>Stuffed Artichokes</h3>
+                                <span>$7.00</span>
+                            </div>
+                            <div class="recommend__detail">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
+                            </div>
+                            <button class="plus_icon"><i class="fa fa-plus"></i></button>
+                        </div> -->
                     </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
-                    </div>
-                    <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-        <!-- CATEGORIES -->
-        <section>
-            <div class="menu__categories">
-                <div class="category active" id="appetizer">
-                    <img src="img/appe1.jpg" alt="appe_1">
-                    <h3>Appetizer</h3>
-                </div>
-                <div class="category" id="main-dish">
-                    <img src="img/main-dish1.jpg" alt="main_dish_1">
-                    <h3>Main dishes</h3>
-                </div>
-                <div class="category" id="salad">
-                    <img src="img/salad1.jpg" alt="appe_1">
-                    <h3>Salad</h3>
-                </div>
-                <div class="category" id="dessert">
-                    <img src="img/des1.jpg" alt="appe_1">
-                    <h3>Dessert</h3>
-                </div>
-                <div class="category" id="drink">
-                    <img src="img/drink1.jpg" alt="appe_1">
-                    <h3>Drinks</h3>
-                </div>
-            </div>
-        </section>
-        <!--Section categories items-->
-        <section>
-            <div class="row p-5 items__category">
-                <div class="col-3">Hello</div>
-                <div id="item__category" class="row col">
-
                 </div>
 
-            </div>
-        </section>
+            </section>
+            <!-- CATEGORIES -->
+            <section>
+                <div class="menu__categories">
+                    <div class="category active" id="appetizer">
+                        <img src="img/appe1.jpg" alt="appe_1">
+                        <h3>Appetizer</h3>
+                    </div>
+                    <div class="category" id="main-dish">
+                        <img src="img/main-dish1.jpg" alt="main_dish_1">
+                        <h3>Main dishes</h3>
+                    </div>
+                    <div class="category" id="salad">
+                        <img src="img/salad1.jpg" alt="appe_1">
+                        <h3>Salad</h3>
+                    </div>
+                    <div class="category" id="dessert">
+                        <img src="img/des1.jpg" alt="appe_1">
+                        <h3>Dessert</h3>
+                    </div>
+                    <div class="category" id="drink">
+                        <img src="img/drink1.jpg" alt="appe_1">
+                        <h3>Drinks</h3>
+                    </div>
+                </div>
+            </section>
+            <!--Section categories items-->
+            <section>
+                <div class="row p-5 items__category">
+                    <div class="col-3">Hello</div>
+                    <div id="item__category" class="row col">
+
+                    </div>
+                </div>
+            </section>
         </div>
         <!-- FEEDBACK -->
         <section class="feedback">
@@ -463,6 +330,8 @@
 
 
     <script>
+
+        // Categories part
         $(function () {
             var menu = [];
             $(".category").click(function () {
@@ -500,6 +369,54 @@
                 });
             });
         });
+
+        // new dishes part
+        $(function() {
+            $.getJSON('menu.json', function (data) {
+                $.each(data.dishes, function (i, v) {
+                    // console.log(v.categories)
+                    // console.log($(".category.active").attr("id"))
+                    if (v.new === true) {
+                        var item =
+                            '<div class="menu__item"><img src="' + v.image + '" alt="Beef Stake"></div>' +
+                            '<div class="menu__text">' +
+                                '<h3>' + v.name + '</h3>' +
+                                '<p>' + v.description + '</p>' +
+                                '<p class="purchase">' +
+                                    '<span>$' + v.price + '</span>' +
+                                    '<button><a href="#">Order</a></button>' +
+                                '</p>' +
+                            '</div>'
+                        $(".menu__content").append(item);
+                    }
+                });
+            });
+        })
+
+        // recommendation part
+        $(function() {
+            $.getJSON('menu.json', function (data) {
+                $.each(data.dishes, function (i, v) {
+                    // console.log(v.categories)
+                    // console.log($(".category.active").attr("id"))
+                    if (v.recommend === true) {
+                        var item =
+                            '<div class="recommend__item">' +
+                                '<img src="' + v.image + '" alt="' + v.name +'">' +
+                                '<div class="recommend__title">' +
+                                    '<h3>' + v.name + '</h3>'+
+                                    '<span>$' + v.price + '</span>' +
+                                '</div>' +
+                                '<div class="recommend__detail">' +
+                                    '<p>' + v.description + '</p>' +
+                                '</div>' +
+                                '<button class="plus_icon"><i class="fa fa-plus"></i></button>' +
+                            '</div>'
+                        $(".recommend__content").append(item);
+                    }
+                });
+            });
+        })
     </script>
 </body>
 
