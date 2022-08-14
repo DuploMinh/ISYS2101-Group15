@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- This was made by Dinh Pham
+         Last Change: August 1st, 2022-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container-fluid d-flex justify-content-center">
+        <a class="navbar-brand" href="home.html" id="h_logo">
+            <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+        </a>
+    </div>
+    <div class="container-fluid d-flex justify-content-center" id="form">
+        <form action="/action.php">
+            <div class="mb-3 mt-5">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="checkBox">
+              <label class="form-check-label" for="checkBox" id="checkBoxLabel">Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-primary mb-5" id="submit">Login</button>
+          </form>
+    </div>
+    <div class="container-fluid d-flex justify-content-center mt-5" id="register">
+        <hr>
+        <h5 class="h5" style="color: gray;">
+            New to Avenger?
+        </h5>
+        <hr>
+    </div>
+    <div class="container-fluid d-flex justify-content-center">
+        <button type="button" class="btn btn-warning"> <a href="registration.html" class="link link-primary">Create New Account</a></button>
+    </div>
+
+</body>
+</html>
