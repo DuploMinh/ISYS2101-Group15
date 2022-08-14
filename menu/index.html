@@ -133,48 +133,6 @@
                     <!-- <div id="menu__new__dishes">
                         
                     </div> -->
-                    
-                    <!--DISH DESCRIPTION-->
-                    <div id="overlay2">
-                        <form action="index.html" method="POST" class="upload_description" id="description_form">
-                            <div class="form_title">
-                                <h3>Description</h3>
-                                <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
-                            </div>
-
-                            <div class="form_content">
-                                <div class="dish_des">
-                                    <h2>Beef Stake</h2>
-                                    <img src="img/appe1.jpg" alt="">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo
-                                        reiciendis tempore qui, animi est?</p>
-                                </div>
-                                <div class="custom_dish">
-                                    <h2>Size</h2>
-                                    <input type="radio" id="m" name="sizes" value="M">
-                                    <label for="m">M</label><br>
-                                    <input type="radio" id="l" name="sizes" value="L">
-                                    <label for="l">L</label><br>
-                                    <input type="radio" id="xl" name="sizes" value="XL">
-                                    <label for="xl">XL</label>
-
-                                    <h2>Add topping</h2>
-                                    <input type="checkbox" id="cheese" name="cheese" value="Cheese">
-                                    <label for="cheese"> Cheese</label><br>
-                                    <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
-                                    <label for="basil_sauce"> Basil sauce</label><br>
-                                    <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
-                                    <label for="milk_cream"> Milk cream</label>
-                                </div>
-                            </div>
-
-                            <div class="description_btn">
-                                <input type="button" onclick="" value="Add to cart >>>" name="post_address"
-                                    class="btn btn_primary post_address">
-                            </div>
-
-                        </form>
-                    </div>
                 </div>
             </section>
 
@@ -346,7 +304,7 @@
                             var item =
                                 '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
                                 '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-                                '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
+                                '<h2 class="cate__text">' + v.name + '</h2>' +
                                 '<p>Price: $' + v.price + '</p>' +
                                 '</div>'
                             $("#item__category").append(item);
@@ -384,7 +342,7 @@
                                 '<p>' + v.description + '</p>' +
                                 '<p class="purchase">' +
                                     '<span>$' + v.price + '</span>' +
-                                    '<button><a href="#">Order</a></button>' +
+                                    '<button>Order</button>' +
                                 '</p>' +
                             '</div>'
                         $(".menu__content").append(item);
@@ -416,6 +374,71 @@
                     }
                 });
             });
+        })
+
+        // Dish description part
+        $(function() {
+            // $(".dish__by_cate").click(function () {
+            //     overlay2.style.display = 'grid';
+            //     $.getJSON('menu.json', function (data) {
+            //         $.each(data.dishes, function (i, v) {
+            //             // console.log(v.categories)
+            //             // console.log($(".category.active").attr("id"))
+
+            // <!--DISH DESCRIPTION-->
+            //         <div id="overlay2">
+            //             <form action="index.html" method="POST" class="upload_description" id="description_form">
+            //                 <div class="form_title">
+            //                     <h3>Description</h3>
+            //                     <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
+            //                 </div>
+
+            //                 <div class="form_content">
+            //                     <div class="dish_des">
+            //                         <h2>Beef Stake</h2>
+            //                         <img src="img/appe1.jpg" alt="">
+            //                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo
+            //                             reiciendis tempore qui, animi est?</p>
+            //                     </div>
+            //                     <div class="custom_dish">
+            //                         <h2>Size</h2>
+            //                         <input type="radio" id="m" name="sizes" value="M">
+            //                         <label for="m">M</label><br>
+            //                         <input type="radio" id="l" name="sizes" value="L">
+            //                         <label for="l">L</label><br>
+            //                         <input type="radio" id="xl" name="sizes" value="XL">
+            //                         <label for="xl">XL</label>
+
+            //                         <h2>Add topping</h2>
+            //                         <input type="checkbox" id="cheese" name="cheese" value="Cheese">
+            //                         <label for="cheese"> Cheese</label><br>
+            //                         <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
+            //                         <label for="basil_sauce"> Basil sauce</label><br>
+            //                         <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
+            //                         <label for="milk_cream"> Milk cream</label>
+            //                     </div>
+            //                 </div>
+
+            //                 <div class="description_btn">
+            //                     <input type="button" onclick="" value="Add to cart >>>" name="post_address"
+            //                         class="btn btn_primary post_address">
+            //                 </div>
+
+            //             </form>
+            //         </div>
+            
+            //             if (v.categories === $(".category.active").attr("id")) {
+            //                 var item =
+            //                     '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
+            //                     '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
+            //                     '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
+            //                     '<p>Price: $' + v.price + '</p>' +
+            //                     '</div>'
+            //                 $("#item__category").append(item);
+            //             }
+            //         });
+            //     });
+            // })
         })
     </script>
 </body>
