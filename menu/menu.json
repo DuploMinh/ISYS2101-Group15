@@ -470,7 +470,7 @@
             "description": "Sweet raspberries do that job perfectly here, while a splash of crème de cassis adds even deeper berry flavor.",
             "price": "12",
             "new": false,
-            "recommend": false,
+            "recommend": true,
             "openSpot": false
         },
         {
@@ -492,7 +492,7 @@
             "description": "Wonderful texture, assertive lemon flavor, just enough richness and just enough icing.",
             "price": "20",
             "new": false,
-            "recommend": false,
+            "recommend": true,
             "openSpot": false
         },
         {
@@ -514,7 +514,7 @@
             "description": "The bananas flavor the light-and-fluffy bars, which are topped with cream cheese icing and chopped pecans for the perfect amount of tanginess and crunch.",
             "price": "7.5",
             "new": false,
-            "recommend": false,
+            "recommend": true,
             "openSpot": false
         }
     ]
