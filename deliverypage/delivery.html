@@ -68,7 +68,7 @@
                         <h1 class="h1">Menu</h1>
                     </div>
                     <div class="row">
-                        <div id="appetizer" class="col-2 m-auto p-auto">
+                        <div id="appetizer" class="col-2 m-auto p-auto category">
                             <a href="#" class="m-auto p-auto active" aria-current="true">
                                 <img src="./image/cart.JPG" alt="#" class="img-fluid">
                                 <div class="container d-flex justify-content-center m-auto p-auto">
@@ -170,5 +170,118 @@
             </div>       
         </div>
     </nav>
+
+
+    
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- jquery waypoint -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <!-- countup JS -->
+    <script src="./js/jquery.countup.js"></script>
+
+    <!-- Back to Top JS -->
+    <script src="./js/util.js"></script>
+    <script src="./js/main-backToTop.js"></script>
+    <script src="./js/shoppingCart.js"></script>
+
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpjeHEMJ0UlaQHFwGOZ9R8gqLID5eJlFo&callback=initMap"
+        async defer></script>
+    <script src="js/menu.js"></script>
+
+
+    <script>
+
+        // Categories part
+        $(function () {
+            var menu = [];
+            $(".category").click(function () {
+                $(".category").removeClass("active")
+                $("#item__category").empty()
+                $(this).addClass("active")
+                $.getJSON('menu.json', function (data) {
+                    $.each(data.dishes, function (i, v) {
+                        // console.log(v.categories)
+                        // console.log($(".category.active").attr("id"))
+                        if (v.categories === $(".category.active").attr("id")) {
+                            var item =
+                                '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
+                                '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
+                                '<h2 class="cate__text">' + v.name + '</h2>' +
+                                '<p>Price: $' + v.price + '</p>' +
+                                '</div>'
+                            $("#item__category").append(item);
+                        }
+                    });
+                });
+            })
+
+            $.getJSON('menu.json', function (data) {
+                $.each(data.dishes, function (i, v) {
+                    if (v.categories === "appetizer") {
+                        var item =
+                            '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
+                            '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
+                            '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
+                            '<p>Price: $' + v.price + '</p>' +
+                            '</div>'
+                        $("#item__category").append(item);
+                    }
+                });
+            });
+        });
+
+        // new dishes part
+        $(function() {
+            $.getJSON('menu.json', function (data) {
+                $.each(data.dishes, function (i, v) {
+                    // console.log(v.categories)
+                    // console.log($(".category.active").attr("id"))
+                    if (v.new === true) {
+                        var item =
+                            '<div class="menu__item"><img src="' + v.image + '" alt="Beef Stake"></div>' +
+                            '<div class="menu__text">' +
+                                '<h3>' + v.name + '</h3>' +
+                                '<p>' + v.description + '</p>' +
+                                '<p class="purchase">' +
+                                    '<span>$' + v.price + '</span>' +
+                                    '<button>Order</button>' +
+                                '</p>' +
+                            '</div>'
+                        $(".menu__content").append(item);
+                    }
+                });
+            });
+        })
+
+        // recommendation part
+        $(function() {
+            $.getJSON('menu.json', function (data) {
+                $.each(data.dishes, function (i, v) {
+                    // console.log(v.categories)
+                    // console.log($(".category.active").attr("id"))
+                    if (v.recommend === true) {
+                        var item =
+                            '<div class="recommend__item">' +
+                                '<img src="' + v.image + '" alt="' + v.name +'">' +
+                                '<div class="recommend__title">' +
+                                    '<h3>' + v.name + '</h3>'+
+                                    '<span>$' + v.price + '</span>' +
+                                '</div>' +
+                                '<div class="recommend__detail">' +
+                                    '<p>' + v.description + '</p>' +
+                                '</div>' +
+                                '<button class="plus_icon"><i class="fa fa-plus"></i></button>' +
+                            '</div>'
+                        $(".recommend__content").append(item);
+                    }
+                });
+            });
+        })
+    </script>
 </body>
 </html>
