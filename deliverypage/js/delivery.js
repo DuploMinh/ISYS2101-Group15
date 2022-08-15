@@ -1,4 +1,5 @@
-var data = [];
+var list = [];
+var totalPrice = 0;
 //This function updates the badge number every time user clicks
 function cartUpdate() {
     let badge = document.getElementById("badge").innerHTML;
@@ -22,48 +23,101 @@ function addItem(x) {
 }
 
 function adder(data, x) {
+    var exist = false;
+    if (list.length != 0) {
+            list.forEach(element => {
+                if (element.id == x) {
+                    exist = true;
+                    let amount_id = "amount" + element.id;
+                    let price_id = "price" + element.id;
+                    let amount = element.amount + 1;
+                    let price = element.price * amount;
+                    document.getElementById(amount_id).innerHTML = amount;
+                    document.getElementById(price_id).innerHTML  = price;
+                    element.amount += 1;
+                    totalPrice += element.price;
+                }
+            });
+    }
 
-    let index = 0;
     for (key of data) {
         if(key.id == x) {
-          document.getElementById("cart-list").innerHTML += 
-          '<li class="list-group-item cart-item d-flex mt-2 mb-2">'+
-          '<div class="d-block">'+
-              '<div class="cart-item-name justify-content-center text-center p-2 mb-2">'+
-                  '<h4 class="h4">' + key.name + '</h4>' +
-              '</div>'+
-              '<div class="d-flex w-100 gap-2">'+
-                  '<div class="cart-item-image w-50">'+
-                      '<img class="img-fluid" alt="item_image" src="./' + key.image + '">'+
-                  '</div>'+ 
-                  '<div class="w-50 d-block m-auto gap-4 justify-content-center cart-item-button" id="cart-item-button">'+
-                      '<div class="d-flex gap-4 h-50 justify-content-center">'+
-                          '<div class="subtract-item">'+
-                              '<button type="button" class="btn btn-dark btn-sm item-button overflow-hidden" id="subtract">'+
-                                  '<i class="bi bi-dash-lg overflow-auto">'+'</i>'+
-                              '</button>'+
-                          '</div>'+
-
-                          '<div class="cart-item-amount">'+
-                              '<h2 class="h2">'+ '1' + '</h2>'+
-                          '</div>'+
-
-                          '<div class="add-item">'+
-                              '<button type="button" class="btn btn-dark btn-sm item-button" id="add">'+ 
-                                  '<i class="bi bi-plus-lg"></i>'+
-                              '</button>'+
-                          '</div>'
-                      +'</div>'+
-                      '<div class="d-flex h-50 justify-content-center mt-3 p-auto">'+
-                          '<h4 class="h4">'+ 'Price: ' + '</h4>'+
-                          '<h4 class="h4" id="amount"> ' + key.price + '$ </h4>'+
-                      '</div>'+
-                  '</div>'+ 
-              '</div>'+
-          '</div>'+
-      '</li>';
-          break;
+            if (!exist) {
+                let id = key.id;
+                let amount = Number(1);
+                let price = Number(key.price);
+                let json = {
+                    "id":id,
+                    "amount": amount, 
+                    "price": price
+                }
+                totalPrice += price;
+                list.push(json);
+                document.getElementById("cart-list").innerHTML += 
+                '<li class="list-group-item cart-item d-flex mt-2 mb-2">'+
+                '<div class="d-block">'+
+                    '<div class="cart-item-name justify-content-center text-center p-2 mb-2">'+
+                        '<h4 class="h4">' + key.name + '</h4>' +
+                    '</div>'+
+                    '<div class="d-flex w-100 gap-2">'+
+                        '<div class="cart-item-image w-50">'+
+                            '<img class="img-fluid" alt="item_image" src="./' + key.image + '">'+
+                        '</div>'+ 
+                        '<div class="w-50 d-block m-auto gap-4 justify-content-center cart-item-button" id="cart-item-button">'+
+                            '<div class="d-flex gap-4 h-50 justify-content-center">'+
+                                '<div class="subtract-item">'+
+                                    '<button type="button" class="btn btn-dark btn-sm item-button overflow-hidden" id="subtract">'+
+                                        '<i class="bi bi-dash-lg overflow-auto">'+'</i>'+
+                                    '</button>'+
+                                '</div>'+
+      
+                                '<div class="cart-item-amount">'+
+                                    '<h2 class="h2" id="amount' + key.id + '">'+ 1 + '</h2>'+
+                                '</div>'+
+      
+                                '<div class="add-item">'+
+                                    '<button type="button" class="btn btn-dark btn-sm item-button" id="add">'+ 
+                                        '<i class="bi bi-plus-lg"></i>'+
+                                    '</button>'+
+                                '</div>'+
+                            '</div>'+
+                                '<div class="d-flex h-50 justify-content-center mt-3 p-auto">'+
+                                    '<h4 class="h4">'+ 'Price: ' + '</h4>'+
+                                    '<h4 class="h4" id="price' + key.id + '"> ' + key.price + '</h4>'+
+                                    '<h4 class="h4"> $ </h4>' +
+                                '</div>'+
+                            '</div>'+ 
+                        '</div>'+
+                    '</div>'+
+                '</li>';
+                break;
+            }
         }
-
+    }
+    if (document.getElementById("totalPrice") !== null) {
+        document.getElementById("totalPrice").remove();
+        document.getElementById("cart-list").innerHTML += 
+        '<li class="list-group-item cart-item d-flex mt-2 mb-2 bg-warning" id="totalPrice">'+
+            '</div>'+
+            '<div class="d-flex h-50 justify-content-center mt-3 p-auto">'+
+            '<h4 class="h4">'+ 'Total Price: ' + '</h4>'+
+            '<h4 class="h4" id="total-item-price">' + totalPrice + '</h4>'+
+            '<h4 class="h4"> $ </h4>' +
+            '</div>'+
+            '</div>'+ 
+            '</li>';
+        // document.getElementById("total-item-price").innerHTML = totalPrice;
+    }
+    else {
+        document.getElementById("cart-list").innerHTML += 
+        '<li class="list-group-item cart-item d-flex mt-2 mb-2 bg-warning" id="totalPrice">'+
+            '</div>'+
+            '<div class="d-flex h-50 justify-content-center mt-3 p-auto position-relative">'+
+            '<h4 class="h4">'+ 'Total Price: ' + '</h4>'+
+            '<h4 class="h4" id="total-item-price">' + totalPrice + '</h4>'+
+            '<h4 class="h4"> $ </h4>' +
+            '</div>'+
+            '</div>'+ 
+            '</li>';
     }
 }
