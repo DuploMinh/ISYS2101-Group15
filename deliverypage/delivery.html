@@ -7,14 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Delivery</title>
+    <!--Header & Footer-->
+     
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+
+    <!-- BootStrap 5-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+    
+    <!--Additional Css Files-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!--Relevant Cart JS Files-->
     <script src="./js/delivery.js"></script>
-    <title>Delivery</title>
+
+    <!--JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
     <!-- Header--> 
@@ -56,51 +73,64 @@
 
         <div class="row pt-md-5 pt-sm-3 mt-sm-2 mt-md-4">
             <!--Column 1-->
-            <div class="col-md-2 col-sm-2 d-flex justify-content-center">
+            <div class="col-md-1 col-sm-1 d-flex justify-content-center">
+                
             </div>
 
 
             <!--Column 2-->
             <div class="col-md-6 col-sm-6 d-flex" id="menu">
                 <div class="container-fluid">
-                    <div class="container-fluid d-flex justify-content-center pb-4 bg-primary">
-                        <h1 class="h1">Menu</h1>
-                    </div>
-                    <div class="row menu__categories">
-                        <div id="appetizer" class="col-2 m-auto p-auto category active">
-                            <img src="./image/cart.JPG" alt="#" class="img-fluid">
-                            <div class="container d-flex justify-content-center m-auto p-auto">
-                                <p>Appetizer</p>
-                            </div>
+                    <section>
+                        <div class="container-fluid d-flex justify-content-center pb-4 bg-primary">
+                            <h1 class="h1">Menu</h1>
                         </div>
-                        <div id="main-dish" class="col-2 m-auto p-auto category">
-                                <img src="./image/cart.JPG" alt="#" class="img-fluid">
+                        <div class="row menu__categories mt-2">
+                            <div class="category active col-2 m-auto p-auto " id="appetizer">
+                                <img src="image/appe1.jpg" alt="appe_1">
+                                <div class="container d-flex justify-content-center m-auto p-auto">
+                                    <p>Appetizer</p>
+                                </div>
+                            </div>
+                            <div class="category col-2 m-auto p-auto " id="main-dish">
+                                <img src="image/main-dish1.jpg" alt="main_dish_1">
                                 <div class="container d-flex justify-content-center m-auto p-auto">
                                     <p>Dishes</p>
                                 </div>
-                        </div>
-                        <div id="salad" class="col-2 m-auto p-auto category">
-                                <img src="./image/cart.JPG" alt="#" class="img-fluid">
+                            </div>
+                            <div class="category col-2 m-auto p-auto " id="salad">
+                                <img src="image/salad1.jpg" alt="appe_1">
                                 <div class="container d-flex justify-content-center m-auto p-auto">
                                     <p>Salad</p>
                                 </div>
-                        </div>
-                        <div id="dessert" class="col-2 m-auto p-auto category">
-                                <img src="./image/cart.JPG" alt="#" class="img-fluid">
+                            </div>
+                            <div class="category col-2 m-auto p-auto " id="dessert">
+                                <img src="image/des1.jpg" alt="appe_1">
                                 <div class="container d-flex justify-content-center m-auto p-auto">
                                     <p>Dessert</p>
                                 </div>
-                        </div>
-                        <div id="drink" class="col-2 m-auto p-auto category">
-                                <img src="./image/cart.JPG" alt="#" class="img-fluid">
+                            </div>
+                            <div class="category col-2 m-auto p-auto" id="drink">
+                                <img src="image/drink1.jpg" alt="appe_1">
                                 <div class="container d-flex justify-content-center m-auto p-auto">
-                                    <p>Drink</p>
+                                    <p>Drinks</p>
                                 </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+                    <section>
+                        <div class="container-fluid mt-3 items__category">
+                            <div id="item__category" class="row col">
+        
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </div>            
+            </div>
 
+            <div class="col-md-1 col-sm-1 d-flex justify-content-center">
+                
+            </div>
 
             <!--Column 3-->
             <div class="col-md-4 col-sm-4 ">
@@ -152,8 +182,11 @@
         </div>
     </nav>
 
-
-    
+        <!-- BACK TO TOP -->
+        <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
+        <!-- SHOPPING CART LOGO -->
+        <a href="#" class="cart_logo cd-top1 text-replace js-cd-top1"><i class="fa fa-shopping-cart"></i></a>
+    </main>
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -172,11 +205,15 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpjeHEMJ0UlaQHFwGOZ9R8gqLID5eJlFo&callback=initMap"
         async defer></script>
-    <script src="./js/menu.json"></script>
+    <script src="./js/menu.js"></script>
 
 
     <script>
-
+        $(function () {
+            $(".cate_btn").click(() => {
+                alert("Hehe");
+            });
+        });
         // Categories part
         $(function () {
             var menu = [];
@@ -184,16 +221,17 @@
                 $(".category").removeClass("active")
                 $("#item__category").empty()
                 $(this).addClass("active")
-                $.getJSON('menu.json', function (data) {
+                $.getJSON('menu.json', data => {
                     $.each(data.dishes, function (i, v) {
                         // console.log(v.categories)
                         // console.log($(".category.active").attr("id"))
                         if (v.categories === $(".category.active").attr("id")) {
                             var item =
-                                '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
+                                '<div class="dish__by_cate col-4 d-flex flex-column justify-content-center align-items-center text-center">' +
                                 '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
                                 '<h2 class="cate__text">' + v.name + '</h2>' +
                                 '<p>Price: $' + v.price + '</p>' +
+                                '<button type="button" class="btn btn-primary cate_btn">Order</button>'
                                 '</div>'
                             $("#item__category").append(item);
                         }
@@ -202,13 +240,14 @@
             })
 
             $.getJSON('menu.json', function (data) {
-                $.each(data.dishes, function (i, v) {
+                $.each(data.dishes, (i, v) => {
                     if (v.categories === "appetizer") {
                         var item =
                             '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
                             '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
                             '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
                             '<p>Price: $' + v.price + '</p>' +
+                            '<button type="button" class="btn btn-primary cate_btn">Order</button>'
                             '</div>'
                         $("#item__category").append(item);
                     }
