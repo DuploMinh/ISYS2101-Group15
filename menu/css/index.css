@@ -388,7 +388,7 @@ body{
 .menu__item {
     border-radius: 0;
     display: flex;
-    width: 40rem;
+    width: 30rem;
     flex: 0 0 auto;
 }
 
