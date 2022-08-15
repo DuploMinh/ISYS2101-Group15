@@ -71,3 +71,15 @@ body{
     top: 0.5rem;
     width: fit-content;
 }
+
+.shoppingCart__item img{
+    width: 40%;    
+}
+
+.adding__icon i{
+    padding: 0.5rem;
+}
+
+.shoppingCart__item .price__item {
+    width: 35%!important;
+}
