@@ -26,16 +26,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navBarHead">
-                <form class="d-flex mx-auto" id="search">
-                    <input class="form-control me-2" type="search" placeholder="Search...">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </form>
-                <ul class="nav nav-pills m-md-auto justify-content-center">
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Menu</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Delivery</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Reservation</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Login</a> </li>
-                </ul>     
+                <div class="container-fluid m-auto">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <form class="d-flex" id="search">
+                                <input class="form-control me-2" type="search" placeholder="Search...">
+                                <button class="btn btn-primary btn-lg w-50" type="submit">Search</button>
+                            </form>
+                        </div>
+                        <div class="col-lg-3">
+                            <ul class="nav nav-pills m-md-auto justify-content-center">
+                                <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Delivery</a> </li>
+                                <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Login</a> </li>
+                            </ul>     
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -46,73 +52,50 @@
             <button id="chatBox_btn"></button>
         </div>
 
-        <!--Welcome DashBoard-->
-        <div class="row position-relative pt-md-4 pt-sm-2 mt-sm-2 mt-md-4">
-            <div class="col-md-8 col-sm-6 bg-info">
-                <h1 class="h1">
-                    This div will be used to introduce the restaurant, mainly with pictures.
-                </h1>
-            </div>
-            <div class="col-md-4 col-sm-6 bg-danger">
-                <h1 class="h1">
-                    This div will be used to put some text that describes the restaurant
-                </h1>
-            </div>
-        </div>
+        <div class="row mt-sm-4 mt-md-4 mt-lg-5">
 
-        <!--Seasonal Dishes-->
+            <!--Internal Map-->
+            <div class="col-md-4 col-lg-4 col-sm-4 bg-info">
 
-        <div class="row position-relative pt-md-5 pt-sm-3 mt-sm-2 mt-md-4" style="height: 300px; width: 90%; margin-left: 5%;">
-            <div class="col-md-3 col-sm-3 bg-info">
-                <h1 class="h2">
-                    <a href="#"> Seasonal Dishes + Background Picture </a>
-                </h1>
             </div>
-            <div class="col-md-3 col-sm-3 bg-success">
-                <h1 class="h2">
-                    <a href="#"> Seasonal Dishes + Background Picture </a>
-                </h1>
-            </div>            
-            <div class="col-md-3 col-sm-3 bg-warning">
-                <h1 class="h2">
-                    <a href="#"> Seasonal Dishes + Background Picture </a>
-                </h1>
-            </div>            
-            <div class="col-md-3 col-sm-3 bg-danger">
-                <h1 class="h2">
-                    <a href="#"> Seasonal Dishes + Background Picture </a>
-                </h1>
-            </div>
-        </div>
 
-        <!--Restaurant History-->
-        <div class="row position-relative pt-md-5 pt-sm-3 mt-sm-2 mt-md-4"  style="height: 300px; width: 90%; margin-left: 5%;">
-            <div class="container bg-info">
-                <h1 class="h1 bg-info">This div will be used to write inspirational history of the restaurant</h1>
+
+            <!--Personal Information, Date, Time, Seat Size, Branch-->
+            <div class="col-md-4 col-lg-4 col-sm-4">
+                <div class="container-fluid d-block justify-content-center">
+                    <div class="col-md-12 mb-3 d-flex justify-content-center">
+                        <button type="button" class="btn btn-danger pt-3 pb-3 mt-3 button-block">Contact Information</button>
+                    </div>
+                    <div class="col-md-12 mb-3 d-flex justify-content-center">
+                        <button type="button" class="btn btn-danger pt-3 pb-3 mt-3 button-block">Date</button>
+                    </div>
+                    <div class="col-md-12 mb-3 d-flex justify-content-center">
+                        <button type="button" class="btn btn-danger pt-3 pb-3 mt-3 button-block">Time</button>
+                    </div>
+                    <div class="col-md-12 mb-3 d-flex justify-content-center">
+                        <button type="button" class="btn btn-danger pt-3 pb-3 mt-3 button-block">Seat Size</button>
+                    </div>
+                    <div class="col-md-12 mb-3 d-flex justify-content-center">
+                        <button type="button" class="btn btn-danger pt-3 pb-3 mt-3 button-block">Branch</button>
+                    </div>
+ 
+                </div>
+            </div>
+
+
+            <!--Google Map-->
+            <div class="col-md-4 col-lg-4 position-relative mb-sm-2 mb-md-2 mb-lg-2"  style="height: 600px;">
+                <div class="container mb-lg-2 mb-md-3 border-3 border-info">
+                    <h1 class="h1 text-dark text-center"> Our Location </h1>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.897549572912!2d106.62903071532963!3d10.742378862757418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529e94594adcd%3A0x35cd5ec9e929d87c!2sMM%20Mega%20Market%20B%C3%ACnh%20Ph%C3%BA!5e0!3m2!1sen!2s!4v1659362001559!5m2!1sen!2s" width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 
 
-        <!--Sub-Menu-->
-        <div class="row position-relative pt-md-5 pt-sm-3 mt-sm-2 mt-md-4"  style="height: 300px; width: 90%; margin-left: 5%;">
-            <div class="container bg-dark">
-                <h1 class="h1 text-white text-center"> Our Menu</h1>
-                <ul class="nav nav-pills m-md-auto m-sm-auto p-auto justify-content-center">
-                    <li class="nav-item text-uppercase text-break"> <a href="#">Link To Some Where</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a href="#">Link To Some Where</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a href="#">Link To Some Where</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a href="#">Link To Some Where</a> </li>
-                </ul>
-            </div>
-        </div>
+
 
         <!--Google Map-->
 
-        <div class="row position-relative pt-md-5 pt-sm-3 mt-sm-2 mt-md-4"  style="height: 600px; width: 90%; margin-left: 5%;">
-            <div class="container bg-info">
-                <h1 class="h1 text-white text-center"> Our Location </h1>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.897549572912!2d106.62903071532963!3d10.742378862757418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529e94594adcd%3A0x35cd5ec9e929d87c!2sMM%20Mega%20Market%20B%C3%ACnh%20Ph%C3%BA!5e0!3m2!1sen!2s!4v1659362001559!5m2!1sen!2s" width="100%" height="85%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
     </main>
 
 

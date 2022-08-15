@@ -1,9 +1,9 @@
 #chatBox {
     position: fixed;
-    margin-top: 30%;
+    margin-top: -50px;
     width: 100px;
     height: 100px;
-    margin-left: 95%;
+    margin-left: 92%;
     z-index: 9999;
 }
 
@@ -27,28 +27,15 @@
     background-color: aqua;
 }
 
-@media only screen and (max-width: 450px) {
+.btn {
+    width: 75%;
+}
+
+@media only screen and (max-width: 1200px) {
     #chatBox {
-        position: fixed;
-        margin-top: 50%;
-        width: 30px;
-        height: 30px;
-        margin-left: 95%;
-        z-index: 9999;
+        display: none;
     }
-    #chatBox_btn {
-        position: relative;
-        border-radius: 50%;
-        width: 80%;
-        height: 80%;
-        margin-left: 10%;
-        margin-top: 10%;
-        background-color: white;
-        font-size: 20px;
-        align-items: center;
-        justify-content: center;
-        background-image: url('../image/msg.JPG');
-        background-repeat: no-repeat;
-        background-position:center;
+    .btn {
+        width: 75%;
     }
 }
