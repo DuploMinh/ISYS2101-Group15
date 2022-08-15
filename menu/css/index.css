@@ -140,6 +140,7 @@ body{
     background-size: 100% 100%;
     height: 300px;
     width: 600px;
+    cursor: pointer;
     background-repeat: no-repeat;
     border-radius: var(--border_radius);
     padding: var(--card_padding);
