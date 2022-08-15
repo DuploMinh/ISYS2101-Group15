@@ -2,9 +2,6 @@
 const post_btn = document.getElementById("post_address_btn");
 const overlay = document.getElementById("overlay");
 const close_btn = document.querySelector("#close_btn");
-const close_btn_2 = document.querySelector("#close_btn_2");
-const menu_item = document.querySelector(".menu__item")
-const overlay2 = document.getElementById("overlay2")
 
 post_btn.onclick = function ()  {
     overlay.style.display = "grid";
@@ -12,12 +9,6 @@ post_btn.onclick = function ()  {
 
 close_btn.onclick = function() {
     overlay.style.display = "none";
-    overlay2.style.display = "none";
-}
-
-close_btn_2.onclick = function() {
-    overlay.style.display = "none";
-    overlay2.style.display = "none";
 }
 
 overlay.addEventListener('click', function(e) {
@@ -26,15 +17,6 @@ overlay.addEventListener('click', function(e) {
     }
 })
 
-menu_item.onclick = function () {
-    overlay2.style.display = 'grid';
-}
-
-overlay2.addEventListener('click', function(e) {
-    if (e.target.id == 'overlay2') {
-        overlay2.style.display = "none";
-    }
-})
 
 //Map feature
 function initMap() {

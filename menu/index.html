@@ -130,9 +130,7 @@
                 </div>
 
                 <div class="menu__content">
-                    <!-- <div id="menu__new__dishes">
-                        
-                    </div> -->
+
                 </div>
             </section>
 
@@ -141,17 +139,7 @@
                 <h1>RECOMMENDATIONS</h1>
                 
                 <div class="recommend__content">
-                    <!-- <div class="recommend__item">
-                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                        <div class="recommend__title">
-                            <h3>Stuffed Artichokes</h3>
-                            <span>$7.00</span>
-                        </div>
-                        <div class="recommend__detail">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                        </div>
-                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
-                    </div> -->
+
                 </div>
 
             </section>
@@ -190,7 +178,12 @@
                     </div>
                 </div>
             </section>
+
+            <div id="item_description">
+
+            </div>
         </div>
+
         <!-- FEEDBACK -->
         <section class="feedback">
             <div class="feedback__content">
@@ -209,27 +202,6 @@
                 </div>
             </div>
         </section>
-        <!--Footer-->
-        <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-bottom position-relative mt-md-4 mt-sm-2">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="home.html" id="h_logo">
-                    <img src="image/logo.JPG" alt="logo" class="rounded-circle">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFoot">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse justify-content-end" id="navBarFoot">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item"> <a class="nav-link" href="#">Feedback</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Privacy</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- >>>>>>> 65491731084e87ae8d245232002e25699fabf090 -->
 
         <!-- MODAL -->
         <!-- Button trigger modal -->
@@ -258,12 +230,31 @@
             </div>
         </div>
 
-
         <!-- BACK TO TOP -->
         <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
         <!-- SHOPPING CART LOGO -->
         <a href="#" class="cart_logo cd-top1 text-replace js-cd-top1"><i class="fa fa-shopping-cart"></i></a>
-<!-- <<<<<<< HEAD -->
+
+        <!--Footer-->
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-bottom position-relative mt-md-4 mt-sm-2">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home.html" id="h_logo">
+                    <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFoot">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end" id="navBarFoot">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"> <a class="nav-link" href="#">Feedback</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Privacy</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </main>
 
     <!-- Jquery -->
@@ -284,8 +275,6 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpjeHEMJ0UlaQHFwGOZ9R8gqLID5eJlFo&callback=initMap"
         async defer></script>
-    <script src="js/menu.js"></script>
-
 
     <script>
 
@@ -319,7 +308,7 @@
                         var item =
                             '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
                             '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-                            '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
+                            '<h2 class="cate__text">' + v.name + '</h2>' +
                             '<p>Price: $' + v.price + '</p>' +
                             '</div>'
                         $("#item__category").append(item);
@@ -327,6 +316,84 @@
                 });
             });
         });
+
+        // Dish description part for cate
+        $(function() {
+            $("#item__category").on('click', ".dish__by_cate", function (event) {
+                event.stopPropagation();
+                event.stopImmediatePropagation();
+                event.preventDefault();
+                var name = $(this).find('h2').text();
+                console.log(name)
+                $.getJSON('menu.json', function (data) {
+                    $.each(data.dishes, function (i, v) {
+            
+                        if (v.name === name) {
+                            var item =
+                                '<!--DISH DESCRIPTION-->'+  
+                                '<div id="overlay2">'+
+                                    '<form action="index.html" method="POST" class="upload_description" id="description_form">'+
+                                        '<div class="form_title">' +
+                                            '<h3>Description</h3>'+
+                                            '<i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>'+
+                                        '</div>'+
+
+                                        '<div class="form_content">'+
+                                            '<div class="dish_des">'+
+                                                '<h2>' + v.name + '</h2>'+
+                                                '<img src="' + v.image + '" alt="">'+
+                                                '<p>' + v.description + '</p>'+
+                                            '</div>'+
+                                            '<div class="custom_dish">'+
+                                                '<h2>Size</h2>'+
+                                                '<input type="radio" id="m" name="sizes" value="M">'+
+                                                '<label for="m">M</label><br>'+
+                                                '<input type="radio" id="l" name="sizes" value="L">'+
+                                                '<label for="l">L</label><br>'+
+                                                '<input type="radio" id="xl" name="sizes" value="XL">'+
+                                                '<label for="xl">XL</label>'+
+
+                                                '<h2>Add topping</h2>'+
+                                                '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
+                                                '<label for="cheese"> Cheese</label><br>'+
+                                                '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
+                                                '<label for="basil_sauce"> Basil sauce</label><br>'+
+                                                '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
+                                                '<label for="milk_cream"> Milk cream</label>'+
+                                            '</div>'+
+                                        '</div>'+
+
+                                        '<div class="description_btn">'+
+                                            '<input type="button" onclick="" value="Add to cart >>>" name="post_address"'+
+                                                'class="btn btn_primary post_address">'+
+                                        '</div>'+
+
+                                    '</form>'+
+                                '</div>';
+                            $("#item_description").append(item);
+                        }
+                    });
+                })
+
+                $("#item_description").on('click', "#overlay2", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    if (event.target.id == 'overlay2') {
+                        $(this).css("display", "none")
+                    } 
+                })
+
+                $("#item_description").on('click', "#close_btn_2", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    // if (event.target.id == 'close_btn_2') {
+                        $("#overlay2").css("display", "none")
+                    // } 
+                })
+            })
+        })
 
         // new dishes part
         $(function() {
@@ -341,7 +408,7 @@
                                 '<p>' + v.description + '</p>' +
                                 '<p class="purchase">' +
                                     '<span>$' + v.price + '</span>' +
-                                    '<button class="btn btn_primary">Order</button>' +
+                                    '<button id="' + v.id + '" class="btn btn_primary">Order</button>' +
                                 '</p>' +
                             '</div>' +
                         '</div>'
@@ -349,6 +416,84 @@
                     }
                 });
             });
+        })
+
+        // Dish description part for new dishes
+        $(function() {
+            $(".menu__content").on('click', ".btn.btn_primary", function (event) {
+                event.stopPropagation();
+                event.stopImmediatePropagation();
+                event.preventDefault();
+                var id = $(this).attr("id");
+                console.log(id)
+                $.getJSON('menu.json', function (data) {
+                    $.each(data.dishes, function (i, v) {
+            
+                        if (v.id == id) {
+                            var item =
+                                '<!--DISH DESCRIPTION-->'+  
+                                '<div id="overlay2">'+
+                                    '<form action="index.html" method="POST" class="upload_description" id="description_form">'+
+                                        '<div class="form_title">' +
+                                            '<h3>Description</h3>'+
+                                            '<i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>'+
+                                        '</div>'+
+
+                                        '<div class="form_content">'+
+                                            '<div class="dish_des">'+
+                                                '<h2>' + v.name + '</h2>'+
+                                                '<img src="' + v.image + '" alt="">'+
+                                                '<p>' + v.description + '</p>'+
+                                            '</div>'+
+                                            '<div class="custom_dish">'+
+                                                '<h2>Size</h2>'+
+                                                '<input type="radio" id="m" name="sizes" value="M">'+
+                                                '<label for="m">M</label><br>'+
+                                                '<input type="radio" id="l" name="sizes" value="L">'+
+                                                '<label for="l">L</label><br>'+
+                                                '<input type="radio" id="xl" name="sizes" value="XL">'+
+                                                '<label for="xl">XL</label>'+
+
+                                                '<h2>Add topping</h2>'+
+                                                '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
+                                                '<label for="cheese"> Cheese</label><br>'+
+                                                '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
+                                                '<label for="basil_sauce"> Basil sauce</label><br>'+
+                                                '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
+                                                '<label for="milk_cream"> Milk cream</label>'+
+                                            '</div>'+
+                                        '</div>'+
+
+                                        '<div class="description_btn">'+
+                                            '<input type="button" onclick="" value="Add to cart >>>" name="post_address"'+
+                                                'class="btn btn_primary post_address">'+
+                                        '</div>'+
+
+                                    '</form>'+
+                                '</div>';
+                            $("#item_description").append(item);
+                        }
+                    });
+                })
+
+                $("#item_description").on('click', "#overlay2", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    if (event.target.id == 'overlay2') {
+                        $(this).css("display", "none")
+                    } 
+                })
+
+                $("#item_description").on('click', "#close_btn_2", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    if (event.target.id == 'close_btn_2') {
+                        $("#overlay2").css("display", "none")
+                    } 
+                })
+            })
         })
 
         // recommendation part
@@ -367,7 +512,7 @@
                                 '<div class="recommend__detail">' +
                                     v.description +
                                 '</div>' +
-                                '<button class="plus_icon"><i class="fa fa-plus"></i></button>' +
+                                '<button id="' + v.id + '" class="plus_icon"><i class="fa fa-plus"></i></button>' +
                                 // '</div>'
                                 
                             '</div>'
@@ -377,69 +522,85 @@
             });
         })
 
-        // Dish description part
+        // Dish description part for recommend
         $(function() {
-            // $(".dish__by_cate").click(function () {
-            //     overlay2.style.display = 'grid';
-            //     $.getJSON('menu.json', function (data) {
-            //         $.each(data.dishes, function (i, v) {
-
-            // <!--DISH DESCRIPTION-->
-            //         <div id="overlay2">
-            //             <form action="index.html" method="POST" class="upload_description" id="description_form">
-            //                 <div class="form_title">
-            //                     <h3>Description</h3>
-            //                     <i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>
-            //                 </div>
-
-            //                 <div class="form_content">
-            //                     <div class="dish_des">
-            //                         <h2>Beef Stake</h2>
-            //                         <img src="img/appe1.jpg" alt="">
-            //                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo
-            //                             reiciendis tempore qui, animi est?</p>
-            //                     </div>
-            //                     <div class="custom_dish">
-            //                         <h2>Size</h2>
-            //                         <input type="radio" id="m" name="sizes" value="M">
-            //                         <label for="m">M</label><br>
-            //                         <input type="radio" id="l" name="sizes" value="L">
-            //                         <label for="l">L</label><br>
-            //                         <input type="radio" id="xl" name="sizes" value="XL">
-            //                         <label for="xl">XL</label>
-
-            //                         <h2>Add topping</h2>
-            //                         <input type="checkbox" id="cheese" name="cheese" value="Cheese">
-            //                         <label for="cheese"> Cheese</label><br>
-            //                         <input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">
-            //                         <label for="basil_sauce"> Basil sauce</label><br>
-            //                         <input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">
-            //                         <label for="milk_cream"> Milk cream</label>
-            //                     </div>
-            //                 </div>
-
-            //                 <div class="description_btn">
-            //                     <input type="button" onclick="" value="Add to cart >>>" name="post_address"
-            //                         class="btn btn_primary post_address">
-            //                 </div>
-
-            //             </form>
-            //         </div>
+            $(".recommend__content").on('click', ".plus_icon", function (event) {
+                event.stopPropagation();
+                event.stopImmediatePropagation();
+                event.preventDefault();
+                var id = $(this).attr("id");
+                console.log(id)
+                $.getJSON('menu.json', function (data) {
+                    $.each(data.dishes, function (i, v) {
             
-            //             if (v.categories === $(".category.active").attr("id")) {
-            //                 var item =
-            //                     '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
-            //                     '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-            //                     '<h2 class="h-25 cate__text">' + v.name + '</h2>' +
-            //                     '<p>Price: $' + v.price + '</p>' +
-            //                     '</div>'
-            //                 $("#item__category").append(item);
-            //             }
-            //         });
-            //     });
-            // })
+                        if (v.id == id) {
+                            var item =
+                                '<!--DISH DESCRIPTION-->'+  
+                                '<div id="overlay2">'+
+                                    '<form action="index.html" method="POST" class="upload_description" id="description_form">'+
+                                        '<div class="form_title">' +
+                                            '<h3>Description</h3>'+
+                                            '<i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>'+
+                                        '</div>'+
+
+                                        '<div class="form_content">'+
+                                            '<div class="dish_des">'+
+                                                '<h2>' + v.name + '</h2>'+
+                                                '<img src="' + v.image + '" alt="">'+
+                                                '<p>' + v.description + '</p>'+
+                                            '</div>'+
+                                            '<div class="custom_dish">'+
+                                                '<h2>Size</h2>'+
+                                                '<input type="radio" id="m" name="sizes" value="M">'+
+                                                '<label for="m">M</label><br>'+
+                                                '<input type="radio" id="l" name="sizes" value="L">'+
+                                                '<label for="l">L</label><br>'+
+                                                '<input type="radio" id="xl" name="sizes" value="XL">'+
+                                                '<label for="xl">XL</label>'+
+
+                                                '<h2>Add topping</h2>'+
+                                                '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
+                                                '<label for="cheese"> Cheese</label><br>'+
+                                                '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
+                                                '<label for="basil_sauce"> Basil sauce</label><br>'+
+                                                '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
+                                                '<label for="milk_cream"> Milk cream</label>'+
+                                            '</div>'+
+                                        '</div>'+
+
+                                        '<div class="description_btn">'+
+                                            '<input type="button" onclick="" value="Add to cart >>>" name="post_address"'+
+                                                'class="btn btn_primary post_address">'+
+                                        '</div>'+
+
+                                    '</form>'+
+                                '</div>';
+                            $("#item_description").append(item);
+                        }
+                    });
+                })
+
+                $("#item_description").on('click', "#overlay2", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    if (event.target.id == 'overlay2') {
+                        $(this).css("display", "none")
+                    } 
+                })
+
+                $("#item_description").on('click', "#close_btn_2", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    if (event.target.id == 'close_btn_2') {
+                        $("#overlay2").css("display", "none")
+                    } 
+                })
+            })
         })
     </script>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>
