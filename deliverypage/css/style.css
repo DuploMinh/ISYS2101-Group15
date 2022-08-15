@@ -7,6 +7,7 @@
     height: 90px;
     margin-left: 94.5%;
     z-index: 9999;
+    display: none;
 }
 
 #chatBox_btn {
@@ -30,22 +31,43 @@
     display: flex;
 }
 
-#badge {
-    position:absolute;
-    background-color: red;
-    z-index: 100;
-}
 
 #menu {
     font-weight: bold;
 }
 
+.cart-item {
+    
+}
 
-@media only screen and (max-width: 450px) {
+.cart-item-image {
+}
+
+.cart-item-amount {
+
+}
+
+
+@media only screen and (min-width:576px) and (max-width: 1000px) {
     #chatBox {
         display: none;
     }
     #menu {
         font-size: 13px;
     }
+    .cart-item-button {
+        gap: 1;
+    }
+
 }
+
+@media only screen and (max-width: 575px) {
+    #chatBox {
+        display: none;
+    }
+    #menu {
+        font-size: 13px;
+    }
+
+}
+
