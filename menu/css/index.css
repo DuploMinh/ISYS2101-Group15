@@ -359,10 +359,9 @@ body{
     color: #6b6b6b;
 }
 
-/* >>>>>>> 65491731084e87ae8d245232002e25699fabf090 */
 /* MENU NEW DISHES */
 .menu{
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 .menu__description{
     text-align: center;
@@ -378,21 +377,26 @@ body{
 }
 
 .menu__content{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    /* grid-gap: ;  khoong neen dung nx*/
-}
-
-.menu__content img{
-    width: 100%;
-    height: 90%;
-    display: block;
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    height: fit-content;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 .menu__item {
     border-radius: 0;
-    overflow: hidden;
+    display: flex;
+    width: 30rem;
+    flex: 0 0 auto;
+}
+
+.menu__item > img{
+    width: 50%;
+    height: 100%;
+    border-radius: var(--card_border_radius);
+    box-shadow: 5px 5px 15px #888888;
 }
 
 .menu__text{
@@ -400,30 +404,43 @@ body{
     letter-spacing: 1px;
     line-height: 1.5;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__text p {
+    height: 30%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .purchase{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .purchase span{
-    color: yellowgreen;
+    color: var(--color_primary);
+    font-weight: 500;
 }
 .purchase button{
     background-color: white;
     border: 1px solid black;
-    color: white;
     padding:  10px 15px;
     font-size: 0.875rem;
     cursor: pointer;
     letter-spacing: 1px;
-    border-radius: var(--card_border_radius);
+    border-radius: var(--border_radius);
     color: #212529;
+    font-weight: bold;
 }
 
 /* RECOMMENDATIONS */
 .recommendation{
-    padding: 50px 0;
+    margin-bottom: 50px;
 }
 
 .recommendation h1{
@@ -434,44 +451,57 @@ body{
 }
 
 .recommend__content{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 50px 50px;
-    width: 90%;
-    margin: 0 auto;
+    display: flex;
+    gap: 1.5rem;
+    /* width: 100%; */
+    height: 250px;
+    margin: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.recommend__item{
+    position: relative;
+    width: 175px;
+    height: 200px;
+    font-size: 12px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .recommend__item > img{
     width: 100%;
     height: 100%;
-    display: block;
+    /* display: block; */
     border-radius: var(--card_border_radius);
-    overflow: hidden;
+    box-shadow: 5px 5px 15px #888888;
+    /* overflow: hidden; */
 }
 
-.recommend__item{
-    position: relative;
-    height: 300px;
-}
 .recommend__title {
     position: absolute;
     bottom: 0;
     left: 0;
+    padding: 1rem;
     background-color: var(--color_secondary);
     color: white;
     width: 100%;
-    padding: 20px 0;
-    padding-left: 30px;
+    height: 50%;
+    text-align: center;
     opacity: 1;
     transition: all .8s;
     border-bottom-left-radius: var(--card_border_radius);
     border-bottom-right-radius: var(--card_border_radius);
 }
 
+.recommend__title h3 {
+    font-size: 100%;
+}
+
 .recommend__title span{
     font-size: 0.875rem;
-    line-height: 28px;
-    padding-right: 80px;
+    line-height: 18px;
 }
 
 .recommend__detail{
@@ -482,17 +512,16 @@ body{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
-    padding: 60px 40px;
-    opacity: 0;
+    padding: 1rem;
+    border-radius: var(--card_border_radius);
     transition: all .8s;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: none;
 }
 
-.recommend__item:hover .recommend__title{
-    opacity: 0;
-}
-
-.recommend__item:hover .recommend__detail{
-    opacity: 1;
+.recommend__item:hover > .recommend__detail{
+    display: block;
 }
 
 .plus_icon {
@@ -514,6 +543,13 @@ body{
 }
 
 /* Categories */
+.cate h1{
+    text-align: center;
+    padding-bottom: 30px;
+    font-weight: 500px;
+    font-size: 2.5rem;
+}
+
 .category__title {
     text-align: center;
     margin: 1rem;
@@ -560,11 +596,16 @@ body{
     margin-left: -20%;
 }
 
-.dish_by_cate {
+.dish__by_cate {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.dish__by_cate > img {
+    box-shadow: 5px 5px 15px #888888;
+    margin-bottom: 1rem;
 }
 
 .cate__text {
@@ -708,8 +749,6 @@ body{
     opacity: 1;
 }
 
-/* <<<<<<< HEAD */
-
 /* *************RESPONSIVE************** */
 @media screen and (max-width:1245px) {
     .carousel__content h1, .menu__description h1, .recommendation h1, .category__title h1{
@@ -851,5 +890,3 @@ body{
         font-size: 5vw;
     }
 }
-
-

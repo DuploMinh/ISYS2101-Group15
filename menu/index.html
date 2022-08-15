@@ -139,25 +139,25 @@
             <!-- RECOMMENDATION -->
             <section class="recommendation">
                 <h1>RECOMMENDATIONS</h1>
-                <div class="container-fluid">
-                    <div class="recommend__content">
-                        <!-- <div class="recommend__item">
-                            <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
-                            <div class="recommend__title">
-                                <h3>Stuffed Artichokes</h3>
-                                <span>$7.00</span>
-                            </div>
-                            <div class="recommend__detail">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
-                            </div>
-                            <button class="plus_icon"><i class="fa fa-plus"></i></button>
-                        </div> -->
-                    </div>
+                
+                <div class="recommend__content">
+                    <!-- <div class="recommend__item">
+                        <img src="./img/appe1.jpg" alt="Stuffed Artichokes">
+                        <div class="recommend__title">
+                            <h3>Stuffed Artichokes</h3>
+                            <span>$7.00</span>
+                        </div>
+                        <div class="recommend__detail">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, doloribus.</p>
+                        </div>
+                        <button class="plus_icon"><i class="fa fa-plus"></i></button>
+                    </div> -->
                 </div>
 
             </section>
             <!-- CATEGORIES -->
-            <section>
+            <section class="cate">
+                <h1>CATEGORIES</h1>
                 <div class="menu__categories">
                     <div class="category active" id="appetizer">
                         <img src="img/appe1.jpg" alt="appe_1">
@@ -332,19 +332,19 @@
         $(function() {
             $.getJSON('menu.json', function (data) {
                 $.each(data.dishes, function (i, v) {
-                    // console.log(v.categories)
-                    // console.log($(".category.active").attr("id"))
                     if (v.new === true) {
                         var item =
-                            '<div class="menu__item"><img src="' + v.image + '" alt="Beef Stake"></div>' +
+                        '<div class="menu__item">' +
+                            '<img src="' + v.image + '" alt="' + v.name +'">' +
                             '<div class="menu__text">' +
                                 '<h3>' + v.name + '</h3>' +
                                 '<p>' + v.description + '</p>' +
                                 '<p class="purchase">' +
                                     '<span>$' + v.price + '</span>' +
-                                    '<button>Order</button>' +
+                                    '<button class="btn btn_primary">Order</button>' +
                                 '</p>' +
-                            '</div>'
+                            '</div>' +
+                        '</div>'
                         $(".menu__content").append(item);
                     }
                 });
@@ -355,20 +355,21 @@
         $(function() {
             $.getJSON('menu.json', function (data) {
                 $.each(data.dishes, function (i, v) {
-                    // console.log(v.categories)
-                    // console.log($(".category.active").attr("id"))
                     if (v.recommend === true) {
                         var item =
                             '<div class="recommend__item">' +
                                 '<img src="' + v.image + '" alt="' + v.name +'">' +
+                                // '<div class="recommend__des">' +
                                 '<div class="recommend__title">' +
                                     '<h3>' + v.name + '</h3>'+
                                     '<span>$' + v.price + '</span>' +
                                 '</div>' +
                                 '<div class="recommend__detail">' +
-                                    '<p>' + v.description + '</p>' +
+                                    v.description +
                                 '</div>' +
                                 '<button class="plus_icon"><i class="fa fa-plus"></i></button>' +
+                                // '</div>'
+                                
                             '</div>'
                         $(".recommend__content").append(item);
                     }
@@ -382,8 +383,6 @@
             //     overlay2.style.display = 'grid';
             //     $.getJSON('menu.json', function (data) {
             //         $.each(data.dishes, function (i, v) {
-            //             // console.log(v.categories)
-            //             // console.log($(".category.active").attr("id"))
 
             // <!--DISH DESCRIPTION-->
             //         <div id="overlay2">
