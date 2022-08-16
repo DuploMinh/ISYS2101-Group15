@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Voucher</title>
+</head>
+<body class="body">
+    <!-- Header-->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html" id="h_logo">
+                <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarHead"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navBarHead">
+                <form class="d-flex mx-auto" id="search">
+                    <input class="form-control me-2" type="search" placeholder="Search...">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+                <ul class="nav nav-pills m-md-auto justify-content-center">
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Menu</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Delivery</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Reservation</a> </li>
+                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Login</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Voucher section-->
+    <main class="container mb-5">
+        <!--Introduction-->
+        <div class="m-3 mb-5">
+            <h2>Avenger</h2>
+            <h3>Special gifts for newbie and novice user</h3>
+        </div>
+
+        <!--Voucher Categories-->
+        <div class="border bg-white rounded-3 position-relative">
+            <div class="voucher__title position-absolute">Gifts categories</div>
+
+            <!--Voucher-->
+            <div class="row p-5 d-flex justify-content-between">
+                <div class="voucher__item col-3 position-relative">
+                    <img class="img-fluid rounded-3 h-100" src="../menu/img/voucher1.jpeg">
+                    <div class="voucher__name position-absolute rounded-3 bottom-0 start-50 translate-middle bg-white top w-100 lh-lg text-center fw-bold">Couple Voucher</div>
+                </div>
+
+                <div class="voucher__item col-3 position-relative">
+                    <img class="img-fluid rounded-3 h-100" src="../menu/img/voucher2.jpeg">
+                    <div class="voucher__name position-absolute rounded-3 bottom-0 start-50 translate-middle bg-white top w-100 lh-lg text-center fw-bold">Birthday Voucher</div>
+                </div>
+
+                <div class="voucher__item col-3 position-relative">
+                    <img class="img-fluid rounded-3 h-100" src="../menu/img/voucher3.jpeg">
+                    <div class="voucher__name position-absolute rounded-3 bottom-0 start-50 translate-middle bg-white top w-100 lh-lg text-center fw-bold">Discount Voucher</div>
+                </div>
+            </div>
+        </div>
+        <!-- Terms and conditions -->
+        <div class="voucher__term">
+            <h3>Terms & Conditions</h3>
+            <div class="term__content">
+                <ul>
+                    <li>The voucher is valid until 180 days from the date of issuance.</li>
+                    <li>The voucher can be redeemed at restaurants or for ordering delivery on website.</li>
+                    <li>The voucher is valid for one bill only, one bill can be redeemed by many vouchers.</li>
+                    <li>The voucher is non-refundable and cannot be exchanged for cash in part or full.</li>
+                    <li>Expired vouchers and “already redeemed” vouchers will be rejected to be redeemed.</li>
+                    <li>Guests will settle the exceeding amount when the bill value is higher than the voucher/s value.</li>
+                    <li>Avenger is responsible for issuing VAT invoices upon guest requests.</li>
+                    <li>Guests are responsible for the security of the voucher codes after purchasing. Giftpop and Avengers are not responsible for the compensation of lost or unintentionally redeemed voucher codes under any circumstances.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer-->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-bottom position-relative mt-md-4 mt-sm-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html" id="h_logo">
+                <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFoot">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navBarFoot">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"> <a class="nav-link" href="#">Feedback</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Privacy</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
