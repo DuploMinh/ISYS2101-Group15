@@ -271,8 +271,8 @@
                             '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
                             '<h2 class="cate__text">' + v.name + '</h2>' +
                             '<p>Price: $' + v.price + '</p>' +
-                            '<button type="button" class="btn btn-primary cate_btn" onclick="addItem();cartUpdate();">Order</button>'
-                            '</div>'
+                            '<button type="button" class="btn btn-primary cate_btn" onclick="cartUpdate(); addItem(' + v.id +  ');">Order' + '</button>' +
+                                '</div>'
                         $("#item__category").append(item);
                     }
                 });
