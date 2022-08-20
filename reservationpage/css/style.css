@@ -37,7 +37,22 @@
   opacity: 1;
 }
 
+#restaurant {
+  max-height: 1000px;
+}
 
+#form-column {
+    display: none;
+}
+
+.table-image {
+  height: 100px;
+}
+
+.table-button:hover {
+    background-color: violet;
+    border: 2px solid black;
+}
 
 @media only screen and (max-width: 1200px) {
     #chatBox {

@@ -1,4 +1,8 @@
-
+function showForm(id) {
+    document.getElementById("form-column").style.display = 'block';
+    var table = document.getElementById('table-reservation');
+    table.innerHTML = 'Table ' + id + ' Reservation';
+}
 
 function showMap(data) {
     if (data == 'HCM') {

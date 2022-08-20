@@ -56,18 +56,77 @@
 
         <div class="row mt-sm-4 mt-md-4 mt-lg-5">
 
+            <div class="col-md-1 col-lg-1 col-sm-1"></div>
             <!--Internal Map-->
-            <div class="col-md-4 col-lg-4 col-sm-4 bg-info">
-
+            <div class="col-md-4 col-lg-4 col-sm-4 border border-dark">
+                <div class="container-fluid d-flex justify-content-center">
+                    <h1 class="h1">Restaurant Map</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 col-sm-4" id="restaurant">
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(1);">
+                            <h6 class="h6">Table 1</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(2);">
+                            <h6 class="h6">Table 2</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(3);">
+                            <h6 class="h6">Table 3</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(4);">
+                            <h6 class="h6">Table 4</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4" id="restaurant">
+                        <button class="btn mb-3 table-button" type="button" onclick="showForm(5);">
+                            <h6 class="h6">Table 5</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                        <button class="btn mt-5 mb-4 table-button" type="button" onclick="showForm(6);">
+                            <h6 class="h6">Table 6</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(7);">
+                            <h6 class="h6">Table 7</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(8);">
+                            <h6 class="h6">Table 8</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4" id="restaurant">
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(9);">
+                            <h6 class="h6">Table 9</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(10);">
+                            <h6 class="h6">Table 10</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(11);">
+                            <h6 class="h6">Table 11</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                        <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(12);">
+                            <h6 class="h6">Table 12</h6>
+                            <img src="./image/map.jpg" alt="table" class="table-image">
+                        </button>
+                    </div>
+                </div>
             </div>
 
 
             <!--Personal Information, Date, Time, Seat Size, Branch-->
-            <div class="col-md-4 col-lg-4 col-sm-4">
+            <div class="col-md-3 col-lg-3 col-sm-3" id="form-column">
                 <div class="container-fluid d-block justify-content-center">
                     <div class="col-md-12 mb-3 d-flex justify-content-center border border-5 border-info rounded" id="form">
                         <form action="#" class="form-check fw-bold">
-                            <h1 class="h1">Reservation</h1>
+                            <h2 class="h2 text-primary" id="table-reservation">Reservation</h2>
                         
                             <label for="name"><h3 class="h3">Name</h3></label>
                             <input class="form-control mb-3" type="text" placeholder="Enter Name" name="name" id="name" required>
