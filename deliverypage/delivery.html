@@ -46,7 +46,7 @@
                     <input class="form-control me-2" type="search" placeholder="What are you looking for?...">
                     <button class="btn btn-primary" type="submit">Search</button>
                 </form>
-                <a class="navbar-brand position-relative" href="#" id="cart">
+                <a class="navbar-brand position-relative" href="#" id="cart" onclick="checkOut();">
                     <div>
                         <img src="./image/cart.JPG" alt="cartLogo" class="rounded-circle">
                     </div>
@@ -255,7 +255,7 @@
                                 '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
                                 '<h2 class="cate__text">' + v.name + '</h2>' +
                                 '<p>Price: $' + v.price + '</p>' +
-                                '<button type="button" class="btn btn-primary cate_btn" onclick="cartUpdate(); addItem(' + v.id +  ');">Order' + '</button>' +
+                                '<button type="button" class="btn btn-primary cate_btn" onclick="addItem(' + v.id +  ');">Order' + '</button>' +
                                 '</div>'
                             $("#item__category").append(item);
                         }
@@ -271,7 +271,7 @@
                             '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
                             '<h2 class="cate__text">' + v.name + '</h2>' +
                             '<p>Price: $' + v.price + '</p>' +
-                            '<button type="button" class="btn btn-primary cate_btn" onclick="cartUpdate(); addItem(' + v.id +  ');">Order' + '</button>' +
+                            '<button type="button" class="btn btn-primary cate_btn" onclick="addItem(' + v.id +  ');">Order' + '</button>' +
                                 '</div>'
                         $("#item__category").append(item);
                     }
