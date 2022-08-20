@@ -70,7 +70,8 @@ function cartUpdate() {
 
 function checkOut() {
     sessionStorage.setItem('list', JSON.stringify(list));
-    window.open("../../cart/cart.html");
+    window.location.href = "../../cart/cart.html";
+    // window.open("../../cart/cart.html", "_self");
 }
 
 function addItem(x) {
