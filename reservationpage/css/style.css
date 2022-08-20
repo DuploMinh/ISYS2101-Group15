@@ -5,6 +5,7 @@
     height: 100px;
     margin-left: 92%;
     z-index: 9999;
+    display: none;
 }
 
 #chatBox_btn {
@@ -28,8 +29,15 @@
 }
 
 .btn {
-    width: 75%;
+  width: 75%;
 }
+
+
+.btn {
+  opacity: 1;
+}
+
+
 
 @media only screen and (max-width: 1200px) {
     #chatBox {
@@ -39,3 +47,5 @@
         width: 75%;
     }
 }
+
+
