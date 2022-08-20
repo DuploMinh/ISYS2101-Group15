@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
@@ -21,6 +23,9 @@ public class UserEntity {
   private String userName;
   private String password;
   private String email;
+  @Setter
+  @Getter
+  private boolean isEnabled;
   private Boolean tokenExpired;
 
   public String getUserName() {
@@ -63,6 +68,8 @@ public class UserEntity {
     this.id = id;
   }
 
+  @Setter
+  @Getter
   @ManyToMany
   @JoinTable(
       name = "users_roles",
@@ -71,5 +78,5 @@ public class UserEntity {
       inverseJoinColumns = @JoinColumn(
           name = "role_id", referencedColumnName = "id")
   )
-  private Collection<Roles> roles;
+  private Collection<Role> roles;
 }
