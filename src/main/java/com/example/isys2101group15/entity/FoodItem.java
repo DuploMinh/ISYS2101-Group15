@@ -5,15 +5,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-public class Privileges {
+@NoArgsConstructor
+@AllArgsConstructor
+public class FoodItem {
+
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
   private Long id;
-  private String name;
+  @Getter
+  @Setter
+  private String name, category,description,price,imgPath;
+  @Getter
+  @Setter
+  private boolean isNew,recommended,openSpot;
+  @ManyToOne
+  @Getter
+  @Setter
+  private Restaurant restaurant;
 
   public Long getId() {
     return id;
@@ -22,4 +39,5 @@ public class Privileges {
   public void setId(Long id) {
     this.id = id;
   }
+
 }

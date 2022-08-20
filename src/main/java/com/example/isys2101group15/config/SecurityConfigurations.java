@@ -1,32 +1,60 @@
 package com.example.isys2101group15.config;
 
+import com.example.isys2101group15.service.CustomUserDetailService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @Configuration
+@RequiredArgsConstructor
 public class SecurityConfigurations {
   @Bean
   public BCryptPasswordEncoder bCryptPasswordEncoder(){
     return new BCryptPasswordEncoder();
   }
+  @Bean
+  public UserDetailsService userDetailsService(){
+    return new CustomUserDetailService();
+  };
 
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http.authorizeRequests(
-        (authz)-> {
-          try {
-            authz
-                .anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll();
-          } catch (Exception e) {
-            throw new RuntimeException(e);
-          }
-        }
-    ).httpBasic();
+    http.csrf().disable()
+        .authorizeRequests()
+        .antMatchers("/login").permitAll()
+        .antMatchers("/users/**", "/settings/**").hasAnyAuthority("Admin")
+        .anyRequest().authenticated()
+        .and()
+        .formLogin()
+          .loginPage("/login")
+          .usernameParameter("email")
+          .permitAll()
+        .and()
+        .logout()
+          .logoutUrl("/logout")
+          .deleteCookies("JSESSIONID");
+    http.userDetailsService(userDetailsService());
+    http.authenticationProvider(authenticationProvider());
     return http.build();
+  }
+  @Bean
+  public DaoAuthenticationProvider authenticationProvider(){
+    DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+    authenticationProvider.setUserDetailsService(userDetailsService());
+    authenticationProvider.setPasswordEncoder(bCryptPasswordEncoder());
+    return authenticationProvider;
+  }
+  @Bean
+  public WebSecurityCustomizer webSecurityCustomizer(){
+    return (web) -> web.ignoring().antMatchers("/img/**");
   }
 }
