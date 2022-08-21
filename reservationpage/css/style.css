@@ -1,33 +1,98 @@
+html, body {
+    margin: 0;
+}
+
+
+/* ChatBox */
+
 #chatBox {
     position: fixed;
-    margin-top: -50px;
-    width: 100px;
-    height: 100px;
-    margin-left: 92%;
+    min-width: 130px;
+    max-width: 150px;
+    max-height: 100px;
     z-index: 9999;
-    display: none;
+    display: flex;
+    flex-direction: row;
 }
 
-#chatBox_btn {
-    position: relative;
-    border-radius: 50%;
-    width: 80%;
-    height: 80%;
-    margin-left: 10%;
-    margin-top: 10%;
-    background-color: white;
-    font-size: 40px;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../image/msg.JPG');
-    background-repeat: no-repeat;
-    background-position:center;
+#chat-container {
+  display: none;
+  position: fixed;
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+  top: 180px;
+  width: 400px;
+  min-height: 200px;
+  max-height: 500px;
+  border: 2px solid black;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-#chatBox_btn:hover {
-    background-color: aqua;
+#chat-header {
+  height: 15%;
+  font-size: 2rem;
 }
 
+#chat-body {
+  min-height: 200px;
+  width: 100%;
+  height: 70%;
+}
+
+#chat-div {
+  width: 100%;
+  height: 15%;
+}
+
+#chat-info {
+  width: 20%;
+  height: 80%;
+}
+
+#chat-close {
+  font-size: 1.5rem;
+  width: 20%;
+  height: 80%;
+  float: right;
+}
+
+.chat-body-sender-message {
+  max-width: 80%;
+  min-width: 30%;
+  border: 2px solid black;
+  font-weight: 500;
+  border-radius: 5px;
+  white-space:initial;
+}
+
+.chat-body-receiver-message {
+  width: 77%;
+  font-weight: 500;
+  border: 2px solid black;
+  border-radius: 5px;
+  white-space:initial;
+}
+
+.chat-body-sender {
+  justify-content: end;
+}
+
+.chat-body-receiver {
+  justify-content: start;
+}
+
+.profile-icon {
+  width: 10%;
+  font-size: 2.5rem;
+}
+
+.server-icon {
+  width: 10%;
+  font-size: 2.5rem;
+}
+
+/* Button class Override */
 .btn {
   width: 75%;
 }
@@ -36,6 +101,8 @@
 .btn {
   opacity: 1;
 }
+
+/* Reservation Form */
 
 #restaurant {
   max-height: 1000px;
@@ -55,12 +122,7 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    #chatBox {
-        display: none;
-    }
-    .btn {
-        width: 75%;
-    }
+
 }
 
 

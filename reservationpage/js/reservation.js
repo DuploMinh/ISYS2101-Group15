@@ -1,9 +1,67 @@
+// Display Reservation Form
 function showForm(id) {
     document.getElementById("form-column").style.display = 'block';
     var table = document.getElementById('table-reservation');
     table.innerHTML = 'Table ' + id + ' Reservation';
+    if (sessionStorage['table']) {
+        sessionStorage.removeItem('table');
+        sessionStorage.setItem('table', id);
+    }
+    else {
+        sessionStorage.setItem('table', id);
+    }
 }
 
+//Show ChatBox
+function showChat() {
+    document.getElementById('chat-container').style.display = 'block';
+}
+// Hide ChatBox
+function hideChat() {
+    document.getElementById('chat-container').style.display = 'none';
+    var sender = document.querySelectorAll('.chat-body-sender');
+    var receiver = document.querySelectorAll('.chat-body-receiver');
+    var info = document.querySelectorAll('.chat-body-info');
+    sender.forEach(x => {
+        x.remove();
+    });
+    receiver.forEach(x => {
+        x.remove();
+    });
+    info.forEach(x => {
+        x.remove();
+    });
+}
+
+function updateMessage() {
+    var message = document.getElementById('message').value;
+    console.log(message);
+    var target = document.getElementById('chat-body');
+    target.innerHTML += 
+    '<div class="container-fluid d-flex gap-1 chat-body-sender">'+
+    '<div class="chat-body-sender-message mt-2 mb-2 bg-info text-end">'+
+        '<span>' + message + '</span>'+
+    '</div>'+
+    '<div class="profile-icon">'+
+        '<i class="bi bi-person-square"></i>'+
+    '</div>'+
+    '</div>';
+}
+
+function showInfo() {
+    var target = document.getElementById('chat-body');
+    target.innerHTML += 
+    '<div class="container-fluid d-flex gap-3 chat-body-receiver" id="chat-body-info">' +
+    '<div class="server-icon">' +
+        '<i class="bi bi-server"></i>'+
+    '</div>'+
+    '<div class="chat-body-receiver-message mt-2 mb-2 bg-warning text-start">'+
+        '<span>You can search for useful information or chat with us!</span>'+
+    '</div>'+
+    '</div>';
+}
+
+// Switch Map Location Display
 function showMap(data) {
     if (data == 'HCM') {
         document.getElementById('map').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.897549572912!2d106.62903071532963!3d10.742378862757418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529e94594adcd%3A0x35cd5ec9e929d87c!2sMM%20Mega%20Market%20B%C3%ACnh%20Ph%C3%BA!5e0!3m2!1sen!2s!4v1659362001559!5m2!1sen!2s";

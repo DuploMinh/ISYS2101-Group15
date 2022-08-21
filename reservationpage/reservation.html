@@ -6,16 +6,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
 
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <!-- BootStrap5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- JavaScript -->
     <script src="./js/reservation.js"></script>
-    <title>Reservation</title>
 </head>
 <body>
     <!-- Header--> 
@@ -49,10 +53,6 @@
     </nav>
     
     <main role="main"> 
-        <!--Chat Box-->
-        <div id="chatBox">
-            <button id="chatBox_btn"></button>
-        </div>
 
         <div class="row mt-sm-4 mt-md-4 mt-lg-5">
 
@@ -126,7 +126,7 @@
                 <div class="container-fluid d-block justify-content-center">
                     <div class="col-md-12 mb-3 d-flex justify-content-center border border-5 border-info rounded" id="form">
                         <form action="#" class="form-check fw-bold">
-                            <h2 class="h2 text-primary" id="table-reservation">Reservation</h2>
+                            <h3 class="h3 text-primary" id="table-reservation">Reservation</h3>
                         
                             <label for="name"><h3 class="h3">Name</h3></label>
                             <input class="form-control mb-3" type="text" placeholder="Enter Name" name="name" id="name" required>
@@ -187,7 +187,7 @@
             
             
             <!--Google Map-->
-            <div class="col-md-4 col-lg-4 position-relative mb-sm-2 mb-md-2 mb-lg-2"  style="height: 600px;">
+            <div class="col-md-4 col-lg-4 position-relative mb-sm-2 mb-md-2 mb-lg-2">
                 <div class="col-md-12 mb-3 d-flex justify-content-center dropdown">
                     <button class="btn btn-primary pt-3 pb-3 mt-3 button-block dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">View Your Local Branch</button>
                         <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
@@ -202,10 +202,62 @@
                 </div>
             </div>
             
-            
+
+            <!--Chat Box Icon-->
+            <div id="chatBox" class="">
+                <button class="btn btn-info text-light p-auto" type="button" id="box-btn" onclick="showChat();">
+                    <i class="bi bi-chat-text p-auto"></i> Chat
+                </button>
+            </div>
 
 
-        <!--Google Map-->
+            <!-- Chat Form -->
+            <div class="bg-dark border border-5 border-danger " id="chat-container">
+
+                <!-- Chat Header -->
+                <div class="d-flex justify-content-between" id="chat-header">
+                    <button class="btn btn-primary mt-1 ms-1" type="button" id="chat-info" onclick="showInfo();">
+                        <i class="bi bi-info-circle"></i> Info
+                    </button>
+                    <button class="btn mt-1 bg-light" id="chat-close" onclick="hideChat();">
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                </div>
+
+                <!-- Chat Body -->
+
+                <div class="border border-2 border-dark bg-light" id="chat-body">
+                    <!-- Sender Example -->
+                    <!-- <div class="container-fluid d-flex gap-1 chat-body-sender">
+                        <div class="chat-body-sender-message mt-2 mb-2 bg-info">
+                            <span>What is the fastest way to subway of Ho CHi Minh city?</span>
+                        </div>
+                        <div class="profile-icon">
+                            <i class="bi bi-person-square"></i>
+                        </div>
+                    </div> -->
+
+                    <!-- Receiver Sample -->
+                    <!-- <div class="container-fluid d-flex gap-3 chat-body-receiver">
+                        <div class="server-icon">
+                            <i class="bi bi-server"></i>
+                        </div>
+                        <div class="chat-body-receiver-message mt-2 mb-2 bg-warning">
+                            <span>Go through Le Loi street 1</span>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Chat Message Sender -->
+                <div class="border border-3 border-primary bg-light rounded" id="chat-div">
+                    <form onsubmit="updateMessage(); return false">
+                        <div class="d-flex">
+                            <input class="form-control w-75" type="text" name="message" id="message" placeholder="Enter Your Message...">
+                            <button class="form-control w-25 btn btn-primary border border-1 border-dark" type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
     </main>
 
