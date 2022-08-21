@@ -30,12 +30,15 @@ public class SecurityConfigurations {
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http.csrf().disable()
         .authorizeRequests()
+        .antMatchers("/api-docs","/swagger-ui/**", "/v3/api-docs/**","/v3/**").permitAll()
+        .antMatchers("/food").permitAll()
+        .antMatchers("/img/**").permitAll()
         .antMatchers("/login").permitAll()
         .antMatchers("/users/**", "/settings/**").hasAnyAuthority("Admin")
         .anyRequest().authenticated()
         .and()
         .formLogin()
-          .loginPage("/login")
+          .loginPage("/login.html")
           .usernameParameter("email")
           .permitAll()
         .and()
@@ -53,8 +56,8 @@ public class SecurityConfigurations {
     authenticationProvider.setPasswordEncoder(bCryptPasswordEncoder());
     return authenticationProvider;
   }
-  @Bean
-  public WebSecurityCustomizer webSecurityCustomizer(){
-    return (web) -> web.ignoring().antMatchers("/img/**");
-  }
+//  @Bean
+//  public WebSecurityCustomizer webSecurityCustomizer(){
+//    return (web) -> web.ignoring().antMatchers("/img/**");
+//  }
 }
