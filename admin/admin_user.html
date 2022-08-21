@@ -1,0 +1,117 @@
+<!-- <?php
+
+if(!isset($_SESSION)) {
+  session_start();
+}
+
+//Check admin logged in or not
+if(isset($_SESSION['instakilogram_admin'])) {
+  $profile = "admin";
+  $file_name = "images\default_avata_girl.png";
+} else {
+  header("Location: login_admin.php");
+  die;
+}
+
+$user_per_page = 3; //Number of users displayed each page
+//Connect to database file
+include 'includes/database.php';
+$db = new Database();
+$users = $db->get_content();
+
+// echo "<br><br><br>";
+$number_of_page = ceil(count($users) / $user_per_page); //Number of pages based on number of user and number of users per page
+
+//Define which page number admin is currently visiting using superglobal Get
+if (!isset($_GET['page'])) {
+    $page = 1;
+} else {
+    $page = $_GET['page'];
+}
+
+$page_first_record = ($page - 1) * $user_per_page;//Determine first ordinal number of users in database for each page (page 1-start from user 0, page 2-start from user 6,...)
+?> -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A restaurant online order system named Avenger">
+	<title>Avenger | Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://kit.fontawesome.com/6edaa7891d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- <?php include 'header.php'; ?> -->
+    <main>
+        <div class="container">
+            <aside class="left">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <a href="admin_user.html" class="menu_item active">
+                        <span><i class="fa-solid fa-user"></i></span>
+                        <h3>User Infor</h3>
+                    </a>
+                    <a href="admin_food.html" class="menu_item">
+                        <span><i class="fa-solid fa-bowl-food"></i></span>
+                        <h3>Dishes Infor</h3>
+                    </a>
+                    <a href="admin_emp.html" class="menu_item">
+                        <span><i class="fa-solid fa-people-carry-box"></i></span>
+                        <h3>Employee Infor</h3>
+                    </a>
+                    <a href="admin_stat.html" class="menu_item">
+                        <span><i class="fa-solid fa-chart-line"></i></span>
+                        <h3>Statistics</h3>
+                    </a>
+                </div>
+            </aside>
+        
+            <!--END OF LEFT-->
+        
+            <div class="user_table">
+                <h1>User's table</h1>
+        
+                <div class="search_data">
+                    <form action="" method="get">
+                        <!-- Get search value as superglobal $GET -->
+                        <input type="search" name="search" class="search_user" value="search" id="search" placeholder="Search for user">
+                        <button type="submit" name="submit" class="btn btn_primary">Search</button>
+                    </form>
+                </div>
+                
+                <table class="content_table">
+                    <thead>
+                        <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                        <th>Image profile</th>
+                        <th>User ID</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        
+                    </tbody>
+                    
+                </table>
+        
+                <div class="pagination">
+                    <!-- <?php
+                        //Prints pages according to number of page
+                        for ($page = 1; $page <= $number_of_page; $page++) {
+                            echo '<a href="admin.php?page=' . $page . '">' . $page . '</a>';
+                        }
+                    ?> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
