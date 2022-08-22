@@ -33,7 +33,7 @@ html{
     1 rem = 16px */
 }
 
-body{
+body, main{
     color: #212529;
     background-color: rgba(245, 222, 179, 0.503);
     letter-spacing: 1px;

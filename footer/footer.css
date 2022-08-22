@@ -2,12 +2,12 @@ body {
     margin: 0;
 }
 
-footer {
+/* footer {
     position: absolute;
     bottom: 10px;
     width: 100%;
     height: 10%;
-}
+} */
 
 nav {
     position: fixed;
@@ -25,3 +25,4 @@ nav {
     background-color: rgb(255, 255, 255);
     text-decoration: underline;
 }
+
