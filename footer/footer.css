@@ -17,6 +17,10 @@ nav {
     margin-left: 5%;
 }
 
+.logo {
+    width: 150px;
+}
+
 .nav-item {
     font-weight: bold;
 }

@@ -54,19 +54,19 @@ body{
     font-size: 0.9rem;
 }
 
-.btn:hover {
+/* .btn:hover {
     opacity: 0.8;
-}
+} */
 
 .btn_primary {
-    background: white;
-    color: var(--color_primary);
+    background: var(--color_primary);
+    color: white;
     white-space: nowrap;
 }
 
 .btn_primary:hover {
-    background: var(--color_primary);
-    color: white;
+    background: var(--color_secondary);
+    color: var(--color_primary);
     white-space: nowrap;
 }
 

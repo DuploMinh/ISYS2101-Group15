@@ -6,6 +6,10 @@ body {
     margin-left: 5%;
 }
 
+.logo {
+    width: 150px;
+}
+
 #search {
     margin: auto;
     width: 50%;

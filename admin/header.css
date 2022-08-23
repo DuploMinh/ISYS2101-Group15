@@ -10,11 +10,6 @@ body {
     width: 150px;
 }
 
-.cart_logo {
-    width: 100px;
-    /* border-radius: 50%; */
-}
-
 #search {
     margin: auto;
     width: 50%;
@@ -28,13 +23,13 @@ body {
 
 .nav-item:hover {
     background-color: rgb(255, 255, 255);
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .nav-item:active {
     background-color: white;
     color: black;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 @media only screen and (max-width: 768px){

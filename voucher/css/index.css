@@ -54,6 +54,10 @@ html{
     cursor: pointer;
 }
 
+.voucher__item:hover {
+    box-shadow: 0 0 20px 9px #ff61241f;
+}
+
 .voucher__term{
     padding: 3rem 3rem 0 3rem;
 }
