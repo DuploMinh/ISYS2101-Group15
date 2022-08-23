@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A restaurant online order system named Avenger">
+	<title>Avenger | Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://kit.fontawesome.com/6edaa7891d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+    <main>
+        <div class="container">
+            <aside class="left">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <a href="admin_user.html" class="menu_item">
+                        <span><i class="fa-solid fa-user"></i></span>
+                        <h3>User Infor</h3>
+                    </a>
+                    <a href="admin_food.html" class="menu_item">
+                        <span><i class="fa-solid fa-bowl-food"></i></span>
+                        <h3>Dishes Infor</h3>
+                    </a>
+                    <a href="admin_emp.html" class="menu_item active">
+                        <span><i class="fa-solid fa-people-carry-box"></i></span>
+                        <h3>Employee Infor</h3>
+                    </a>
+                    <a href="admin_stat.html" class="menu_item">
+                        <span><i class="fa-solid fa-chart-line"></i></span>
+                        <h3>Statistics</h3>
+                    </a>
+                </div>
+            </aside>
+        
+            <!--END OF LEFT-->
+        
+            <div class="user_table">
+                <h1>Employee's table</h1>
+        
+                <div class="search_data">
+                    <form action="" method="get">
+                        <!-- Get search value as superglobal $GET -->
+                        <input type="search" name="search" class="search_user" value="" id="search" placeholder="Search for user">
+                        <button type="submit" name="submit" class="btn btn_primary">Search</button>
+                    </form>
+                </div>
+                
+                <table class="content_table">
+                    <thead>
+                        <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Time working</th>
+                        <th>Image profile</th>
+                        <th>Employee ID</th>
+                        <th>Actions</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        
+                    </tbody>
+                    
+                </table>
+        
+                <div class="pagination">
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
