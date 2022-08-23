@@ -7,39 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+    <link rel="stylesheet" href="../header/home_header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="../image/logo.PNG" />
     <title>Home Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <!-- Header--> 
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="home.html" id="h_logo">
-                <img src="../image/Capture.PNG" alt="logo" class="logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarHead" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navBarHead">
-                <form class="d-flex mx-auto" id="search">
-                    <input class="form-control me-2" type="search" placeholder="Search...">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </form>
-                <ul class="nav nav-pills m-md-auto justify-content-center">
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Menu</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="../menu/menu.html">Delivery</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="../reservationpage/reservation.html">Reservation</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="../loginpage/login.html">Login</a> </li>
-                </ul>     
-            </div>
-        </div>
-    </nav>
+    <header></header>
     
     <main role="main"> 
         <!--Chat Box-->
@@ -116,26 +97,13 @@
         </div>
     </main>
 
+    <footer></footer>
 
-    <!--Footer-->
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-bottom position-relative mt-md-4 mt-sm-2">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="home.html" id="h_logo">
-                <img src="../image/Capture.PNG" alt="logo" class="logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFoot">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse justify-content-end" id="navBarFoot">
-                <ul class="nav nav-pills">
-                    <li class="nav-item"> <a class="nav-link" href="#">Feedback</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Privacy</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
-                </ul>         
-            </div>       
-        </div>
-    </nav>
+    <script>
+        $(document).ready(function() {
+            $('header').load('../header/home_header.html')
+            $('footer').load('../footer/footer.html')
+        })
+    </script>
 </body>
 </html>

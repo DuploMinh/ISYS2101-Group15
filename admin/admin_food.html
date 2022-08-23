@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A restaurant online order system named Avenger">
 	<title>Avenger | Admin</title>
+    <link rel="stylesheet" href="../header/home_header.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./header.css">
     <link rel="stylesheet" href="admin.css">
     <link rel="shortcut icon" href="../image/logo.PNG" />
     <script src="https://kit.fontawesome.com/6edaa7891d.js" crossorigin="anonymous"></script>
@@ -22,29 +22,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-        <!-- Header--> 
-        <nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="home.html" id="h_logo">
-                    <img src="../image/Capture.PNG" alt="logo" class="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarHead" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navBarHead">
-                    <form class="d-flex mx-auto" id="search">
-                        <input class="form-control me-2" type="search" placeholder="Search...">
-                        <button class="btn btn-primary" type="submit">Search</button>
-                    </form>
-                    <ul class="nav nav-pills m-md-auto justify-content-center">
-                        <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Menu</a> </li>
-                        <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="../menu/menu.html">Delivery</a> </li>
-                        <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="../reservationpage/reservation.html">Reservation</a> </li>
-                        <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="../loginpage/login.html">Login</a> </li>
-                    </ul>     
-                </div>
-            </div>
-        </nav>
+    <header></header>
     <main>
         <div class="container">
             <aside class="left">
@@ -59,7 +37,7 @@
                         <h3>Dishes Infor</h3>
                     </a>
                     <a href="admin_table.html" class="menu_item">
-                        <span><i class="fa-solid fa-people-carry-box"></i></span>
+                        <span><i class="fa-solid fa-table"></i></span>
                         <h3>Table Infor</h3>
                     </a>
                     <a href="admin_emp.html" class="menu_item">
@@ -112,5 +90,10 @@
     </main>
 
     <script src="admin.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('header').load('../header/home_header.html')
+        })
+    </script>
 </body>
 </html>

@@ -549,6 +549,10 @@ body{
 }
 
 /* Categories */
+.cate {
+    margin-bottom: 3rem;
+}
+
 .cate h1{
     text-align: center;
     padding-bottom: 30px;
