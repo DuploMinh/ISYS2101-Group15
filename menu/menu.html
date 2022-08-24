@@ -90,10 +90,10 @@
                     <div id="map"></div>
 
                     <div class="address_btn">
-                        <input type="button" onclick="" value="Continue as guest" name="post_address"
-                            class="btn btn_primary post_address">
+                        <a href="menu.html"><input type="button" onclick="" value="Continue as guest" name="post_address"
+                            class="btn btn_primary post_address"></a>
                         <p>or</p>
-                        <input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address">
+                        <a href="../loginpage/login.html"><input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address"></a>
                     </div>
 
                 </form>
@@ -288,82 +288,82 @@
         });
 
         // Dish description part for cate
-        $(function() {
-            $("#item__category").on('click', ".dish__by_cate", function (event) {
-                event.stopPropagation();
-                event.stopImmediatePropagation();
-                event.preventDefault();
-                var name = $(this).find('h2').text();
-                console.log(name)
-                $.getJSON('menu.json', function (data) {
-                    $.each(data.dishes, function (i, v) {
+        // $(function() {
+        //     $("#item__category").on('click', ".dish__by_cate", function (event) {
+        //         event.stopPropagation();
+        //         event.stopImmediatePropagation();
+        //         event.preventDefault();
+        //         var name = $(this).find('h2').text();
+        //         console.log(name)
+        //         $.getJSON('menu.json', function (data) {
+        //             $.each(data.dishes, function (i, v) {
             
-                        if (v.name === name) {
-                            var item =
-                                '<!--DISH DESCRIPTION-->'+  
-                                '<div id="overlay2">'+
-                                    '<form action="index.html" method="POST" class="upload_description" id="description_form">'+
-                                        '<div class="form_title">' +
-                                            '<h3>Description</h3>'+
-                                            '<i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>'+
-                                        '</div>'+
+        //                 if (v.name === name) {
+        //                     var item =
+        //                         '<!--DISH DESCRIPTION-->'+  
+        //                         '<div id="overlay2">'+
+        //                             '<form action="index.html" method="POST" class="upload_description" id="description_form">'+
+        //                                 '<div class="form_title">' +
+        //                                     '<h3>Description</h3>'+
+        //                                     '<i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>'+
+        //                                 '</div>'+
 
-                                        '<div class="form_content">'+
-                                            '<div class="dish_des">'+
-                                                '<h2>' + v.name + '</h2>'+
-                                                '<img src="' + v.image + '" alt="">'+
-                                                '<p>' + v.description + '</p>'+
-                                            '</div>'+
-                                            '<div class="custom_dish">'+
-                                                '<h2>Size</h2>'+
-                                                '<input type="radio" id="m" name="sizes" value="M">'+
-                                                '<label for="m">M</label><br>'+
-                                                '<input type="radio" id="l" name="sizes" value="L">'+
-                                                '<label for="l">L</label><br>'+
-                                                '<input type="radio" id="xl" name="sizes" value="XL">'+
-                                                '<label for="xl">XL</label>'+
+        //                                 '<div class="form_content">'+
+        //                                     '<div class="dish_des">'+
+        //                                         '<h2>' + v.name + '</h2>'+
+        //                                         '<img src="' + v.image + '" alt="">'+
+        //                                         '<p>' + v.description + '</p>'+
+        //                                     '</div>'+
+        //                                     '<div class="custom_dish">'+
+        //                                         '<h2>Size</h2>'+
+        //                                         '<input type="radio" id="m" name="sizes" value="M">'+
+        //                                         '<label for="m">M</label><br>'+
+        //                                         '<input type="radio" id="l" name="sizes" value="L">'+
+        //                                         '<label for="l">L</label><br>'+
+        //                                         '<input type="radio" id="xl" name="sizes" value="XL">'+
+        //                                         '<label for="xl">XL</label>'+
 
-                                                '<h2>Add topping</h2>'+
-                                                '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
-                                                '<label for="cheese"> Cheese</label><br>'+
-                                                '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
-                                                '<label for="basil_sauce"> Basil sauce</label><br>'+
-                                                '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
-                                                '<label for="milk_cream"> Milk cream</label>'+
-                                            '</div>'+
-                                        '</div>'+
+        //                                         '<h2>Add topping</h2>'+
+        //                                         '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
+        //                                         '<label for="cheese"> Cheese</label><br>'+
+        //                                         '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
+        //                                         '<label for="basil_sauce"> Basil sauce</label><br>'+
+        //                                         '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
+        //                                         '<label for="milk_cream"> Milk cream</label>'+
+        //                                     '</div>'+
+        //                                 '</div>'+
 
-                                        '<div class="description_btn">'+
-                                            '<input type="button" onclick="" value="Add to cart >>>" name="post_address"'+
-                                                'class="btn btn_primary post_address">'+
-                                        '</div>'+
+        //                                 '<div class="description_btn">'+
+        //                                     '<input type="button" onclick="" value="Add to cart >>>" name="post_address"'+
+        //                                         'class="btn btn_primary post_address">'+
+        //                                 '</div>'+
 
-                                    '</form>'+
-                                '</div>';
-                            $("#item_description").append(item);
-                        }
-                    });
-                })
+        //                             '</form>'+
+        //                         '</div>';
+        //                     $("#item_description").append(item);
+        //                 }
+        //             });
+        //         })
 
-                $("#item_description").on('click', "#overlay2", function (event) {
-                    event.stopPropagation();
-                    event.stopImmediatePropagation();
-                    event.preventDefault();
-                    if (event.target.id == 'overlay2') {
-                        $(this).css("display", "none")
-                    } 
-                })
+        //         $("#item_description").on('click', "#overlay2", function (event) {
+        //             event.stopPropagation();
+        //             event.stopImmediatePropagation();
+        //             event.preventDefault();
+        //             if (event.target.id == 'overlay2') {
+        //                 $(this).css("display", "none")
+        //             } 
+        //         })
 
-                $("#item_description").on('click', "#close_btn_2", function (event) {
-                    event.stopPropagation();
-                    event.stopImmediatePropagation();
-                    event.preventDefault();
-                    // if (event.target.id == 'close_btn_2') {
-                        $("#overlay2").css("display", "none")
-                    // } 
-                })
-            })
-        })
+        //         $("#item_description").on('click', "#close_btn_2", function (event) {
+        //             event.stopPropagation();
+        //             event.stopImmediatePropagation();
+        //             event.preventDefault();
+        //             // if (event.target.id == 'close_btn_2') {
+        //                 $("#overlay2").css("display", "none")
+        //             // } 
+        //         })
+        //     })
+        // })
 
         // new dishes part
         $(function() {
@@ -415,23 +415,24 @@
                                                 '<img src="' + v.image + '" alt="">'+
                                                 '<p>' + v.description + '</p>'+
                                             '</div>'+
-                                            '<div class="custom_dish">'+
-                                                '<h2>Size</h2>'+
-                                                '<input type="radio" id="m" name="sizes" value="M">'+
-                                                '<label for="m">M</label><br>'+
-                                                '<input type="radio" id="l" name="sizes" value="L">'+
-                                                '<label for="l">L</label><br>'+
-                                                '<input type="radio" id="xl" name="sizes" value="XL">'+
-                                                '<label for="xl">XL</label>'+
+                                            // '<div class="custom_dish">'+
+                                            //     '<h2>Size</h2>'+
+                                            //     '<input type="radio" id="m" name="sizes" value="M">'+
+                                            //     '<label for="m">M</label><br>'+
+                                            //     '<input type="radio" id="l" name="sizes" value="L">'+
+                                            //     '<label for="l">L</label><br>'+
+                                            //     '<input type="radio" id="xl" name="sizes" value="XL">'+
+                                            //     '<label for="xl">XL</label>'+
 
-                                                '<h2>Add topping</h2>'+
-                                                '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
-                                                '<label for="cheese"> Cheese</label><br>'+
-                                                '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
-                                                '<label for="basil_sauce"> Basil sauce</label><br>'+
-                                                '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
-                                                '<label for="milk_cream"> Milk cream</label>'+
-                                            '</div>'+
+                                            //     '<h2>Add topping</h2>'+
+                                            //     '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
+                                            //     '<label for="cheese"> Cheese</label><br>'+
+                                            //     '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
+                                            //     '<label for="basil_sauce"> Basil sauce</label><br>'+
+                                            //     '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
+                                            //     '<label for="milk_cream"> Milk cream</label>'+
+                                            //     '<input type="text" id="text" name="text" value="text">'+
+                                            // '</div>'+
                                         '</div>'+
 
                                         '<div class="description_btn">'+
@@ -451,7 +452,8 @@
                     event.stopImmediatePropagation();
                     event.preventDefault();
                     if (event.target.id == 'overlay2') {
-                        $(this).css("display", "none")
+                        // $(this).css("display", "none")
+                        $(this).remove()
                     } 
                 })
 
@@ -461,6 +463,9 @@
                     event.preventDefault();
                     if (event.target.id == 'close_btn_2') {
                         $("#overlay2").css("display", "none")
+                        // $("#overlay2").remove()
+                        // $("#overlay2").css("transform", "scale(0)")
+                        window.location.reload()
                     } 
                 })
             })
@@ -519,23 +524,23 @@
                                                 '<img src="' + v.image + '" alt="">'+
                                                 '<p>' + v.description + '</p>'+
                                             '</div>'+
-                                            '<div class="custom_dish">'+
-                                                '<h2>Size</h2>'+
-                                                '<input type="radio" id="m" name="sizes" value="M">'+
-                                                '<label for="m">M</label><br>'+
-                                                '<input type="radio" id="l" name="sizes" value="L">'+
-                                                '<label for="l">L</label><br>'+
-                                                '<input type="radio" id="xl" name="sizes" value="XL">'+
-                                                '<label for="xl">XL</label>'+
+                                            // '<div class="custom_dish">'+
+                                            //     '<h2>Size</h2>'+
+                                            //     '<input type="radio" id="m" name="sizes" value="M">'+
+                                            //     '<label for="m">M</label><br>'+
+                                            //     '<input type="radio" id="l" name="sizes" value="L">'+
+                                            //     '<label for="l">L</label><br>'+
+                                            //     '<input type="radio" id="xl" name="sizes" value="XL">'+
+                                            //     '<label for="xl">XL</label>'+
 
-                                                '<h2>Add topping</h2>'+
-                                                '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
-                                                '<label for="cheese"> Cheese</label><br>'+
-                                                '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
-                                                '<label for="basil_sauce"> Basil sauce</label><br>'+
-                                                '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
-                                                '<label for="milk_cream"> Milk cream</label>'+
-                                            '</div>'+
+                                            //     '<h2>Add topping</h2>'+
+                                            //     '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
+                                            //     '<label for="cheese"> Cheese</label><br>'+
+                                            //     '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
+                                            //     '<label for="basil_sauce"> Basil sauce</label><br>'+
+                                            //     '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
+                                            //     '<label for="milk_cream"> Milk cream</label>'+
+                                            // '</div>'+
                                         '</div>'+
 
                                         '<div class="description_btn">'+
@@ -568,6 +573,7 @@
                     if (event.target.id == 'close_btn_2') {
                         console.log(event.target.id)
                         $("#overlay2").css("display", "none")
+                        window.location.reload()
                     } 
                 })
         })
