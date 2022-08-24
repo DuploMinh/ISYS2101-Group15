@@ -21,45 +21,89 @@
 <body>
     <header></header>
 
-    <div class="container-fluid d-flex justify-content-center">
-        <a class="navbar-brand" href="home.html" id="h_logo">
-            <img src="image/logo.JPG" alt="logo" class="rounded-circle">
-        </a>
-    </div>
-    <div class="container-fluid d-flex justify-content-center" id="form">  
-        <form action="/action.php">
-            <div class="mb-3 mt-5">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email">
+    <main class="hero">
+        <!-- <div class="container-fluid d-flex justify-content-center">
+            <a class="navbar-brand" href="home.html" id="h_logo">
+                <img src="image/logo.JPG" alt="logo" class="rounded-circle">
+            </a>
+        </div> -->
+        <div class="container-fluid" id="form">  
+            <div class="button_box">
+                <div id="btn_tg"></div>
+                <button type="button" class="toggle" onclick="login()">Log in</button>
+                <button type="button" class="toggle" onclick="register()">Register</button>
             </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="checkBox">
-              <label class="form-check-label" for="checkBox" id="checkBoxLabel">Remember Me</label>
-            </div>
-            <button type="submit" class="btn btn-primary mb-5" id="submit">Login</button>
-          </form>
-    </div>
-    <div class="container-fluid d-flex justify-content-center mt-5" id="register">
-        <hr>
-        <h5 class="h5" style="color: gray;">
-            New to Avenger?
-        </h5>
-        <hr>
-    </div>
-    <div class="container-fluid d-flex justify-content-center">
-        <button type="button" class="btn btn-warning"> <a href="registration.html" class="link link-primary">Create New Account</a></button>
-    </div>
+            <form action="" class="input_group" id="login">
+                <div class="mb-3 mt-5">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control input_field" id="email" placeholder="Enter email" required >
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control input_field" id="password" placeholder="Enter password" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="checkBox">
+                    <label class="form-check-label" for="checkBox" id="checkBoxLabel">Remember Me</label>
+                </div>
+                <button type="submit" class="btn btn-primary log" id="submit">Login</button>
+            </form>
 
-    <footer></footer>
+            <form action="" class="input_group" id="register">
+                <div class="mb-1">
+                    <label for="name" class="form-label">Fullname</label>
+                    <input type="text" class="form-control input_field" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-1">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control input_field" id="email" placeholder="Enter email" required>
+                </div>
+                <div class="mb-1">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control input_field" id="password" placeholder="Enter password" required>
+                </div>
+                <div class="mb-1">
+                    <label for="re-password" class="form-label">Retype password</label>
+                    <input type="password" class="form-control input_field" id="re-password" placeholder="Retype password" required>
+                </div>
+                <div class="mb-1 form-check">
+                    <input type="checkbox" class="form-check-input" id="checkBox">
+                    <label class="form-check-label" for="checkBox" id="checkBoxLabel">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary log" id="submit">Register</button>
+            </form>
+        </div>
+        <div class="container-fluid d-flex justify-content-center" id="register_h5">
+            <hr>
+            <h5 class="h5" style="color: gray;">
+                New to Avenger?
+            </h5>
+            <hr>
+        </div>
+        <div class="container-fluid d-flex justify-content-center" id="re">
+            <button type="button" class="btn btn-warning"> <a onclick="register()" class="link link-primary">Create New Account</a></button>
+        </div>
+    </main>
 
+    <script>
+        var x = document.getElementById('login')
+        var y = document.getElementById('register')
+        var z = document.getElementById('btn_tg')
+
+        function register() {
+            x.style.left = "-100%";
+            y.style.left = "10%"
+            z.style.left = "110px"
+        }
+        function login() {
+            x.style.left = "10%";
+            y.style.left = "110%"
+            z.style.left = "0px"
+        }
+    </script>
     <script>
         $(document).ready(function() {
             $('header').load('../header/home_header.html')
-            $('footer').load('../footer/footer.html')
         })
     </script>
 </body>

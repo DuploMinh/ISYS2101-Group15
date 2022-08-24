@@ -761,6 +761,7 @@ body{
     opacity: 1;
 }
 
+
 /* *************RESPONSIVE************** */
 @media screen and (max-width:1245px) {
     .carousel__content h1, .menu__description h1, .recommendation h1, .category__title h1{

@@ -157,11 +157,11 @@
 
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <div id="item_description">
 
-            </div> -->
+            </div>
         </div>
 
         <!-- FEEDBACK -->
@@ -213,7 +213,9 @@
         <!-- BACK TO TOP -->
         <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
         <!-- SHOPPING CART LOGO -->
-        <a href="../cart/cart.html" class="cart_logo cd-top1 text-replace js-cd-top1"><i class="fa fa-shopping-cart"></i></a>
+        <a href="../cart/cart.html" class="cart_logo cd-top1 text-replace js-cd-top1">
+            <i class="fa fa-shopping-cart"><div class="position-absolute start-100 translate-middle bg-danger badge border border-light rounded-circle">0</div></i>
+        </a>
     </main>
     <footer></footer>
 
@@ -249,39 +251,40 @@
         $(function () {
             var menu = [];
             $(".category").click(function () {
-                $(".category").removeClass("active")
-                $("#item__category").empty()
-                $(this).addClass("active")
-                $.getJSON('menu.json', function (data) {
-                    $.each(data.dishes, function (i, v) {
-                        // console.log(v.categories)
-                        // console.log($(".category.active").attr("id"))
-                        if (v.categories === $(".category.active").attr("id")) {
-                            var item =
-                                '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
-                                '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-                                '<h2 class="cate__text">' + v.name + '</h2>' +
-                                '<p>Price: $' + v.price + '</p>' +
-                                '</div>'
-                            $("#item__category").append(item);
-                        }
-                    });
-                });
+                window.location.href = "../deliverypage/delivery.html"
+                // $(".category").removeClass("active")
+                // $("#item__category").empty()
+                // $(this).addClass("active")
+                // $.getJSON('menu.json', function (data) {
+                //     $.each(data.dishes, function (i, v) {
+                //         // console.log(v.categories)
+                //         // console.log($(".category.active").attr("id"))
+                //         if (v.categories === $(".category.active").attr("id")) {
+                //             var item =
+                //                 '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
+                //                 '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
+                //                 '<h2 class="cate__text">' + v.name + '</h2>' +
+                //                 '<p>Price: $' + v.price + '</p>' +
+                //                 '</div>'
+                //             $("#item__category").append(item);
+                //         }
+                //     });
+                // });
             })
 
-            $.getJSON('menu.json', function (data) {
-                $.each(data.dishes, function (i, v) {
-                    if (v.categories === "appetizer") {
-                        var item =
-                            '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
-                            '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-                            '<h2 class="cate__text">' + v.name + '</h2>' +
-                            '<p>Price: $' + v.price + '</p>' +
-                            '</div>'
-                        $("#item__category").append(item);
-                    }
-                });
-            });
+        //     $.getJSON('menu.json', function (data) {
+        //         $.each(data.dishes, function (i, v) {
+        //             if (v.categories === "appetizer") {
+        //                 var item =
+        //                     '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
+        //                     '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
+        //                     '<h2 class="cate__text">' + v.name + '</h2>' +
+        //                     '<p>Price: $' + v.price + '</p>' +
+        //                     '</div>'
+        //                 $("#item__category").append(item);
+        //             }
+        //         });
+        //     });
         });
 
         // Dish description part for cate
@@ -547,7 +550,9 @@
                     });
                 })
 
-                $("#item_description").on('click', "#overlay2", function (event) {
+
+            })
+            $("#item_description").on('click', "#overlay2", function (event) {
                     event.stopPropagation();
                     event.stopImmediatePropagation();
                     event.preventDefault();
@@ -561,10 +566,10 @@
                     event.stopImmediatePropagation();
                     event.preventDefault();
                     if (event.target.id == 'close_btn_2') {
+                        console.log(event.target.id)
                         $("#overlay2").css("display", "none")
                     } 
                 })
-            })
         })
     </script>
     <script src="js/menu.js"></script>
