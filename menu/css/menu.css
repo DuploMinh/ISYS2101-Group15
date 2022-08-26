@@ -265,7 +265,6 @@ body{
     height: 100%;
     z-index: 15;
     transition: all 0.5s ease;
-    display: none;
     place-items: center;
     display: grid;
 }
@@ -305,7 +304,11 @@ body{
 }
 
 .dish_des {
-    width: 40%;
+    width: 100%;
+}
+
+.dish_des img {
+    width: 100%;
 }
 
 .custom_dish {
@@ -760,6 +763,7 @@ body{
     visibility: visible;
     opacity: 1;
 }
+
 
 /* *************RESPONSIVE************** */
 @media screen and (max-width:1245px) {

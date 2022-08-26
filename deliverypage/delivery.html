@@ -40,50 +40,40 @@
 
         <!--Menu-->
 
-        <div class="row pt-md-5 pt-sm-3 mt-sm-2 mt-md-4">
+        <div class="row pt-md-1 mt-md-1">
             <!--Column 1-->
-            <div class="col-lg-1 col-md-1 col-sm-1 d-flex justify-content-center">
+            <!-- <div class="col-lg-1 col-md-1 col-sm-1 d-flex justify-content-center">
                 
-            </div>
+            </div> -->
 
 
             <!--Column 2-->
-            <div class="col=lg-6 col-md-6 col-sm-6 d-flex" id="menu">
+            <div class="col-md-8 d-flex" id="menu">
                 <div class="container-fluid">
                     <section>
-                        <div class="container-fluid d-flex justify-content-center pb-4 bg-primary">
-                            <h1 class="h1">Menu</h1>
+                        <div class="container-fluid d-flex justify-content-center pb-4 category__title">
+                            <h1 class="h1">Menu Categories</h1>
                         </div>
-                        <div class="row menu__categories mt-2">
-                            <div class="category active col-2 m-auto p-auto " id="appetizer">
-                                <img src="image/appe1.jpg" alt="appe_1">
-                                <div class="container d-flex justify-content-center m-auto p-auto">
-                                    <p>Appetizer</p>
-                                </div>
+                        <div class="menu__categories">
+                            <div class="category active" id="appetizer">
+                                <img src="img/appe1.jpg" alt="appe_1">
+                                <h3>Appetizer</h3>
                             </div>
-                            <div class="category col-2 m-auto p-auto " id="main-dish">
-                                <img src="image/main-dish1.jpg" alt="main_dish_1">
-                                <div class="container d-flex justify-content-center m-auto p-auto">
-                                    <p>Dishes</p>
-                                </div>
+                            <div class="category" id="main-dish">
+                                <img src="img/main-dish1.jpg" alt="main_dish_1">
+                                <h3>Main dishes</h3>
                             </div>
-                            <div class="category col-2 m-auto p-auto " id="salad">
-                                <img src="image/salad1.jpg" alt="appe_1">
-                                <div class="container d-flex justify-content-center m-auto p-auto">
-                                    <p>Salad</p>
-                                </div>
+                            <div class="category" id="salad">
+                                <img src="img/salad1.jpg" alt="appe_1">
+                                <h3>Salad</h3>
                             </div>
-                            <div class="category col-2 m-auto p-auto " id="dessert">
-                                <img src="image/des1.jpg" alt="appe_1">
-                                <div class="container d-flex justify-content-center m-auto p-auto">
-                                    <p>Dessert</p>
-                                </div>
+                            <div class="category" id="dessert">
+                                <img src="img/des1.jpg" alt="appe_1">
+                                <h3>Dessert</h3>
                             </div>
-                            <div class="category col-2 m-auto p-auto" id="drink">
-                                <img src="image/drink1.jpg" alt="appe_1">
-                                <div class="container d-flex justify-content-center m-auto p-auto">
-                                    <p>Drinks</p>
-                                </div>
+                            <div class="category" id="drink">
+                                <img src="img/drink1.jpg" alt="appe_1">
+                                <h3>Drinks</h3>
                             </div>
                         </div>
                     </section>
@@ -97,14 +87,14 @@
                 </div>
             </div>
 
-            <div class="col-lg-1 col-md-0 col-sm-0 d-flex justify-content-center">
+            <!-- <div class="col-lg-1 col-md-0 col-sm-0 d-flex justify-content-center">
                 
-            </div>
+            </div> -->
 
             <!--Column 3-->
-            <div class="col-lg-4 col-md-5 col-sm-5">
-                <div class="container-fluid">
-                    <div class="container-fluid d-flex justify-content-center pb-4 bg-primary">
+            <div class="col-md-4">
+                <div class="container-fluid preview_cart">
+                    <div class="container-fluid d-flex justify-content-center category__title">
                         <h1 class="h1">My Cart</h1>
                     </div>
                     <div class="container-fluid" id="my-cart">
@@ -155,7 +145,9 @@
         <!-- BACK TO TOP -->
         <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
         <!-- SHOPPING CART LOGO -->
-        <a href="#" class="cart_logo cd-top1 text-replace js-cd-top1"><i class="fa fa-shopping-cart"></i></a>
+        <a href="../cart/cart.html" class="cart_logo cd-top1 text-replace js-cd-top1" onclick="checkOut();">
+            <i class="fa fa-shopping-cart"><span id="badge2" class="position-absolute start-100 translate-middle bg-danger badge border border-light rounded-circle">0</span></i>
+        </a>
     </main>
     <footer></footer>
 
@@ -210,7 +202,7 @@
                                 '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
                                 '<h2 class="cate__text">' + v.name + '</h2>' +
                                 '<p>Price: $' + v.price + '</p>' +
-                                '<button type="button" class="btn btn-primary cate_btn" onclick="addItem(' + v.id +  ');">Order' + '</button>' +
+                                '<button type="button" class="btn btn_primary cate_btn" onclick="addItem(' + v.id +  ');">Order' + '</button>' +
                                 '</div>'
                             $("#item__category").append(item);
                         }
@@ -226,7 +218,7 @@
                             '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
                             '<h2 class="cate__text">' + v.name + '</h2>' +
                             '<p>Price: $' + v.price + '</p>' +
-                            '<button type="button" class="btn btn-primary cate_btn" onclick="addItem(' + v.id +  ');">Order' + '</button>' +
+                            '<button type="button" class="btn btn_primary cate_btn" onclick="addItem(' + v.id +  ');">Order' + '</button>' +
                                 '</div>'
                         $("#item__category").append(item);
                     }

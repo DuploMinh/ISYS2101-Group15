@@ -1,4 +1,6 @@
 var list = [];
+list = JSON.parse(sessionStorage.getItem("list"))
+console.log(list)
 var totalPrice = 0;
 
 function subtractCartItem(x) {
@@ -65,12 +67,12 @@ function removeCartItem(x) {
 //This function updates the badge number every time user clicks
 function cartUpdate() {
     document.getElementById("badge").innerHTML = list.length;
+    document.getElementById("badge2").innerHTML = list.length;
 }
-
 
 function checkOut() {
     sessionStorage.setItem('list', JSON.stringify(list));
-    window.location.href = "../../cart/cart.html";
+    window.location.href = "../cart/cart.html";
     // window.open("../../cart/cart.html", "_self");
 }
 
@@ -119,33 +121,34 @@ function adder(data, x) {
                 list.push(json);
                 document.getElementById("cart-list").innerHTML += 
                 '<li class="list-group-item cart-item d-flex mt-2 mb-2" id="c-item' + key.id + '">'+
-                '<div class="d-block">'+
-                    '<div class="cart-item-name justify-content-center text-center p-2 mb-2">'+
-                        '<h4 class="h4">' + key.name + '</h4>' +
-                    '</div>'+
-                    '<div class="d-flex w-100 gap-2">'+
-                        '<div class="cart-item-image w-50">'+
-                            '<img class="img-fluid" alt="item_image" src="./' + key.image + '">'+
-                        '</div>'+ 
-                        '<div class="w-50 d-block m-auto gap-4 justify-content-center cart-item-button" id="cart-item-button">'+
-                            '<div class="d-flex gap-4 h-50 justify-content-center">'+
-                                '<div class="subtract-item">'+
-                                    '<button type="button" class="btn btn-dark btn-sm item-button overflow-hidden" id="subtract' + key.id + '" onclick="subtractCartItem(' + key.id+ ')">'+
-                                        '<i class="bi bi-dash-lg overflow-auto">'+'</i>'+
-                                    '</button>'+
+                    '<div class="d-block">'+
+                        '<div class="cart-item-name justify-content-center text-center p-2 mb-2">'+
+                            '<h4 class="h4">' + key.name + '</h4>' +
+                        '</div>'+
+                        '<div class="d-flex w-100 gap-2">'+
+                            '<div class="cart-item-image w-50">'+
+                                '<img class="img-fluid" alt="item_image" src="./' + key.image + '">'+
+                            '</div>'+ 
+                            '<div class="w-50 d-block m-auto gap-4 justify-content-center cart-item-button" id="cart-item-button">'+
+                                '<div class="d-flex gap-4 h-50 justify-content-center">'+
+                                    '<div class="subtract-item">'+
+                                        '<button type="button" class="btn btn-dark btn-sm item-button overflow-hidden" id="subtract' + key.id + '" onclick="subtractCartItem(' + key.id+ ')">'+
+                                            '<i class="bi bi-dash-lg overflow-auto">'+'</i>'+
+                                        '</button>'+
+                                    '</div>'+
+        
+                                    '<div class="cart-item-amount">'+
+                                        '<h2 class="h2" id="amount' + key.id + '">'+ 1 + '</h2>'+
+                                    '</div>'+
+        
+                                    '<div class="add-item">'+
+                                        '<button type="button" class="btn btn-dark btn-sm item-button" id="add' + key.id + '" onclick="addCartItem(' + key.id + ')">'+ 
+                                            '<i class="bi bi-plus-lg"></i>'+
+                                        '</button>'+
+                                    '</div>'+
                                 '</div>'+
-      
-                                '<div class="cart-item-amount">'+
-                                    '<h2 class="h2" id="amount' + key.id + '">'+ 1 + '</h2>'+
-                                '</div>'+
-      
-                                '<div class="add-item">'+
-                                    '<button type="button" class="btn btn-dark btn-sm item-button" id="add' + key.id + '" onclick="addCartItem(' + key.id + ')">'+ 
-                                        '<i class="bi bi-plus-lg"></i>'+
-                                    '</button>'+
-                                '</div>'+
-                            '</div>'+
-                                '<div class="d-flex h-50 justify-content-center mt-3 p-auto">'+
+
+                                '<div class="d-flex h-50 justify-content-center mt-3">'+
                                     '<h4 class="h4">'+ 'Price: ' + '</h4>'+
                                     '<h4 class="h4" id="price' + key.id + '"> ' + key.price + '</h4>'+
                                     '<h4 class="h4"> $ </h4>' +
@@ -163,27 +166,31 @@ function adder(data, x) {
         document.getElementById("totalPrice").remove();
         document.getElementById("cart-list").innerHTML += 
         '<li class="list-group-item cart-item d-flex mt-2 mb-2 bg-warning" id="totalPrice">'+
-            '</div>'+
-            '<div class="d-flex h-50 justify-content-between mt-3 p-auto">'+
-            '<h4 class="h4">'+ 'Total Price: ' + '</h4>'+
-            '<h4 class="h4" id="total-item-price">' + totalPrice + '</h4>'+
-            '<h4 class="h4"> $ </h4>' +
-            '<button class="btn btn-primary" onclick="checkOut();">Check Out</button>'
-            '</div>'+
-            '</div>'+ 
+            
+                '<div class="d-flex justify-content-between align-items-center">'+
+                    '<div class="d-flex">'+
+                        '<h4 class="h4">'+ 'Total Price: ' + '</h4>'+
+                        '<h4 class="h4" id="total-item-price">' + totalPrice + '</h4>'+
+                        '<h4 class="h4"> $ </h4>' +
+                    '</div>'+ 
+                    '<button class="btn btn_primary justify-content-end" onclick="checkOut();">Check Out</button>'+
+                '</div>'+
+            
         '</li>';
         // document.getElementById("total-item-price").innerHTML = totalPrice;
     }
     else {
         document.getElementById("cart-list").innerHTML += 
         '<li class="list-group-item cart-item d-flex mt-2 mb-2 bg-warning" id="totalPrice">'+
-            '</div>'+
-            '<div class="d-flex h-50 justify-content-between mt-3 p-auto">'+
-            '<h4 class="h4">'+ 'Total Price: ' + '</h4>'+
-            '<h4 class="h4" id="total-item-price">' + totalPrice + '</h4>'+
-            '<h4 class="h4"> $ </h4>' +
-            '<button class="btn btn-primary" onclick="checkOut();">Check Out</button>' +
-            '</div>'+
+            
+            '<div class="d-flex justify-content-between align-items-center p-3">'+
+                '<div class="d-flex">'+
+                    '<h4 class="h4">'+ 'Total Price: ' + '</h4>'+
+                    '<h4 class="h4" id="total-item-price">' + totalPrice + '</h4>'+
+                    '<h4 class="h4"> $ </h4>' +
+                '</div>'+
+            '<button class="btn btn_primary" onclick="checkOut();">Check Out</button>' +
+            
             '</div>'+ 
         '</li>';
     }
