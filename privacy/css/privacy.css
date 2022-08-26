@@ -44,19 +44,3 @@ body{
     margin: 5%;
 }
 
-.list-item img{
-    width: 100%;
-    opacity: 0.7;
-    transition: all .5s;
-}
-.list-item img:hover{
-    opacity: 1;
-}
-.item__overlay{
-    position: absolute;
-    top: 0;
-}
-.item__overlay p{
-    transform: translateY(50px);
-    color: white;
-}
