@@ -45,6 +45,7 @@ body{
 }
 
 .list-item img{
+    width: 100%;
     opacity: 0.7;
     transition: all .5s;
 }
