@@ -52,8 +52,22 @@
         background-position:center;
     }
 }
-
-/* Seasonal Dishes */
+/* WELCOME DASHBOARD */
+.dashboard__text p{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 15% 10% 5%;
+    line-height: 2rem;
+}
+.dashboard__text button{
+    margin-left: 30%;
+    padding: 3%;
+}
+.dashboard__text button a{
+    text-decoration: none;
+    color: black;
+}
+/* SEASONAL DISHES */
 .row {
     position: relative;
 }
