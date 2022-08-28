@@ -52,3 +52,43 @@
         background-position:center;
     }
 }
+/* WELCOME DASHBOARD */
+.dashboard__text p{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 15% 10% 5%;
+    line-height: 2rem;
+}
+.dashboard__text button{
+    margin-left: 30%;
+    padding: 3%;
+}
+.dashboard__text button a{
+    text-decoration: none;
+    color: black;
+}
+/* SEASONAL DISHES */
+.row {
+    position: relative;
+}
+.list-item img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    transition: all .5s;
+}
+.list-item img:hover{
+    opacity: 1;
+}
+.item__overlay{
+    position: absolute;
+    top: 0;
+}
+.item__overlay p{
+    transform: translateY(100px);
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+    margin: 20px;
+}
