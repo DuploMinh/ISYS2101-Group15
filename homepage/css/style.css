@@ -1,3 +1,4 @@
+
 #chatBox {
     position: fixed;
     margin-top: 30%;
@@ -91,4 +92,90 @@
     text-align: center;
     font-size: 1rem;
     margin: 20px;
+}
+/* HISTORY */
+.history{
+    margin-bottom: 10vw;
+}
+.feedback__content .item {
+    color: white;
+    padding: 1rem;
+}
+.feedback__top p{
+    color: white;
+}
+.feedback__top {
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.47);
+    position: relative;
+}
+
+.feedback__top::after {
+    content: '';
+    border-top: 9px solid rgba(0, 0, 0, 0.47);
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+
+    position: absolute;
+    top: 100%;
+    left: 26%;
+}
+
+.feedback__content .feedback__bottom img {
+    width: 20vw;
+    margin: 0;
+    display: inline-block;
+}
+
+.feedback__bottom {
+    display: flex;
+    justify-content: center;
+
+    width: 55%;
+    margin: 2rem auto 0;
+}
+
+.feedback__name p {
+    margin: 0;
+    color: white;
+}
+
+.feedback__name {
+    margin-left: 5px;
+}
+
+.feedback__name p:first-child {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.feedback__content .owl-theme .owl-dots .owl-dot span {
+    background-color: #ff4f81;
+    opacity: 0.5;
+}
+
+.feedback__content .owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    opacity: 1;
+}
+
+.feedback__content .owl-theme .owl-dots .owl-dot:focus {
+    outline: none;
+}
+/* SUB MENU */
+.subMenu{
+    margin: 3% 0;
+}
+.subMenu ul li{
+    text-align: center;
+    list-style: none;
+}
+.subMenu ul li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: black;
 }
