@@ -42,3 +42,25 @@ html body {
 .checkout{
     margin: 0 15%;
 }
+
+.btn_ {
+    display: inline-block;
+    padding: var(--btn_padding);
+    font-weight: 500;
+    border-radius: var(--border_radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+}
+
+.btn_primary {
+    background: var(--color_primary);
+    color: white;
+    white-space: nowrap;
+}
+
+.btn_primary:hover {
+    color: var(--color_primary);
+    background-color: var(--color_secondary);
+    white-space: nowrap;
+}

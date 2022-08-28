@@ -150,11 +150,14 @@ body, main{
 }
 
 .preview_cart {
-    position: sticky;
-    top: 5.4rem;
+    /* position: sticky; */
+    /* top: 5.4rem; */
     right: 0;
     width: 100%;
     height: max-content;
+    background-color: white;
+    border-radius: var(--card_border_radius);
+    margin-bottom: 2rem;
 }
 
 /* BACK TO TOP */
@@ -211,3 +214,6 @@ body, main{
     opacity: 1;
 }
 
+#badge2 {
+    padding: 3px;
+}
