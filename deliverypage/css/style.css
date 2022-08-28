@@ -37,10 +37,12 @@
 }
 
 .cart-item {
-    
+    border-radius: var(--card_border_radius);
+    background-color: rgba(245, 222, 179, 0.503);
 }
 
 .cart-item-image {
+    border-radius: var(--card_border_radius);
 }
 
 .cart-item-amount {

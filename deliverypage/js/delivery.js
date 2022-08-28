@@ -1,6 +1,6 @@
 var list = [];
-list = JSON.parse(sessionStorage.getItem("list"))
-console.log(list)
+// list = JSON.parse(sessionStorage.getItem("list"))
+// console.log(list)
 var totalPrice = 0;
 
 function subtractCartItem(x) {
@@ -66,8 +66,15 @@ function removeCartItem(x) {
 
 //This function updates the badge number every time user clicks
 function cartUpdate() {
-    document.getElementById("badge").innerHTML = list.length;
-    document.getElementById("badge2").innerHTML = list.length;
+    if(list.length !== 0) {
+        document.getElementById("badge").innerHTML = list.length;
+        document.getElementById("badge2").innerHTML = list.length;
+        document.getElementById("badge").style.display = "grid";
+        document.getElementById("badge2").style.display = "grid";
+    } else {
+        document.getElementById("badge").style.display = "none";
+        document.getElementById("badge2").style.display = "none";
+    }
 }
 
 function checkOut() {
@@ -91,19 +98,19 @@ function addItem(x) {
 function adder(data, x) {
     var exist = false;
     if (list.length != 0) {
-            list.forEach(element => {
-                if (element.id == x) {
-                    exist = true;
-                    let amount_id = "amount" + element.id;
-                    let price_id = "price" + element.id;
-                    let amount = element.amount + 1;
-                    let price = element.price * amount;
-                    document.getElementById(amount_id).innerHTML = amount;
-                    document.getElementById(price_id).innerHTML  = price;
-                    element.amount += 1;
-                    totalPrice += element.price;
-                }
-            });
+        list.forEach(element => {
+            if (element.id == x) {
+                exist = true;
+                let amount_id = "amount" + element.id;
+                let price_id = "price" + element.id;
+                let amount = element.amount + 1;
+                let price = element.price * amount;
+                document.getElementById(amount_id).innerHTML = amount;
+                document.getElementById(price_id).innerHTML  = price;
+                element.amount += 1;
+                totalPrice += element.price;
+            }
+        });
     }
 
     for (key of data) {
@@ -167,7 +174,7 @@ function adder(data, x) {
         document.getElementById("cart-list").innerHTML += 
         '<li class="list-group-item cart-item d-flex mt-2 mb-2 bg-warning" id="totalPrice">'+
             
-                '<div class="d-flex justify-content-between align-items-center">'+
+                '<div class="d-flex justify-content-between align-items-center w-100">'+
                     '<div class="d-flex">'+
                         '<h4 class="h4">'+ 'Total Price: ' + '</h4>'+
                         '<h4 class="h4" id="total-item-price">' + totalPrice + '</h4>'+
@@ -183,7 +190,7 @@ function adder(data, x) {
         document.getElementById("cart-list").innerHTML += 
         '<li class="list-group-item cart-item d-flex mt-2 mb-2 bg-warning" id="totalPrice">'+
             
-            '<div class="d-flex justify-content-between align-items-center p-3">'+
+            '<div class="d-flex justify-content-between align-items-center w-100">'+
                 '<div class="d-flex">'+
                     '<h4 class="h4">'+ 'Total Price: ' + '</h4>'+
                     '<h4 class="h4" id="total-item-price">' + totalPrice + '</h4>'+
