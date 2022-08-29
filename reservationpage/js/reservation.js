@@ -415,5 +415,9 @@ var express = [
         "reg" : 'location',
         "res" : "Please refer to our reservation page to view our available branches (oº‿ º )☆ﾟ.*･｡ﾟ"
     },
+    {
+        "reg" : 'new customer',
+        "res" : "Please refer to our Home Page to view our available information and guidelines (oº‿ º )☆ﾟ.*･｡ﾟ"
+    },
     
 ]

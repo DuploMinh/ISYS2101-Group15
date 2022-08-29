@@ -1,3 +1,5 @@
+var list = [];
+
 //UPLOAD IMAGE FORM
 const post_btn = document.getElementById("post_address_btn");
 const overlay = document.getElementById("overlay");
@@ -80,4 +82,69 @@ function goToVoucher() {
     window.location = "../voucher/voucher.html";
     window.location.href = "../voucher/voucher.html";
     window.location.assign("../voucher/voucher.html");
+}
+
+
+function addItem(x) {
+
+    fetch("./js/menu.json")
+        .then(response => response.json())
+        .then(data => {
+            adder(data,x);
+        })
+        .catch((error) => {
+          console.error(error);
+        })
+  }
+
+
+  function adder(data, x) {
+    var exist = false;
+    var target = document.getElementById("cart-quantity");
+    target.innerHTML = Number(target.innerHTML) + 1;
+    document.getElementById("badge").innerHTML = Number(document.getElementById("badge").innerHTML) + 1;
+    if (list.length != 0) {
+        list.forEach(element => {
+            if (element.id == x) {
+                exist = true;
+                let amount_id = "amount" + element.id;
+                let price_id = "price" + element.id;
+                let amount = element.amount + 1;
+                let price = element.price * amount;
+                element.amount += 1;
+            }
+        });
+    }
+
+    for (key of data) {
+        if(key.id == x) {
+            if (!exist) {
+                let id = key.id;
+                let amount = Number(1);
+                let price = Number(key.price);
+                let json = {
+                    "id":id,
+                    "amount": amount, 
+                    "price": price
+                }
+                list.push(json);
+                break;
+            }
+        }
+    }
+    sessionStorage.setItem('list', JSON.stringify(list));
+    cartUpdate();
+}  
+
+
+function cartUpdate() {
+    if(list.length !== 0) {
+        document.getElementById("badge").innerHTML = list.length;
+        document.getElementById("badge2").innerHTML = list.length;
+        document.getElementById("badge").style.display = "grid";
+        document.getElementById("badge2").style.display = "grid";
+    } else {
+        document.getElementById("badge").style.display = "none";
+        document.getElementById("badge2").style.display = "none";
+    }
 }

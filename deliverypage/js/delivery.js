@@ -2,6 +2,17 @@ var list = [];
 // list = JSON.parse(sessionStorage.getItem("list"))
 // console.log(list)
 var totalPrice = 0;
+var jsonList = JSON.parse(sessionStorage.getItem('list'));
+
+//Check if customer ordered from the menu
+function start() {
+    if (jsonList.length != 0 && list.length == 0) {
+        list = jsonList;
+    }
+}
+
+start();
+
 
 function subtractCartItem(x) {
     var target = document.getElementById("amount" + x);
