@@ -62,7 +62,7 @@
 
             <div class="col-md-1 col-lg-1 col-sm-1"></div>
             <!--Internal Map-->
-            <div class="col-md-4 col-lg-4 col-sm-4 border border-dark">
+            <div class="col-md-4 col-lg-4 col-sm-4 mb-3 border border-3 border-dark">
                 <div class="container-fluid d-flex justify-content-center">
                     <h1 class="h1">Restaurant Map</h1>
                 </div>
@@ -70,55 +70,55 @@
                     <div class="col-md-4 col-lg-4 col-sm-4" id="restaurant">
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(1);">
                             <h6 class="h6">Table 1</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(2);">
                             <h6 class="h6">Table 2</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(3);">
                             <h6 class="h6">Table 3</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(4);">
                             <h6 class="h6">Table 4</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                     </div>
                     <div class="col-md-4 col-lg-4 col-sm-4" id="restaurant">
                         <button class="btn mb-3 table-button" type="button" onclick="showForm(5);">
                             <h6 class="h6">Table 5</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                         <button class="btn mt-5 mb-4 table-button" type="button" onclick="showForm(6);">
                             <h6 class="h6">Table 6</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(7);">
                             <h6 class="h6">Table 7</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(8);">
                             <h6 class="h6">Table 8</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                     </div>
                     <div class="col-md-4 col-lg-4 col-sm-4" id="restaurant">
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(9);">
                             <h6 class="h6">Table 9</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(10);">
                             <h6 class="h6">Table 10</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(11);">
                             <h6 class="h6">Table 11</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(12);">
                             <h6 class="h6">Table 12</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
                         </button>
                     </div>
                 </div>
@@ -128,26 +128,26 @@
             <!--Personal Information, Date, Time, Seat Size, Branch-->
             <div class="col-md-3 col-lg-3 col-sm-3" id="form-column">
                 <div class="container-fluid d-block justify-content-center">
-                    <div class="col-md-12 mb-3 d-flex justify-content-center border border-5 border-info rounded" id="form">
-                        <form action="#" class="form-check fw-bold">
+                    <div class="col-md-12 mb-3 d-flex justify-content-center align-content-center border border-5 border-info rounded p-auto" id="form">
+                        <form action="#" class="form-check fw-bold justify-content-center align-content-center">
                             <h3 class="h3 text-primary" id="table-reservation">Reservation</h3>
                         
-                            <label for="name"><h3 class="h3">Name</h3></label>
-                            <input class="form-control mb-3" type="text" placeholder="Enter Name" name="name" id="name" required>
+                            <label for="name"><h3 class="h3">Name<i class="bi bi-asterisk required"></i></h3></label>
+                            <input class="form-control mb-3" type="text" placeholder="Enter Name" name="name" id="name" required pattern="[A-Z a-z 0-9]+">
                         
                             <label for="email"><h3 class="h3">Email</h3></label>
-                            <input class="form-control mb-3" type="email" placeholder="Enter Email" name="email" id="email" required>
+                            <input class="form-control mb-3" type="email" placeholder="Enter Email" name="email" id="email">
     
-                            <label for="address"><h3 class="h3">Address</h3></label>
-                            <input class="form-control mb-3" type="text" placeholder="Enter Address" name="address" id="address" required>
+                            <label for="address"><h3 class="h3">Address<i class="bi bi-asterisk required"></i></h3></label>
+                            <input class="form-control mb-3" type="text" placeholder="Enter Address" name="address" id="address" required pattern="[0-9]+">
                         
-                            <label for="phone"><h3 class="h3">Phone Number</h3></label>
+                            <label for="phone"><h3 class="h3">Phone Number<i class="bi bi-asterisk required"></i></h3></label>
                             <input class="form-control mb-3" type="tel" placeholder="Enter Phone Number" name="phone" id="phone" required>
 
-                            <label for="date"><h3 class="h3">Date</h3></label>
+                            <label for="date"><h3 class="h3">Date<i class="bi bi-asterisk required"></i></h3></label>
                             <input class="form-control mb-3" type="date" placeholder="Enter Date" name="date" id="date" required>
 
-                            <label for="time"><h3 class="h3">Time</h3></label>
+                            <label for="time"><h3 class="h3">Time<i class="bi bi-asterisk required"></i></h3></label>
                             <select class="form-select form-select-lg mb-3 form-control" name="time" id="time" required>
                                 <option selected>Choose Time Slot</option>
                                 <option value="10:00am - 11:00am">10:00am - 11:00am</option>
@@ -161,7 +161,7 @@
                             </select>
 
 
-                            <label for="size"><h3 class="h3">Seat Size</h3></label>
+                            <label for="size"><h3 class="h3">Seat Size<i class="bi bi-asterisk required"></i></h3></label>
                             <select class="form-select form-select-lg mb-3 form-control" name="size" id="size" required>
                                 <option selected>Choose Table Size</option>
                                 <option value="2">2</option>
@@ -173,7 +173,7 @@
                                 <option value="More">More</option>
                             </select>
 
-                            <label for="size"><h3 class="h3">Branch Location</h3></label>
+                            <label for="size"><h3 class="h3">Branch Location<i class="bi bi-asterisk required"></i></h3></label>
                             <select class="form-select form-select-lg mb-3" name="size" id="size" required>
                                 <option selected>Choose Location</option>
                                 <option value="Ho Chi Minh">Ho Chi Minh City</option>
