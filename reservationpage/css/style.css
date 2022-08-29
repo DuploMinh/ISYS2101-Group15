@@ -153,10 +153,11 @@ html, body {
 
 .table-image {
   height: 100px;
+  background-color: lightgreen;
 }
 
 .table-button:hover {
-    background-color: violet;
+    background-color: rgb(255, 252, 68);
     border: 2px solid black;
 }
 
