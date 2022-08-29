@@ -15,19 +15,13 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="../header/header.css">
     <link rel="stylesheet" href="../footer/footer.css">
     <link rel="stylesheet" href="./css/menu.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="../chatbox/chatbox.js"></script>
 </head>
 
 <body>
@@ -516,12 +510,13 @@
                                         '</div>'+
 
                                         '<div class="description_btn">'+
-                                            '<input type="button" value="Add to cart >>>" name="post_address" class="btn btn_primary post_address" onclick="addItem(' + v.id +  ');">'+
+                                            '<input type="button" value="Add to cart >>>" name="post_address" class="btn btn_primary post_address" onclick="addItem(' + v.id +  ');" id="addCart">'+
                                         '</div>'+
 
                                     '</form>'+
                                 '</div>';
                             $("#item_description").append(item);
+                            $("#overlay2").css("display", "grid");
                         }
                     });
                 })
@@ -531,8 +526,8 @@
                     event.stopImmediatePropagation();
                     event.preventDefault();
                     if (event.target.id == 'overlay2') {
-                        // $(this).css("display", "none")
-                        $(this).remove()
+                        $(this).css("display", "none")
+                        $("#overlay2").remove()
                     } 
                 })
 
@@ -542,9 +537,17 @@
                     event.preventDefault();
                     if (event.target.id == 'close_btn_2') {
                         $("#overlay2").css("display", "none")
-                        // $("#overlay2").remove()
-                        // $("#overlay2").css("transform", "scale(0)")
-                        window.location.reload()
+                        $("#overlay2").remove()
+                    } 
+                })
+
+                $("#item_description").on('click', "#addCart", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    if (event.target.id == 'addCart') {
+                        $("#overlay2").css("display", "none")
+                        $("#overlay2").remove()
                     } 
                 })
             })
@@ -624,12 +627,13 @@
 
                                         '<div class="description_btn">'+
                                             '<input type="button" value="Add to cart >>>" name="post_address"'+
-                                                'class="btn btn_primary post_address" onclick="addItem(' + v.id +  ');">'+
+                                                'class="btn btn_primary post_address" onclick="addItem(' + v.id +  ');" id="addCart">'+
                                         '</div>'+
 
                                     '</form>'+
                                 '</div>';
                             $("#item_description").append(item);
+                            $("#overlay2").css("display", "grid");
                         }
                     });
                 })
@@ -642,6 +646,7 @@
                     event.preventDefault();
                     if (event.target.id == 'overlay2') {
                         $(this).css("display", "none")
+                        $(this).remove()
                     } 
                 })
 
@@ -650,14 +655,24 @@
                     event.stopImmediatePropagation();
                     event.preventDefault();
                     if (event.target.id == 'close_btn_2') {
-                        console.log(event.target.id)
                         $("#overlay2").css("display", "none")
-                        window.location.reload()
+                        $("#overlay2").remove()
+                    } 
+                })
+
+                $("#item_description").on('click', "#addCart", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    if (event.target.id == 'addCart') {
+                        $("#overlay2").css("display", "none")
+                        $("#overlay2").remove()
                     } 
                 })
         })
     </script>
     <script src="js/menu.js"></script>
+    <script src="../chatbox/chatbox.js"></script>
 </body>
 
 </html>

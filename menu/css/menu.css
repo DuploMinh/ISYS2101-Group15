@@ -266,7 +266,7 @@ body{
     z-index: 15;
     transition: all 0.5s ease;
     place-items: center;
-    display: grid;
+    display: none;
 }
 
 #description_form {
@@ -894,17 +894,6 @@ body{
     transform: translateY(-15px);
   }
 }
-
-/* Button class Override */
-.btn {
-  width: 75%;
-}
-
-
-.btn {
-  opacity: 1;
-}
-
 
 /* *************RESPONSIVE************** */
 @media screen and (max-width:1245px) {
