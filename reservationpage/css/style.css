@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     color: #212529;
-    background-color: rgba(245, 222, 179, 0.503);
+    background-color: rgba(255, 255, 255, 0.503);
     letter-spacing: 1px;
 }
 
@@ -158,6 +158,10 @@ html, body {
 .table-button:hover {
     background-color: violet;
     border: 2px solid black;
+}
+
+.required {
+  color: red;
 }
 
 @media only screen and (max-width: 1200px) {
