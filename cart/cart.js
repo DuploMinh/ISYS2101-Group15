@@ -1,5 +1,18 @@
 //Retrieve From Order Page
-var list = JSON.parse(sessionStorage.getItem('list'));
+var list = []
+var jsonList = JSON.parse(sessionStorage.getItem('list'));
+
+
+start();
+function start() {
+    if (jsonList.length != 0 && list.length == 0) {
+        list = jsonList;
+        addItem()
+    }
+    else {
+        addItem();
+    }
+}
 
 function decrease(x) {
     let amount = document.getElementById("amount" + x);
@@ -119,5 +132,3 @@ function adder(data) {
     }
     document.getElementById("total-money").innerHTML = "Total Price: " + total + "$";
 }
-
-addItem();

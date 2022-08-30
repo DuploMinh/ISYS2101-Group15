@@ -8,6 +8,9 @@ var jsonList = JSON.parse(sessionStorage.getItem('list'));
 function start() {
     if (jsonList.length != 0 && list.length == 0) {
         list = jsonList;
+        for (key of list) {
+            addItem(key.id);
+        }
     }
 }
 
@@ -99,6 +102,7 @@ function addItem(x) {
   fetch("./js/menu.json")
       .then(response => response.json())
       .then(data => {
+
           adder(data,x);
       })
       .catch((error) => {
@@ -108,7 +112,7 @@ function addItem(x) {
 
 function adder(data, x) {
     var exist = false;
-    if (list.length != 0) {
+    if (list.length != 0 && jsonList.length == 0) {
         list.forEach(element => {
             if (element.id == x) {
                 exist = true;
