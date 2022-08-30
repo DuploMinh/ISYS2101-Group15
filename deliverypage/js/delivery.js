@@ -2,13 +2,14 @@ var list = [];
 // list = JSON.parse(sessionStorage.getItem("list"))
 // console.log(list)
 var totalPrice = 0;
+var transfer = false;
 var jsonList = JSON.parse(sessionStorage.getItem('list'));
 
 //Check if customer ordered from the menu
 function start() {
     if (jsonList.length != 0 && list.length == 0) {
-        list = jsonList;
-        for (key of list) {
+        transfer = true;
+        for (key of jsonList) {
             addItem(key.id);
         }
     }
@@ -138,6 +139,15 @@ function adder(data, x) {
             if (!exist) {
                 let id = key.id;
                 let amount = Number(1);
+                if (transfer == true) {
+                    for (item of jsonList) {
+                        if (item.id == key.id) {
+                            amount = item.amount;
+                            console.log("Amount: " + amount);
+                            console.log("Updated Amount");
+                        }
+                    }
+                }
                 let price = Number(key.price);
                 let json = {
                     "id":id,
@@ -165,7 +175,7 @@ function adder(data, x) {
                                     '</div>'+
         
                                     '<div class="cart-item-amount">'+
-                                        '<h2 class="h2" id="amount' + key.id + '">'+ 1 + '</h2>'+
+                                        '<h2 class="h2" id="amount' + key.id + '">'+ amount + '</h2>'+
                                     '</div>'+
         
                                     '<div class="add-item">'+
