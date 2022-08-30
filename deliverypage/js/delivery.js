@@ -19,6 +19,7 @@ start();
 
 function subtractCartItem(x) {
     var target = document.getElementById("amount" + x);
+    var total = document.getElementById("total-item-price");
     if ((target.innerHTML - 1) == 0) {
         removeCartItem(x);
         return;
@@ -35,13 +36,15 @@ function subtractCartItem(x) {
     var single_price = parseFloat(price.innerHTML) / parseInt(target.innerHTML);
     price.innerHTML = (parseInt(target.innerHTML) - 1) * single_price;
     target.innerHTML = parseInt(target.innerHTML) - 1;
+    total.innerHTML = Number(total.innerHTML) - Number(single_price);
+    totalPrice = Number(total.innerHTML);
     cartUpdate();
 }
 
 function addCartItem(x) {
     var target = document.getElementById("amount" + x);
     var price = document.getElementById("price" + x);
-
+    var total = document.getElementById("total-item-price");
     
     for (data of list) {
         if (data.id == x) {
@@ -52,6 +55,8 @@ function addCartItem(x) {
     var single_price = parseFloat(price.innerHTML) / parseInt(target.innerHTML);
     price.innerHTML = (parseInt(target.innerHTML) + 1) * single_price;
     target.innerHTML = parseInt(target.innerHTML) + 1;
+    total.innerHTML = Number(total.innerHTML) + Number(single_price);
+    totalPrice = Number(total.innerHTML);
     cartUpdate();
 }
 
@@ -112,7 +117,7 @@ function addItem(x) {
 
 function adder(data, x) {
     var exist = false;
-    if (list.length != 0 && jsonList.length == 0) {
+    if (list.length != 0) {
         list.forEach(element => {
             if (element.id == x) {
                 exist = true;
