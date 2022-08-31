@@ -34,8 +34,8 @@ html{
 }
 
 html body {
-    color: #212529;
-    background-color: rgba(245, 222, 179, 0.503);
+    background-color: rgba(33, 37, 41, 0.85);
+    color: white;
     letter-spacing: 1px;
 }
 

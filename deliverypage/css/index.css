@@ -124,6 +124,7 @@ body, main{
     height: 20%;
     display: block;
     text-align: center;
+    color: black;
 }
 
 .items__category {
@@ -158,6 +159,10 @@ body, main{
     background-color: white;
     border-radius: var(--card_border_radius);
     margin-bottom: 2rem;
+}
+
+.preview_cart .category__title{
+    color: black;
 }
 
 /* BACK TO TOP */

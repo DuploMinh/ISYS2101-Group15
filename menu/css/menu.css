@@ -115,7 +115,7 @@ body{
 
 .number__item p:first-of-type {
     font-size: 2rem;
-    color: #4e2a84;
+    color: white;
     font-weight: 600;
 }
 
@@ -432,7 +432,7 @@ body{
 }
 
 .purchase span{
-    color: var(--color_primary);
+    color: white;
     font-weight: 500;
 }
 .purchase button{
@@ -602,6 +602,7 @@ body{
     height: 20%;
     display: block;
     text-align: center;
+    color: black;
 }
 
 .items__category {
@@ -644,6 +645,7 @@ body{
     letter-spacing: 2px;
     padding: 0 15px;
     margin: 10px 0 0;
+    color: black;
 }
 .feedback__content .feedback__icon{
     padding: 10px 25px;
@@ -999,6 +1001,9 @@ body{
     .feedback__content .feedback__icon{
         padding:0;
     }
+    .feedback__content .feedback__icon i{
+        font-size: 5vw;
+    }
 }
 
 @media screen and (max-width:390px) {
@@ -1028,11 +1033,5 @@ body{
     }
     .voucher__content2 h3{
         font-size: 3vw;
-    }
-    .feedback__content{
-        width: 60vw;
-    }
-    .feedback__content .feedback__icon i{
-        font-size: 5vw;
     }
 }
