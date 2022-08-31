@@ -15,11 +15,11 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="../header/header.css">
     <link rel="stylesheet" href="../footer/footer.css">
     <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -212,10 +212,78 @@
 
         <!-- BACK TO TOP -->
         <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
+        
+        
+        
         <!-- SHOPPING CART LOGO -->
+
         <a href="../cart/cart.html" class="cart_logo cd-top1 text-replace js-cd-top1" onclick="checkout();">
-            <i class="fa fa-shopping-cart"><div class="position-absolute start-100 translate-middle bg-danger badge border border-light rounded-circle">0</div></i>
+            <i class="fa fa-shopping-cart"><div class="position-absolute start-100 translate-middle bg-danger badge border border-light rounded-circle" id="cart-quantity">0</div></i>
         </a>
+
+
+        
+            <!--Chat Box Icon-->
+            <div id="chatBox" class="">
+                <button class="btn btn-info text-light p-auto" type="button" id="box-btn" onclick="showChat();">
+                    <i class="bi bi-chat-text p-auto"></i> Chat
+                </button>
+            </div>
+
+            <!-- Chat Form -->
+            <div class="bg-dark border border-5 border-danger" id="chat-container">
+
+                <!-- Chat Header -->
+                <div class="d-flex justify-content-between mb-2 d-flex flex-row position-sticky" id="chat-header">
+                    <button class="btn btn-info mt-1 ms-1 fw-bold" type="button" id="chat-info" onclick="showInfo();">
+                        <i class="bi bi-info-circle"></i> Info
+                    </button>
+
+                    <button class="btn btn-primary mt-1 ms-1 fw-bold" type="button" id="chat-chat" onclick="startChat();">
+                        <i class="bi bi-wechat"></i> Chat
+                    </button>
+
+                    <button class="btn mt-1 bg-light fw-bold" id="chat-close" onclick="hideChat();">
+                        <i class="bi bi-x-square-fill"></i> Exit
+                    </button>
+                </div>
+
+                <!-- Chat Body -->
+
+                <div class="border border-2 border-dark bg-light" id="chat-body">
+                    <!-- Sender Example -->
+                    <!-- <div class="container-fluid d-flex gap-1 chat-body-sender">
+                        <div class="chat-body-sender-message mt-2 mb-2 bg-info">
+                            <span>What is the fastest way to subway of Ho CHi Minh city?</span>
+                        </div>
+                        <div class="profile-icon">
+                            <i class="bi bi-person-square"></i>
+                        </div>
+                    </div> -->
+
+                    <!-- Receiver Sample -->
+                    <!-- <div class="container-fluid d-flex gap-3 chat-body-receiver">
+                        <div class="server-icon">
+                            <i class="bi bi-server"></i>
+                        </div>
+                        <div class="chat-body-receiver-message mt-2 mb-2 bg-warning">
+                            <span>Go through Le Loi street 1</span>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Chat Message Sender -->
+                <div class="border border-3 border-primary bg-light rounded" id="chat-div">
+                    <form onsubmit="updateMessage(); return false;">
+                        <div class="d-flex">
+                            <input class="form-control w-75" type="text" name="message" id="message" placeholder="Enter Your Message...">
+                            <button class="form-control w-25 btn btn-primary border border-1 border-dark" type="submit">Send</button>
+                            <button class="form-control btn btn-primary d-none" type="reset" id="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
     </main>
     <footer></footer>
 
@@ -250,7 +318,7 @@
         })
     </script>
 
-    <script src="../deliverypage/js/delivery.js"></script>
+    <script src="../chatbox/chatbox.js"></script>
 
     <script>
 
@@ -258,6 +326,7 @@
         $(function () {
             var menu = [];
             $(".category").click(function () {
+                
                 window.location.href = "../deliverypage/delivery.html"
                 // $(".category").removeClass("active")
                 // $("#item__category").empty()
@@ -443,13 +512,13 @@
                                         '</div>'+
 
                                         '<div class="description_btn">'+
-                                            '<input type="button" onclick="" value="Add to cart >>>" name="post_address"'+
-                                                'class="btn btn_primary post_address" onclick="addItem(' + v.id +  ');">'+
+                                            '<input type="button" value="Add to cart >>>" name="post_address" class="btn btn_primary post_address" onclick="addItem(' + v.id +  ');" id="addCart">'+
                                         '</div>'+
 
                                     '</form>'+
                                 '</div>';
                             $("#item_description").append(item);
+                            $("#overlay2").css("display", "grid");
                         }
                     });
                 })
@@ -459,8 +528,8 @@
                     event.stopImmediatePropagation();
                     event.preventDefault();
                     if (event.target.id == 'overlay2') {
-                        // $(this).css("display", "none")
-                        $(this).remove()
+                        $(this).css("display", "none")
+                        $("#overlay2").remove()
                     } 
                 })
 
@@ -470,9 +539,17 @@
                     event.preventDefault();
                     if (event.target.id == 'close_btn_2') {
                         $("#overlay2").css("display", "none")
-                        // $("#overlay2").remove()
-                        // $("#overlay2").css("transform", "scale(0)")
-                        window.location.reload()
+                        $("#overlay2").remove()
+                    } 
+                })
+
+                $("#item_description").on('click', "#addCart", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    if (event.target.id == 'addCart') {
+                        $("#overlay2").css("display", "none")
+                        $("#overlay2").remove()
                     } 
                 })
             })
@@ -551,13 +628,14 @@
                                         '</div>'+
 
                                         '<div class="description_btn">'+
-                                            '<input type="button" onclick="" value="Add to cart >>>" name="post_address"'+
-                                                'class="btn btn_primary post_address" onclick="addItem(' + v.id +  ');">'+
+                                            '<input type="button" value="Add to cart >>>" name="post_address"'+
+                                                'class="btn btn_primary post_address" onclick="addItem(' + v.id +  ');" id="addCart">'+
                                         '</div>'+
 
                                     '</form>'+
                                 '</div>';
                             $("#item_description").append(item);
+                            $("#overlay2").css("display", "grid");
                         }
                     });
                 })
@@ -570,6 +648,7 @@
                     event.preventDefault();
                     if (event.target.id == 'overlay2') {
                         $(this).css("display", "none")
+                        $(this).remove()
                     } 
                 })
 
@@ -578,14 +657,24 @@
                     event.stopImmediatePropagation();
                     event.preventDefault();
                     if (event.target.id == 'close_btn_2') {
-                        console.log(event.target.id)
                         $("#overlay2").css("display", "none")
-                        window.location.reload()
+                        $("#overlay2").remove()
+                    } 
+                })
+
+                $("#item_description").on('click', "#addCart", function (event) {
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    if (event.target.id == 'addCart') {
+                        $("#overlay2").css("display", "none")
+                        $("#overlay2").remove()
                     } 
                 })
         })
     </script>
     <script src="js/menu.js"></script>
+    <script src="../chatbox/chatbox.js"></script>
 </body>
 
 </html>

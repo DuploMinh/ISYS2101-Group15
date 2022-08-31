@@ -1,48 +1,75 @@
 //Retrieve From Order Page
-var list = JSON.parse(sessionStorage.getItem('list'));
+var list = []
+var jsonList = JSON.parse(sessionStorage.getItem('list'));
+
+
+start();
+function start() {
+    if (jsonList.length != 0 && list.length == 0) {
+        list = jsonList;
+        addItem()
+    }
+    else {
+        addItem();
+    }
+}
 
 function decrease(x) {
-
-
-    var target = document.getElementById("amount" + x);
-    if ((target.innerHTML - 1) == 0) {
+    let amount = document.getElementById("amount" + x);
+    if ((amount.innerHTML - 1) == 0) {
         removeItem(x);
         return;
     }
-
-    for (data of list) {
-        if (data.id == x) {
-            data.amount = target.innerHTML - 1;
-        }
-    }
-
-
-    var price = document.getElementById("price" + x);
-    var single_price = parseFloat(price.innerHTML) / parseInt(target.innerHTML);
-    price.innerHTML = (parseInt(target.innerHTML) - 1) * single_price;
-    target.innerHTML = parseInt(target.innerHTML) - 1;
-
-}
-
-function increase(x) {
-    var target = document.getElementById("amount" + x);
-    var price = document.getElementById("price" + x);
-
-    
+    let target = document.getElementById("amount" + x);
+    let price = document.getElementById("price" + x);
     for (data of list) {
         if (data.id == x) {
             data.amount = parseInt(target.innerHTML) + 1;
         }
     }
+    let quantity = target.innerHTML;
+    let pos = price.innerHTML.indexOf(':');
+    let subString = price.innerHTML.substring(pos + 2, price.innerHTML.length - 1);
 
-    var single_price = parseFloat(price.innerHTML) / parseInt(target.innerHTML);
-    price.innerHTML = (parseInt(target.innerHTML) + 1) * single_price;
-    target.innerHTML = parseInt(target.innerHTML) + 1;
 
+    let single_price = parseFloat(subString) / parseInt(target.innerHTML);
+    // price.innerHTML = "Price: " + toString(parseInt(target.innerHTML + 1) * parseFloat(single_price));
+    // target.innerHTML = parseInt(target.innerHTML + 1);
+    
+    let total = document.getElementById("total-money").innerHTML;
+    total = total.substring(total.indexOf(':') +2, total.length - 1);
+    
+    target.innerHTML = parseInt(quantity) - 1;
+    price.innerHTML = "Price: " + (parseInt(target.innerHTML) * single_price) + "$";
+    document.getElementById("total-money").innerHTML = "Total Price: " + (parseFloat(total) - single_price) + "$";
+}
+
+function increase(x) {
+    let target = document.getElementById("amount" + x);
+    let price = document.getElementById("price" + x);
+    for (data of list) {
+        if (data.id == x) {
+            data.amount = parseInt(target.innerHTML) + 1;
+        }
+    }
+    let quantity = target.innerHTML;
+    let pos = price.innerHTML.indexOf(':');
+    let subString = price.innerHTML.substring(pos + 2, price.innerHTML.length - 1);
+
+
+    let single_price = parseFloat(subString) / parseInt(target.innerHTML);
+    // price.innerHTML = "Price: " + toString(parseInt(target.innerHTML + 1) * parseFloat(single_price));
+    // target.innerHTML = parseInt(target.innerHTML + 1);
+    
+    let total = document.getElementById("total-money").innerHTML;
+    total = total.substring(total.indexOf(':') +2, total.length - 1);
+    
+    target.innerHTML = parseInt(quantity) + 1;
+    price.innerHTML = "Price: " + (parseInt(target.innerHTML) * single_price) + "$";
+    document.getElementById("total-money").innerHTML = "Total Price: " + (parseFloat(total) + single_price) + "$";
 }
 
 function removeItem(x) {
-    console.log(list);
     var target = document.getElementById("item" + x);
     var temp = [];
     for (data of list) { 
@@ -54,8 +81,14 @@ function removeItem(x) {
         }
     }
     list = temp;
-    console.log(list);
     target.remove();
+
+    let total = 0;
+    var target = document.getElementById("cart");
+    for (item of list) {
+        total += item.price * item.amount;
+    }
+    document.getElementById("total-money").innerHTML = "Total Price: " + total + "$";
 }
 
 function addItem() {
@@ -72,6 +105,7 @@ function addItem() {
 
 function adder(data) {
     var target = document.getElementById("cart");
+    let total = 0;
     for (key of data) {
         for (item of list) {
             if (key.id == item.id) {
@@ -90,11 +124,11 @@ function adder(data) {
                     '</div>' + 
                 '</div>' +
                     '<i class="fa-regular fa-circle-xmark" id="close_btn" onclick="removeItem(' + key.id + ');"></i>' + 
-                '<p class="price__item position-absolute bottom-0 w-50 text-end end-0" id="price' + key.id + '">' + (item.price * item.amount) + '</p>' + 
+                '<p class="price__item position-absolute bottom-0 w-50 text-end end-0 fw-bold" id="price' + key.id + '">' + 'Price: ' + (item.price * item.amount) + '$</p>' + 
                 '</div>';
+                total += item.price * item.amount;
             }
         }
     }
+    document.getElementById("total-money").innerHTML = "Total Price: " + total + "$";
 }
-
-addItem();

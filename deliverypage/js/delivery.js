@@ -2,9 +2,25 @@ var list = [];
 // list = JSON.parse(sessionStorage.getItem("list"))
 // console.log(list)
 var totalPrice = 0;
+var transfer = false;
+var jsonList = JSON.parse(sessionStorage.getItem('list'));
+
+//Check if customer ordered from the menu
+function start() {
+    if (jsonList.length != 0 && list.length == 0) {
+        transfer = true;
+        for (key of jsonList) {
+            addItem(key.id);
+        }
+    }
+}
+
+start();
+
 
 function subtractCartItem(x) {
     var target = document.getElementById("amount" + x);
+    var total = document.getElementById("total-item-price");
     if ((target.innerHTML - 1) == 0) {
         removeCartItem(x);
         return;
@@ -21,13 +37,15 @@ function subtractCartItem(x) {
     var single_price = parseFloat(price.innerHTML) / parseInt(target.innerHTML);
     price.innerHTML = (parseInt(target.innerHTML) - 1) * single_price;
     target.innerHTML = parseInt(target.innerHTML) - 1;
+    total.innerHTML = Number(total.innerHTML) - Number(single_price);
+    totalPrice = Number(total.innerHTML);
     cartUpdate();
 }
 
 function addCartItem(x) {
     var target = document.getElementById("amount" + x);
     var price = document.getElementById("price" + x);
-
+    var total = document.getElementById("total-item-price");
     
     for (data of list) {
         if (data.id == x) {
@@ -38,6 +56,8 @@ function addCartItem(x) {
     var single_price = parseFloat(price.innerHTML) / parseInt(target.innerHTML);
     price.innerHTML = (parseInt(target.innerHTML) + 1) * single_price;
     target.innerHTML = parseInt(target.innerHTML) + 1;
+    total.innerHTML = Number(total.innerHTML) + Number(single_price);
+    totalPrice = Number(total.innerHTML);
     cartUpdate();
 }
 
@@ -88,6 +108,7 @@ function addItem(x) {
   fetch("./js/menu.json")
       .then(response => response.json())
       .then(data => {
+
           adder(data,x);
       })
       .catch((error) => {
@@ -118,6 +139,15 @@ function adder(data, x) {
             if (!exist) {
                 let id = key.id;
                 let amount = Number(1);
+                if (transfer == true) {
+                    for (item of jsonList) {
+                        if (item.id == key.id) {
+                            amount = item.amount;
+                            console.log("Amount: " + amount);
+                            console.log("Updated Amount");
+                        }
+                    }
+                }
                 let price = Number(key.price);
                 let json = {
                     "id":id,
@@ -145,7 +175,7 @@ function adder(data, x) {
                                     '</div>'+
         
                                     '<div class="cart-item-amount">'+
-                                        '<h2 class="h2" id="amount' + key.id + '">'+ 1 + '</h2>'+
+                                        '<h2 class="h2" id="amount' + key.id + '">'+ amount + '</h2>'+
                                     '</div>'+
         
                                     '<div class="add-item">'+

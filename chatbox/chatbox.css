@@ -1,10 +1,3 @@
-html, body {
-    margin: 0;
-    color: #212529;
-    background-color: rgba(255, 255, 255, 0.503);
-    letter-spacing: 1px;
-}
-
 
 /* ChatBox */
 #chatBox {
@@ -12,6 +5,8 @@ html, body {
     min-width: 130px;
     max-width: 150px;
     max-height: 100px;
+    right: 0px;
+    top: 100px;
     z-index: 9999;
     display: flex;
     flex-direction: row;
@@ -20,15 +15,16 @@ html, body {
 #chat-container {
   display: none;
   position: fixed;
-  margin-left: 2.5%;
+  margin-left: 66%;
   margin-top: 2.5%;
-  top: 180px;
-  width: 700px;
+  top: 130px;
+  width: 500px;
   min-height: 200px;
   max-height: 500px;
   border: 2px solid black;
   overflow-y: auto;
   overflow-x: hidden;
+  z-index: 9999;
 }
 
 #chat-header {
@@ -63,7 +59,6 @@ html, body {
 
 #chat-chat {
   width: 20%;
-  height: 80%;  
 }
 
 .chat-body-sender-message {
@@ -140,33 +135,3 @@ html, body {
 .btn {
   opacity: 1;
 }
-
-/* Reservation Form */
-
-#restaurant {
-  max-height: 1000px;
-}
-
-#form-column {
-    display: none;
-}
-
-.table-image {
-  height: 100px;
-  background-color: lightgreen;
-}
-
-.table-button:hover {
-    background-color: rgb(255, 252, 68);
-    border: 2px solid black;
-}
-
-.required {
-  color: red;
-}
-
-@media only screen and (max-width: 1200px) {
-
-}
-
-
