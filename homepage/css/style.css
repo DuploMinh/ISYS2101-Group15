@@ -1,4 +1,11 @@
-
+html, body{
+    background-color: rgba(33, 37, 41, 0.95);
+    color: white;
+}
+h1, a, .item__overlay p{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
 #chatBox {
     position: fixed;
     margin-top: 30%;
@@ -66,7 +73,7 @@
 }
 .dashboard__text button a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 /* SEASONAL DISHES */
 .row {
@@ -84,12 +91,12 @@
 .item__overlay{
     position: absolute;
     top: 0;
+    text-align: center;
 }
 .item__overlay p{
     transform: translateY(100px);
     color: black;
     font-weight: bold;
-    text-align: center;
     font-size: 1rem;
     margin: 20px;
 }
@@ -166,7 +173,7 @@
 }
 /* SUB MENU */
 .subMenu{
-    margin: 3% 0;
+    margin: 2% 0;
 }
 .subMenu ul li{
     text-align: center;
@@ -174,8 +181,9 @@
 }
 .subMenu ul li a{
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     letter-spacing: 1px;
-    color: black;
+    color: white;
+    padding: 4% 0;
 }
