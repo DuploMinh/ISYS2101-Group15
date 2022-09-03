@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../header/header.css">
-    <link rel="stylesheet" href="../footer/footer.css">
-    <link rel="stylesheet" href="css/vourcher.css">
+    <link rel="stylesheet" href="../static/css/home_header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/vourcher.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Voucher</title>
-    <link rel="shortcut icon" href="../image/logo.PNG" />
+    <link rel="shortcut icon" href="../static/image/logo.PNG" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -33,17 +33,17 @@
             <!--Voucher-->
             <div class="row p-5 d-flex justify-content-between">
                 <div class="voucher__item col-3 position-relative" onclick="alert('Congratulation! You have got the love voucher')">
-                    <img class="img-fluid rounded-3 h-100" src="../menu/img/voucher1.jpeg">
+                    <img class="img-fluid rounded-3 h-100" src="../static/image/voucher1.jpeg">
                     <div class="voucher__name position-absolute rounded-3 bottom-0 start-50 translate-middle bg-white top w-100 lh-lg text-center fw-bold">Couple Voucher</div>
                 </div>
 
                 <div class="voucher__item col-3 position-relative" onclick="alert('Congratulation! You have got the birthday voucher')">
-                    <img class="img-fluid rounded-3 h-100" src="../menu/img/voucher2.jpeg">
+                    <img class="img-fluid rounded-3 h-100" src="../static/image/voucher2.jpeg">
                     <div class="voucher__name position-absolute rounded-3 bottom-0 start-50 translate-middle bg-white top w-100 lh-lg text-center fw-bold">Birthday Voucher</div>
                 </div>
 
                 <div class="voucher__item col-3 position-relative" onclick="alert('Congratulation! You have got the discount voucher')">
-                    <img class="img-fluid rounded-3 h-100" src="../menu/img/voucher3.jpeg">
+                    <img class="img-fluid rounded-3 h-100" src="../static/image/voucher3.jpeg">
                     <div class="voucher__name position-absolute rounded-3 bottom-0 start-50 translate-middle bg-white top w-100 lh-lg text-center fw-bold">Discount Voucher</div>
                 </div>
             </div>
@@ -69,8 +69,8 @@
     <footer></footer>
     <script>
         $(document).ready(function() {
-            $('header').load('../header/home_header.html')
-            $('footer').load('../footer/footer.html')
+            $('header').load('./home_header.html')
+            $('footer').load('./footer.html')
         })
     </script>
 </body>

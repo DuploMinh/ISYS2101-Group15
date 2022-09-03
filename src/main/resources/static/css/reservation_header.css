@@ -6,15 +6,6 @@ body {
     margin-left: 5%;
 }
 
-.logo {
-    width: 150px;
-}
-
-.cart_logo {
-    width: 100px;
-    border-radius: 50%;
-}
-
 #search {
     margin: auto;
     width: 50%;
@@ -35,20 +26,6 @@ body {
     background-color: white;
     color: black;
     text-decoration: underline;
-}
-
-.badge {
-    width: 20px;
-    height: 20px;
-    top: 5px;
-    display: flex;
-    padding: 1px;
-    justify-content: center;
-}
-
-#profileLogo {
-    width: 40px;
-    margin-left: 1rem;
 }
 
 @media only screen and (max-width: 768px){
