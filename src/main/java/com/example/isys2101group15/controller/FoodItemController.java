@@ -4,6 +4,7 @@ import com.example.isys2101group15.entity.FoodItem;
 import com.example.isys2101group15.repository.FoodItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,11 @@ public class FoodItemController {
   @GetMapping
   Page<FoodItem> getAll(Pageable pageable){
     return repository.findAll(pageable);
+  }
+  @GetMapping("/all")
+  Page<FoodItem> getAllAtOnce(Pageable pageable) {
+    return repository.findAll(
+      PageRequest.of(0, Integer.MAX_VALUE));
   }
   @GetMapping("/category/{category}")
   Page<FoodItem> getByCategory(Pageable pageable, @PathVariable String category){
