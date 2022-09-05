@@ -1,4 +1,12 @@
 
+#my-cart{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#cart-list {
+    width: 80%;
+}
 
 #chatBox {
     position: fixed;
@@ -45,12 +53,12 @@
     border-radius: var(--card_border_radius);
 }
 
-.cart-item-amount {
+/* .cart-item-amount {
 
-}
+} */
 
 
-@media only screen and (min-width:576px) and (max-width: 1000px) {
+@media only screen and (min-width:576px) and (max-width: 1200px) {
     #chatBox {
         display: none;
     }
@@ -60,7 +68,19 @@
     .cart-item-button {
         gap: 1;
     }
-
+    .subtract-item button, .add-item button {
+        width: 90%;
+        font-size: 1vw;
+    }
+    #cart-list {
+        width: 100% !important;
+    }
+    .trade-info {
+        gap: 0 !important;
+    }
+    .btn_primary {
+        font-size: 1vw !important;
+    }
 }
 
 @media only screen and (max-width: 575px) {
@@ -70,6 +90,18 @@
     #menu {
         font-size: 13px;
     }
-
+    .subtract-item button, .add-item button {
+        width: 50%;
+        font-size: 2vw;
+    }
+    #cart-list {
+        width: 100% !important;
+    }
+    .trade-info {
+        gap: 0 !important;
+    }
+    .btn_primary {
+        font-size: 2vw !important;
+    }
 }
 

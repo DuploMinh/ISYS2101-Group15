@@ -164,10 +164,10 @@ function adder(data, x) {
                         '</div>'+
                         '<div class="d-flex w-100 gap-2">'+
                             '<div class="cart-item-image w-50">'+
-                                '<img class="img-fluid" alt="item_image" src="./' + key.image + '">'+
+                                '<img class="img-fluid" alt="item_image" src="' + key.image + '">'+
                             '</div>'+ 
                             '<div class="w-50 d-block m-auto gap-4 justify-content-center cart-item-button" id="cart-item-button">'+
-                                '<div class="d-flex gap-4 h-50 justify-content-center">'+
+                                '<div class="d-flex gap-4 h-50 justify-content-center trade-info">'+
                                     '<div class="subtract-item">'+
                                         '<button type="button" class="btn btn-dark btn-sm item-button overflow-hidden" id="subtract' + key.id + '" onclick="subtractCartItem(' + key.id+ ')">'+
                                             '<i class="bi bi-dash-lg overflow-auto">'+'</i>'+

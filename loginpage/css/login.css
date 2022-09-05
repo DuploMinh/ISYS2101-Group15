@@ -13,7 +13,7 @@
 }
 
 #form {
-    width: 30%;
+    width: 40%;
     margin: 2% auto;
     font-weight: bold;
     border-radius: 2px;
@@ -88,4 +88,18 @@ hr {
 
 #register {
     left: 110%;
+}
+
+@media screen and (max-width:1170px) {
+    #form {
+        width: 60%;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width:590px) {
+    #form {
+        width: 95%;
+        height: 500px;
+    }
 }
