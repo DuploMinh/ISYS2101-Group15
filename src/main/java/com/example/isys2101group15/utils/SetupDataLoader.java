@@ -9,14 +9,22 @@ import com.example.isys2101group15.repository.FoodItemRepository;
 import com.example.isys2101group15.repository.PrivilegesRepository;
 import com.example.isys2101group15.repository.RolesRepository;
 import com.example.isys2101group15.repository.UserEntityRepository;
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -24,6 +32,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
 @Component
 @RequiredArgsConstructor
@@ -31,6 +40,7 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
 
 
   private final PasswordEncoder passwordEncoder;
+  private static final Logger logger = LoggerFactory.getLogger(SetupDataLoader.class.getName());
   boolean alreadySetup = false;
 
   private final UserEntityRepository userRepository;
@@ -63,23 +73,33 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
     user.setRoles(Arrays.asList(adminRole));
     user.setEnabled(true);
     userRepository.save(user);
-    FoodItem f1 = new FoodItem();
-    f1.setName("test food");
-    f1.setCategory("dessert");
-    f1.setDescription("test food item");
-    f1.setPrice("123456");
-    FoodItem f2 = new FoodItem();
-    f2.setName("test food 2");
-    f2.setCategory("dessert");
-    f2.setDescription("test food item 2");
-    f2.setPrice("123456");
-    foodItemRepository.save(f1);
-    foodItemRepository.save(f2);
-//    try{
-//
-//    }catch (IOException e){
-//      System.out.println(e);;
-//    }
+    try{
+      File file = ResourceUtils.getFile("classpath:menu.csv");
+      try (FileReader reader = new FileReader(file))
+      {
+        CSVReader csvReader = new CSVReader(reader);
+        String[] nextRecord=csvReader.readNext();
+        while ((nextRecord = csvReader.readNext()) != null){
+          logger.info(Arrays.toString(nextRecord));
+          FoodItem f = new FoodItem();
+          f.setCategory(nextRecord[2]);
+          f.setName(nextRecord[0]);
+          f.setImgPath(nextRecord[1]);
+          f.setDescription(nextRecord[3]);
+          f.setPrice(nextRecord[4]);
+          f.setNew(Boolean.parseBoolean(nextRecord[5]));
+          f.setRecommended(Boolean.parseBoolean(nextRecord[6]));
+          f.setOpenSpot(Boolean.parseBoolean(nextRecord[7]));
+          foodItemRepository.save(f);
+        }
+      }catch (FileNotFoundException e){
+        logger.error(e.getMessage());
+      } catch (CsvValidationException e) {
+        throw new RuntimeException(e);
+      }
+    }catch (IOException e){
+      logger.error(e.getMessage());
+    }
     alreadySetup = true;
   }
 

@@ -1,5 +1,7 @@
 package com.example.isys2101group15.entity;
 
+import java.math.BigDecimal;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.Hibernate;
 
 @Entity
 @NoArgsConstructor
@@ -23,7 +26,11 @@ public class FoodItem {
   private Long id;
   @Getter
   @Setter
-  private String name, category,description,price,imgPath;
+  private String name, category,imgPath;
+  @Setter
+  @Getter
+  @Column(columnDefinition="TEXT")
+  private String description;
   @Getter
   @Setter
   private boolean isNew,recommended,openSpot;
@@ -31,6 +38,28 @@ public class FoodItem {
   @Getter
   @Setter
   private Restaurant restaurant;
+  private BigDecimal price;
+
+  public BigDecimal getPrice() {
+    return price;
+  }
+
+  public void setPrice(BigDecimal price) {
+    this.price = price;
+  }
+  public void setPrice(String price){
+    this.price = BigDecimal.valueOf(Double.parseDouble(price));
+  }
+  public void setPrice(Long price){
+    this.price = BigDecimal.valueOf(price);
+  }
+  public void setPrice(int price){
+    this.price = BigDecimal.valueOf(price);
+  }
+  public void setPrice(double price){
+    this.price = BigDecimal.valueOf(price);
+  }
+
 
   public Long getId() {
     return id;
@@ -40,4 +69,20 @@ public class FoodItem {
     this.id = id;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
+      return false;
+    }
+    FoodItem foodItem = (FoodItem) o;
+    return id != null && Objects.equals(id, foodItem.id);
+  }
+
+  @Override
+  public int hashCode() {
+    return getClass().hashCode();
+  }
 }

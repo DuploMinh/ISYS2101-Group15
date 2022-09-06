@@ -1,5 +1,6 @@
 package com.example.isys2101group15.entity;
 
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,11 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.hibernate.Hibernate;
 import org.springframework.data.geo.Point;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Entity
 @Table(name = "restaurant")
@@ -32,5 +32,20 @@ public class Restaurant {
   @Column(columnDefinition = "point")
   private Point coordinate;
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
+      return false;
+    }
+    Restaurant that = (Restaurant) o;
+    return id != null && Objects.equals(id, that.id);
+  }
 
+  @Override
+  public int hashCode() {
+    return getClass().hashCode();
+  }
 }
