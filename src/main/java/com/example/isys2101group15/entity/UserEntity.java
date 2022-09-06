@@ -3,6 +3,7 @@ package com.example.isys2101group15.entity;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,12 +12,14 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 @Entity
 public class UserEntity {
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
@@ -48,8 +51,7 @@ public class UserEntity {
   }
 
   public void setPassword(String password) {
-    PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    this.password = passwordEncoder.encode(password) ;
+    this.password = password ;
   }
 
   public String getEmail() {
@@ -78,7 +80,7 @@ public class UserEntity {
 
   @Setter
   @Getter
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
       name = "users_roles",
       joinColumns = @JoinColumn(

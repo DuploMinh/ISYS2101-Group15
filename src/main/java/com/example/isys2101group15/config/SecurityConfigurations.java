@@ -8,6 +8,7 @@ import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -31,7 +32,7 @@ public class SecurityConfigurations {
   private final RolesRepository rolesRepository;
   @Bean
   public PasswordEncoder passwordEncoder(){
-    return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    return new BCryptPasswordEncoder();
   }
   @Bean
   public UserDetailsService userDetailsService(){
@@ -40,7 +41,7 @@ public class SecurityConfigurations {
 
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http.csrf().disable()
+    http
         .authorizeRequests()
         .antMatchers("/api-docs","/swagger-ui/**", "/v3/api-docs/**","/v3/**").permitAll()
         .antMatchers("/css/**","/image/**","/js/**").permitAll()
@@ -57,11 +58,14 @@ public class SecurityConfigurations {
             .loginProcessingUrl("/doLogin")
             .usernameParameter("email")
             .passwordParameter("password")
-            .successForwardUrl("/")
+            .defaultSuccessUrl("/delivery")
+            .failureForwardUrl("/login")
+            .successForwardUrl("/delivery")
             .permitAll())
         .logout(logout->
             logout.logoutUrl("/logout")
-        .deleteCookies("JSESSIONID"));
+        .deleteCookies("JSESSIONID"))
+        .csrf().disable();
     http.userDetailsService(userDetailsService());
     http.authenticationProvider(authenticationProvider());
     return http.build();

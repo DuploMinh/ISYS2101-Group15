@@ -9,11 +9,14 @@ import com.example.isys2101group15.repository.FoodItemRepository;
 import com.example.isys2101group15.repository.PrivilegesRepository;
 import com.example.isys2101group15.repository.RolesRepository;
 import com.example.isys2101group15.repository.UserEntityRepository;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.common.util.impl.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -26,12 +29,15 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class SetupDataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
+
+  private final PasswordEncoder passwordEncoder;
   boolean alreadySetup = false;
 
   private final UserEntityRepository userRepository;
   private final PrivilegesRepository privilegeRepository;
   private final RolesRepository roleRepository;
   private final FoodItemRepository foodItemRepository;
+
 
   @Override
   @Transactional
@@ -52,7 +58,7 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
     UserEntity user = new UserEntity();
     user.setFirstName("Test");
     user.setLastName("Test");
-    user.setPassword("test");
+    user.setPassword(passwordEncoder.encode("test"));
     user.setUserName("test@test.com");
     user.setRoles(Arrays.asList(adminRole));
     user.setEnabled(true);
@@ -69,6 +75,11 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
     f2.setPrice("123456");
     foodItemRepository.save(f1);
     foodItemRepository.save(f2);
+//    try{
+//
+//    }catch (IOException e){
+//      System.out.println(e);;
+//    }
     alreadySetup = true;
   }
 
