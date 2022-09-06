@@ -3,6 +3,7 @@ package com.example.isys2101group15.entity;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,12 +16,17 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@NoArgsConstructor
 public class Role {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
   private Long id;
+
+  public Role(String name) {
+    this.name = name;
+  }
 
   public Long getId() {
     return id;
@@ -33,7 +39,7 @@ public class Role {
   private String name;
   @ManyToMany
   private Collection<UserEntity> users;
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.EAGER)
   @Setter
   @Getter
   @JoinTable(
