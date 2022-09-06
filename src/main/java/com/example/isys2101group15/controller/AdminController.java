@@ -1,14 +1,46 @@
 package com.example.isys2101group15.controller;
 
+import com.example.isys2101group15.entity.Role;
+import com.example.isys2101group15.entity.UserEntity;
+import com.example.isys2101group15.repository.RolesRepository;
+import com.example.isys2101group15.repository.UserEntityRepository;
+import java.util.Collections;
+import java.util.Objects;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/admin")
+@RequiredArgsConstructor
 public class AdminController {
-@GetMapping
+  private final UserEntityRepository userEntityRepository;
+  private final RolesRepository rolesRepository;
+  @GetMapping
   public String mainPage(){
   return "admin_user";
 }
+  @PostMapping("/new")
+  public HttpStatus newAdmin(
+      @RequestBody String r_email,
+      @RequestBody String r_password,
+      @RequestBody String re_password,
+      @RequestBody String name){
+    if (!Objects.equals(r_password, re_password)){
+      return HttpStatus.BAD_REQUEST;
+    }
+    UserEntity u = new UserEntity();
+    Role role = rolesRepository.findByName("ROLE_ADMIN");
+    u.setUserName(r_email);
+    u.setEmail(r_email);
+    u.setPassword(r_password);
+    u.setRoles(Collections.singletonList(role));
+    userEntityRepository.save(u);
+    return HttpStatus.ACCEPTED;
+  }
+
 }

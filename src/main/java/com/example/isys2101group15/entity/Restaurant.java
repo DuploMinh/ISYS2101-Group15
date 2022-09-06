@@ -29,7 +29,9 @@ public class Restaurant {
   private Long id;
   private String name;
   private String address;
-  @Column(columnDefinition = "point")
+  private String city;
+  private String district;
+  private String province;
   private Point coordinate;
 
   @Override

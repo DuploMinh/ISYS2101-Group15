@@ -2,9 +2,9 @@ version: '3.8'
 
 services:
 
-  posgres:
-    image: postgres
-    restart: always
+  postgres:
+    image: postgis/postgis:latest
+    restart: unless-stopped
     environment:
       POSTGRES_PASSWORD: example
       POSTGRES_DB: test
@@ -14,6 +14,7 @@ services:
       - pgdata:/var/lib/postgresql/data
   influxdb:
     image: influxdb:latest
+    restart: unless-stopped
     ports:
       - '8086:8086'
     volumes:
@@ -24,6 +25,7 @@ services:
       - INFLUXDB_ADMIN_PASSWORD=${INFLUXDB_PASSWORD}
   chronograf:
     image: chronograf:latest
+    restart: unless-stopped
     ports:
       - '127.0.0.1:8888:8888'
     volumes:
@@ -36,6 +38,7 @@ services:
       - INFLUXDB_PASSWORD=${INFLUXDB_PASSWORD}
   grafana:
     image: grafana/grafana:latest
+    restart: unless-stopped
     ports:
       - '3000:3000'
     volumes:

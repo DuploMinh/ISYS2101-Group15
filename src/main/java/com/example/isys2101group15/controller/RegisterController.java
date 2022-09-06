@@ -1,7 +1,12 @@
 package com.example.isys2101group15.controller;
 
+import com.example.isys2101group15.entity.Role;
 import com.example.isys2101group15.entity.UserEntity;
+import com.example.isys2101group15.repository.RolesRepository;
 import com.example.isys2101group15.repository.UserEntityRepository;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class RegisterController
 {
   private final UserEntityRepository userEntityRepository;
+  private final RolesRepository rolesRepository;
   @GetMapping()
   public String registerPage(){
     return "registration";
@@ -33,9 +39,11 @@ public class RegisterController
       return HttpStatus.BAD_REQUEST;
     }
     UserEntity u = new UserEntity();
+    Role role = rolesRepository.findByName("ROLE_USER");
     u.setUserName(r_email);
     u.setEmail(r_email);
     u.setPassword(r_password);
+    u.setRoles(Collections.singletonList(role));
     userEntityRepository.save(u);
     return HttpStatus.ACCEPTED;
   }

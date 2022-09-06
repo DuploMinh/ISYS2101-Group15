@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookingController {
 
   @PostMapping("/makeBooking")
-  public boolean makeBooking(@RequestBody String name){
+  public boolean makeBooking(@RequestBody String name, @RequestBody String email, @RequestBody int time,
+      @RequestBody(required = false)  long tableID, @RequestBody(required = false) long restaurantID){
     return true;
   }
 

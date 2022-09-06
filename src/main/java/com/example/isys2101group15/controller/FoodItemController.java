@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +33,9 @@ public class FoodItemController {
   Page<FoodItem> getByCategory(Pageable pageable, @PathVariable String category){
     return repository.findAllByCategory(category,pageable);
   }
-
+  @GetMapping("/search")
+  Page<FoodItem> searchByName(Pageable pageable, @RequestBody String query){
+    return repository.searchFoodItemByName(query, PageRequest.of(0, Integer.MAX_VALUE));
+  }
 
 }
