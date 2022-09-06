@@ -11,6 +11,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 @Entity
@@ -19,7 +21,6 @@ public class UserEntity {
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
   private Long id;
-  @Column(nullable = false,unique = true)
   private String userName;
   private String password;
   private String email;
@@ -27,6 +28,12 @@ public class UserEntity {
   @Getter
   private boolean isEnabled;
   private Boolean tokenExpired;
+
+
+
+  @Setter
+  @Getter
+  private String firstName, lastName;
 
   public String getUserName() {
     return userName;
@@ -41,7 +48,8 @@ public class UserEntity {
   }
 
   public void setPassword(String password) {
-    this.password = password;
+    PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    this.password = passwordEncoder.encode(password) ;
   }
 
   public String getEmail() {

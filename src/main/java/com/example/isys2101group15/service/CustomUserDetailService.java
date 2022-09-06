@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -21,9 +22,10 @@ import org.springframework.stereotype.Service;
 @Service("userDetailService")
 @RequiredArgsConstructor
 public class CustomUserDetailService implements UserDetailsService {
-
-  private UserEntityRepository userEntityRepository;
-  private RolesRepository rolesRepository;
+  @Autowired
+  private final UserEntityRepository userEntityRepository;
+  @Autowired
+  private final RolesRepository rolesRepository;
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     UserEntity user= userEntityRepository.findByUserName(username);
@@ -63,7 +65,8 @@ public class CustomUserDetailService implements UserDetailsService {
     return authorities;
   }
   private User buildAuthUser(UserEntity user, Collection<? extends GrantedAuthority> authorities){
-    return new User(user.getUserName(),user.getPassword(),authorities);
+    return new User(user.getUserName(),user.getPassword(),true,true,
+        true,true,authorities);
   }
 
 }
