@@ -33,7 +33,7 @@
                 <button type="button" class="toggle" onclick="login()">Log in</button>
                 <button type="button" class="toggle" onclick="register()">Register</button>
             </div>
-            <form th:action="@{/doLogin}" class="input_group" id="login" method="post">
+            <form th:action="@{/login}" class="input_group" id="login" method="post">
                 <div class="mb-3 mt-5">
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" class="form-control input_field" name="email" id="email" placeholder="Enter email" required >
@@ -46,7 +46,7 @@
                     <input type="checkbox" class="form-check-input" id="checkBox">
                     <label class="form-check-label" for="checkBox" id="checkBoxLabel">Remember Me</label>
                 </div>
-                <button type="submit" class="btn btn-primary log" name="submit" id="submit">Login</button>
+                <button type="submit" class="btn btn-primary log" name="submit" id="submit" value="log in">Login</button>
             </form>
 
             <form action="" class="input_group" id="register">

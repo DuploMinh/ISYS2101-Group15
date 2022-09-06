@@ -50,23 +50,19 @@ public class SecurityConfigurations {
         .antMatchers("/login").permitAll()
         .antMatchers("/register/**").permitAll()
         .antMatchers("/delivery/checkout/**").authenticated()
-        .antMatchers("/users/**", "/settings/**","/admin/**").hasAnyAuthority("Admin")
+        .antMatchers("/users/**", "/settings/**","/admin/**").hasAnyAuthority("WRITE_PRIVILEGE")
         .anyRequest().permitAll()
         .and()
         .formLogin(form-> form
             .loginPage("/login")
-            .loginProcessingUrl("/doLogin")
+            .loginProcessingUrl("/login")
             .usernameParameter("email")
             .passwordParameter("password")
-            .defaultSuccessUrl("/delivery")
-            .failureForwardUrl("/login")
-            .successForwardUrl("/delivery")
             .permitAll())
         .logout(logout->
             logout.logoutUrl("/logout")
         .deleteCookies("JSESSIONID"))
         .csrf().disable();
-    http.userDetailsService(userDetailsService());
     http.authenticationProvider(authenticationProvider());
     return http.build();
   }
