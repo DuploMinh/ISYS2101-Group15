@@ -1,5 +1,6 @@
 package com.example.isys2101group15.entity;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
 import java.math.BigDecimal;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -44,6 +45,7 @@ public class FoodItem {
     return price;
   }
 
+  @JsonSetter
   public void setPrice(BigDecimal price) {
     this.price = price;
   }
