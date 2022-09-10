@@ -2,20 +2,18 @@ package com.example.isys2101group15.controller;
 
 import com.example.isys2101group15.entity.Role;
 import com.example.isys2101group15.entity.UserEntity;
+import com.example.isys2101group15.model.RegistrationModel;
 import com.example.isys2101group15.repository.RolesRepository;
 import com.example.isys2101group15.repository.UserEntityRepository;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
@@ -31,15 +29,19 @@ public class RegisterController
   }
   @PostMapping()
   public HttpStatus registerHandle(
-      @RequestBody String r_email,
-      @RequestBody String r_password,
-      @RequestBody String re_password,
-      @RequestBody String name){
+      @ModelAttribute RegistrationModel registrationModel
+      ){
+    String r_email = registrationModel.getR_email();
+    String r_password = registrationModel.getR_password();
+    String re_password = registrationModel.getRe_password();
+    String name = registrationModel.getName();
     if (!Objects.equals(r_password, re_password)){
       return HttpStatus.BAD_REQUEST;
     }
     UserEntity u = new UserEntity();
     Role role = rolesRepository.findByName("ROLE_USER");
+    u.setFirstName(name);
+    u.setLastName(name);
     u.setUserName(r_email);
     u.setEmail(r_email);
     u.setPassword(r_password);

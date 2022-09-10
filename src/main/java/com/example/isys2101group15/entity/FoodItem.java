@@ -24,6 +24,8 @@ public class FoodItem {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
+  @Setter
+  @Getter
   private Long id;
   @Getter
   @Setter
@@ -63,13 +65,6 @@ public class FoodItem {
   }
 
 
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
 
   @Override
   public boolean equals(Object o) {
