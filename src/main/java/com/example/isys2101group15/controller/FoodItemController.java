@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/food")
-@CrossOrigin // remove in prod
+@CrossOrigin
 public class FoodItemController {
   private final FoodItemRepository repository;
 
