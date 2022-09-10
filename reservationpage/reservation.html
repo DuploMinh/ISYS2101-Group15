@@ -70,55 +70,55 @@
                     <div class="col-md-4 col-lg-4 col-sm-4" id="restaurant">
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(1);">
                             <h6 class="h6">Table 1</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-1">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(2);">
                             <h6 class="h6">Table 2</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-2"> 
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(3);">
                             <h6 class="h6">Table 3</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-3">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(4);">
                             <h6 class="h6">Table 4</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-4">
                         </button>
                     </div>
                     <div class="col-md-4 col-lg-4 col-sm-4" id="restaurant">
                         <button class="btn mb-3 table-button" type="button" onclick="showForm(5);">
                             <h6 class="h6">Table 5</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-5">
                         </button>
                         <button class="btn mt-5 mb-4 table-button" type="button" onclick="showForm(6);">
                             <h6 class="h6">Table 6</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-6">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(7);">
                             <h6 class="h6">Table 7</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-7">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(8);">
                             <h6 class="h6">Table 8</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-8">
                         </button>
                     </div>
                     <div class="col-md-4 col-lg-4 col-sm-4" id="restaurant">
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(9);">
                             <h6 class="h6">Table 9</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-9">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(10);">
                             <h6 class="h6">Table 10</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-10">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(11);">
                             <h6 class="h6">Table 11</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-11">
                         </button>
                         <button class="btn mt-5 mb-5 table-button" type="button" onclick="showForm(12);">
                             <h6 class="h6">Table 12</h6>
-                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid">
+                            <img src="./image/map.jpg" alt="table" class="table-image img-fluid" id="table-image-12">
                         </button>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
             <div class="col-md-6 col-lg-3 col-sm-12" id="form-column">
                 <div class="container-fluid d-block justify-content-center">
                     <div class="col-md-12 mb-3 d-flex justify-content-center align-content-center border border-5 border-info rounded p-auto" id="form">
-                        <form action="#" class="form-check fw-bold justify-content-center align-content-center">
+                        <form action="http://68.183.181.77:8080/booking/makeBooking" class="form-check fw-bold justify-content-center align-content-center" method="POST" onsubmit="getData();">
                             <h3 class="h3 text-primary" id="table-reservation">Reservation</h3>
                         
                             <label for="name"><h3 class="h3">Name<i class="bi bi-asterisk required"></i></h3></label>
@@ -139,7 +139,7 @@
                             <input class="form-control mb-3" type="email" placeholder="Enter Email" name="email" id="email">
     
                             <label for="address"><h3 class="h3">Address<i class="bi bi-asterisk required"></i></h3></label>
-                            <input class="form-control mb-3" type="text" placeholder="Enter Address" name="address" id="address" required pattern="[0-9]+">
+                            <input class="form-control mb-3" type="text" placeholder="Enter Address" name="address" id="address" required pattern="[A-Z a-z 0-9]+">
                         
                             <label for="phone"><h3 class="h3">Phone Number<i class="bi bi-asterisk required"></i></h3></label>
                             <input class="form-control mb-3" type="tel" placeholder="Enter Phone Number" name="phone" id="phone" required>
@@ -150,14 +150,14 @@
                             <label for="time"><h3 class="h3">Time<i class="bi bi-asterisk required"></i></h3></label>
                             <select class="form-select form-select-lg mb-3 form-control" name="time" id="time" required>
                                 <option selected>Choose Time Slot</option>
-                                <option value="10:00am - 11:00am">10:00am - 11:00am</option>
-                                <option value="11:00am - 12:00pm">11:00am - 12:00pm</option>
-                                <option value="12:00pm - 13:00pm">12:00pm - 13:00pm</option>
-                                <option value="13:00pm - 14:00pm">13:00pm - 14:00pm</option>
-                                <option value="14:00pm - 15:00pm">14:00pm - 15:00pm</option>
-                                <option value="15:00pm - 16:00pm">15:00pm - 16:00pm</option>
-                                <option value="16:00pm - 17:00pm">16:00pm - 17:00pm</option>
-                                <option value="17:00pm - 18:00pm">17:00pm - 18:00pm</option>
+                                <option value="1">10:00am - 11:00am</option>
+                                <option value="2">11:00am - 12:00pm</option>
+                                <option value="3">12:00pm - 13:00pm</option>
+                                <option value="4">13:00pm - 14:00pm</option>
+                                <option value="5">14:00pm - 15:00pm</option>
+                                <option value="6">15:00pm - 16:00pm</option>
+                                <option value="7">16:00pm - 17:00pm</option>
+                                <option value="8">17:00pm - 18:00pm</option>
                             </select>
 
 

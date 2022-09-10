@@ -29,3 +29,39 @@ function showForm(id) {
         sessionStorage.setItem('table', id);
     }
 }
+
+function getData() {
+    let id = sessionStorage.getItem('table');
+    $('#form').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+             type: 'POST',
+             url: 'http://68.183.181.77:8080/booking/makeBooking',
+             data: $(this).serialize(),
+             beforeSend: function() {
+
+             },
+             complete: function() {
+
+             }, //do something
+             success: function(data) {
+                if (data) {
+                    let target = document.getElementById('table-image-' + id);
+                    target.style.backgroundColor = 'lightgreen';
+                    alert("Submission Received");
+                }
+                else {
+                    let target = document.getElementById('table-image-' + id);
+                    target.style.backgroundColor = 'red';
+                    alert("Table is reserved! Please Try Again");
+                    setTimeout(reloadPage, 2000);
+                }
+             } //do something for example if the request response is success play your animation...
+        });
+     
+     })
+}
+
+function reloadPage() {
+    window.location.reload();
+}
