@@ -104,12 +104,11 @@ function checkOut() {
 }
 
 function addItem(x) {
-
-  fetch("./js/menu.json")
+    let url = 'http://68.183.181.77:8080/food/all';
+  fetch(url)
       .then(response => response.json())
       .then(data => {
-
-          adder(data,x);
+        adder(data,x);
       })
       .catch((error) => {
         console.error(error);
@@ -134,10 +133,12 @@ function adder(data, x) {
         });
     }
 
-    for (key of data) {
-        if(key.id == x) {
+    let index = 1;
+    for (key of data.content) {
+        if(index == x) {
             if (!exist) {
-                let id = key.id;
+                let id = index;
+                index++;
                 let amount = Number(1);
                 if (transfer == true) {
                     for (item of jsonList) {
@@ -149,6 +150,7 @@ function adder(data, x) {
                     }
                 }
                 let price = Number(key.price);
+                console.log("ID: " + id );
                 let json = {
                     "id":id,
                     "amount": amount, 
@@ -157,47 +159,53 @@ function adder(data, x) {
                 totalPrice += price;
                 list.push(json);
                 document.getElementById("cart-list").innerHTML += 
-                '<li class="list-group-item cart-item d-flex mt-2 mb-2" id="c-item' + key.id + '">'+
-                    '<div class="d-block">'+
-                        '<div class="cart-item-name justify-content-center text-center p-2 mb-2">'+
-                            '<h4 class="h4">' + key.name + '</h4>' +
+                '<li class="list-group-item cart-item d-flex mt-2 mb-2" id="c-item' + id + '">'+
+                '<div class="d-block">'+
+                '<div class="cart-item-name justify-content-center text-center p-2 mb-2">'+
+                '<h4 class="h4">' + key.name + '</h4>' +
                         '</div>'+
                         '<div class="d-flex w-100 gap-2">'+
-                            '<div class="cart-item-image w-50">'+
-                                '<img class="img-fluid" alt="item_image" src="./' + key.image + '">'+
-                            '</div>'+ 
-                            '<div class="w-50 d-block m-auto gap-4 justify-content-center cart-item-button" id="cart-item-button">'+
-                                '<div class="d-flex gap-4 h-50 justify-content-center trade-info">'+
-                                    '<div class="subtract-item">'+
-                                        '<button type="button" class="btn btn-dark btn-sm item-button overflow-hidden" id="subtract' + key.id + '" onclick="subtractCartItem(' + key.id+ ')">'+
-                                            '<i class="bi bi-dash-lg overflow-auto">'+'</i>'+
-                                        '</button>'+
-                                    '</div>'+
-        
-                                    '<div class="cart-item-amount">'+
-                                        '<h2 class="h2" id="amount' + key.id + '">'+ amount + '</h2>'+
-                                    '</div>'+
-        
-                                    '<div class="add-item">'+
-                                        '<button type="button" class="btn btn-dark btn-sm item-button" id="add' + key.id + '" onclick="addCartItem(' + key.id + ')">'+ 
-                                            '<i class="bi bi-plus-lg"></i>'+
-                                        '</button>'+
-                                    '</div>'+
-                                '</div>'+
-
-                                '<div class="d-flex h-50 justify-content-center mt-3">'+
-                                    '<h4 class="h4">'+ 'Price: ' + '</h4>'+
-                                    '<h4 class="h4" id="price' + key.id + '"> ' + key.price + '</h4>'+
-                                    '<h4 class="h4"> $ </h4>' +
-                                '</div>'+
-                            '</div>'+ 
+                        '<div class="cart-item-image w-50">'+
+                        '<img class="img-fluid" alt="item_image" src="./' + key.imgPath + '">'+
+                        '</div>'+ 
+                        '<div class="w-50 d-block m-auto gap-4 justify-content-center cart-item-button" id="cart-item-button">'+
+                        '<div class="d-flex gap-4 h-50 justify-content-center trade-info">'+
+                        '<div class="subtract-item">'+
+                        '<button type="button" class="btn btn-dark btn-sm item-button overflow-hidden" id="subtract' + id + '" onclick="subtractCartItem(' + id + ')">'+
+                        '<i class="bi bi-dash-lg overflow-auto">'+'</i>'+
+                        '</button>'+
                         '</div>'+
-                    '</div>'+
-                '</li>';
-                break;
+                        
+                        '<div class="cart-item-amount">'+
+                        '<h2 class="h2" id="amount' + id + '">'+ amount + '</h2>'+
+                        '</div>'+
+                        
+                        '<div class="add-item">'+
+                        '<button type="button" class="btn btn-dark btn-sm item-button" id="add' + id + '" onclick="addCartItem(' + id + ')">'+ 
+                        '<i class="bi bi-plus-lg"></i>'+
+                        '</button>'+
+                        '</div>'+
+                        '</div>'+
+                        
+                        '<div class="d-flex h-50 justify-content-center mt-3">'+
+                        '<h4 class="h4">'+ 'Price: ' + '</h4>'+
+                        '<h4 class="h4" id="price' + id + '"> ' + key.price + '</h4>'+
+                        '<h4 class="h4"> $ </h4>' +
+                        '</div>'+
+                        '</div>'+ 
+                        '</div>'+
+                        '</div>'+
+                        '</li>';
+                        break;
+                    }
+                }
+                else {
+                    index++;
+                }
             }
-        }
-    }
+            
+            console.log(list);
+            
 
     if (document.getElementById("totalPrice") !== null) {
         document.getElementById("totalPrice").remove();
