@@ -7,5 +7,5 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 public interface RestaurantTableRepository extends JpaRepository<RestaurantTable, Long>,
     JpaSpecificationExecutor<RestaurantTable>, QuerydslPredicateExecutor<RestaurantTable> {
-
+  RestaurantTable findByTableName(String tableName);
 }

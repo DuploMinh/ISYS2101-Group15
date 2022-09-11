@@ -11,8 +11,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "resevation")
-public class Resevation {
+@Table(name = "reservation")
+public class Reservation {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
