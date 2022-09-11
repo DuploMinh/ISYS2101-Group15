@@ -28,6 +28,14 @@ public class AdminController {
   public String mainPage(){
   return "admin_user";
 }
+  @GetMapping("/user")
+  public String userPage(){
+    return "admin_user";
+  }
+  @GetMapping("/table")
+  public String tablePage(){
+    return "admin_table";
+  }
   @PostMapping("/new")
   public HttpStatus newAdmin(
       @ModelAttribute RegistrationModel registrationModel

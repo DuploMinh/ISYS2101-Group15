@@ -13,4 +13,12 @@ public class PagesController {
   public String privacyPage(){
     return "delivery";
   }
+  @GetMapping("/story")
+  public String story(){
+    return "story";
+  }
+  @GetMapping("/reservation")
+  public String reservation(){
+    return "reservation";
+  }
 }
