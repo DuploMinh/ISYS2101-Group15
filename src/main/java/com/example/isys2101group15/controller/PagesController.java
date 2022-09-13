@@ -21,4 +21,10 @@ public class PagesController {
   public String reservation(){
     return "reservation";
   }
+  @GetMapping("/menu")
+  public String menu(){return "menu";}
+  @GetMapping("/header")
+  public String header(){return "header";}
+  @GetMapping("/footer")
+  public String footer(){return "footer";}
 }
