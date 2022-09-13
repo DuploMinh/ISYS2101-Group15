@@ -72,7 +72,7 @@ body{
 
 /* CAROUSEL */
 .carousel{
-    background-image: url(../image/menu-page.jpg);
+    background-image: url(/image/menu-page.jpg);
     width: 100%;
     height: 800px;
     background-size: cover;

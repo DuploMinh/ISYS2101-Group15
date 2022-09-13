@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,6 +59,10 @@ public class AdminController {
     u.setRoles(Collections.singletonList(role));
     userEntityRepository.save(u);
     return HttpStatus.ACCEPTED;
+  }
+  @GetMapping("/test")
+  public ResponseEntity<String> test(Authentication authentication){
+    return new ResponseEntity<>(authentication.getName(), HttpStatus.OK);
   }
 
 }

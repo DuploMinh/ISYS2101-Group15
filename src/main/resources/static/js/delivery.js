@@ -99,12 +99,12 @@ function cartUpdate() {
 
 function checkOut() {
     sessionStorage.setItem('list', JSON.stringify(list));
-    window.location.href = "../cart/cart.html";
+    window.location.href = "/cart";
     // window.open("../../cart/cart.html", "_self");
 }
 
 function addItem(x) {
-    let url = 'http://68.183.181.77:8080/food/all';
+    let url = '/food/all';
   fetch(url)
       .then(response => response.json())
       .then(data => {
