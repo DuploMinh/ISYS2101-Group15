@@ -443,25 +443,28 @@
 
         // new dishes part
         $(function() {
-            $.getJSON('menu.json', function (data) {
-                $.each(data.dishes, function (i, v) {
-                    if (v.new === true) {
-                        var item =
-                        '<div class="menu__item">' +
-                            '<img src="' + v.image + '" alt="' + v.name +'">' +
-                            '<div class="menu__text">' +
-                                '<h3>' + v.name + '</h3>' +
-                                '<p>' + v.description + '</p>' +
-                                '<p class="purchase">' +
-                                    '<span>$' + v.price + '</span>' +
-                                    '<button id="' + v.id + '" class="btn btn_primary">Order</button>' +
-                                '</p>' +
-                            '</div>' +
-                        '</div>'
-                        $(".menu__content").append(item);
-                    }
+            fetch('http://68.183.181.77:8080/food/all')
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    $.each(data.content, function (i, v) {
+                        if (v.new === true) {
+                            var item =
+                            '<div class="menu__item">' +
+                                '<img src="' + v.image + '" alt="' + v.name +'">' +
+                                '<div class="menu__text">' +
+                                    '<h3>' + v.name + '</h3>' +
+                                    '<p>' + v.description + '</p>' +
+                                    '<p class="purchase">' +
+                                        '<span>$' + v.price + '</span>' +
+                                        '<button id="' + v.id + '" class="btn btn_primary">Order</button>' +
+                                    '</p>' +
+                                '</div>' +
+                            '</div>'
+                            $(".menu__content").append(item);
+                        }
+                    });
                 });
-            });
         })
 
         // Dish description part for new dishes

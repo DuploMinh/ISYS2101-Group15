@@ -86,16 +86,16 @@ function goToVoucher() {
 
 
 function addItem(x) {
-
-    fetch("./js/menu.json")
-        .then(response => response.json())
-        .then(data => {
-            adder(data,x);
-        })
-        .catch((error) => {
-          console.error(error);
-        })
-  }
+    let url = 'http://68.183.181.77:8080/food/all';
+  fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        adder(data,x);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+}
 
 
   function adder(data, x) {
