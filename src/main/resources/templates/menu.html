@@ -440,7 +440,7 @@
 
         // new dishes part
         $(function() {
-            fetch('http://68.183.181.77:8080/food/all')
+            fetch('/food/all')
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
@@ -476,7 +476,7 @@
                 var id = $(this).attr("id");
                 console.log(id)
                 
-                fetch('http://68.183.181.77:8080/food/all')
+                fetch('/food/all')
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data)
