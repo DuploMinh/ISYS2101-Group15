@@ -36,7 +36,7 @@ function getData() {
         e.preventDefault();
         $.ajax({
              type: 'POST',
-             url: 'http://68.183.181.77:8080/booking/makeBooking',
+             url: '/booking/makeBooking',
              data: $(this).serialize(),
              beforeSend: function() {
 

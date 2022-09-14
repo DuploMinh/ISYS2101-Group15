@@ -2,6 +2,7 @@ package com.example.isys2101group15.entity;
 
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,6 +15,8 @@ import javax.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 
 @Entity
@@ -79,7 +82,8 @@ public class UserEntity {
 
   @Setter
   @Getter
-  @ManyToMany(fetch = FetchType.EAGER)
+  @ManyToMany(fetch = FetchType.LAZY)
+  @Fetch(FetchMode.JOIN)
   @JoinTable(
       name = "users_roles",
       joinColumns = @JoinColumn(

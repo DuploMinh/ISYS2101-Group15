@@ -168,7 +168,7 @@ body{
 
 
 .voucher__content2{
-    background-image: url(../img/white.jpg);
+    background-image: url(/img/white.jpg);
     height: 300px;
     width: 250px;
     background-size: cover;

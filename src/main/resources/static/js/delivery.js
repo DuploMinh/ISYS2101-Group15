@@ -99,12 +99,12 @@ function cartUpdate() {
 
 function checkOut() {
     sessionStorage.setItem('list', JSON.stringify(list));
-    window.location.href = "../cart/cart.html";
+    window.location.href = "/cart";
     // window.open("../../cart/cart.html", "_self");
 }
 
 function addItem(x) {
-    let url = 'http://68.183.181.77:8080/food/all';
+    let url = '/food/all';
   fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -166,7 +166,7 @@ function adder(data, x) {
                         '</div>'+
                         '<div class="d-flex w-100 gap-2">'+
                         '<div class="cart-item-image w-50">'+
-                        '<img class="img-fluid" alt="item_image" src="./' + key.imgPath + '">'+
+                        '<img class="img-fluid" alt="item_image" src="/' + key.imgPath + '">'+
                         '</div>'+ 
                         '<div class="w-50 d-block m-auto gap-4 justify-content-center cart-item-button" id="cart-item-button">'+
                         '<div class="d-flex gap-4 h-50 justify-content-center trade-info">'+
