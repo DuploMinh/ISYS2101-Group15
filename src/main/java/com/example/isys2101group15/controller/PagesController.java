@@ -27,4 +27,6 @@ public class PagesController {
   public String header(){return "header";}
   @GetMapping("/footer")
   public String footer(){return "footer";}
+  @GetMapping("/cart")
+  public String cart(){return "cart";}
 }

@@ -87,7 +87,7 @@ function goToVoucher() {
 
 function addItem(x) {
 
-    fetch("http://68.183.181.77:8080/food/all")
+    fetch("/food/all")
         .then(response => response.json())
         .then(data => {
             adder(data,x);
