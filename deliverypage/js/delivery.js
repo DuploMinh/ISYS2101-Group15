@@ -104,7 +104,7 @@ function checkOut() {
 }
 
 function addItem(x) {
-    let url = '/food/all';
+    let url = 'http://68.183.181.77:8080/food/all';
   fetch(url)
       .then(response => response.json())
       .then(data => {

@@ -3,7 +3,6 @@ var list = []
 var jsonList = JSON.parse(sessionStorage.getItem('list'));
 
 
-start();
 function start() {
     if (jsonList.length != 0 && list.length == 0) {
         list = jsonList;
@@ -13,6 +12,7 @@ function start() {
         addItem();
     }
 }
+start();
 
 function decrease(x) {
     let amount = document.getElementById("amount" + x);
@@ -93,7 +93,7 @@ function removeItem(x) {
 
 function addItem() {
 
-    fetch("../deliverypage/js/menu.json")
+    fetch("http://68.183.181.77:8080/food/all")
         .then(response => response.json())
         .then(data => {
             adder(data);
@@ -106,7 +106,7 @@ function addItem() {
 function adder(data) {
     var target = document.getElementById("cart");
     let total = 0;
-    for (key of data) {
+    for (key of data.content) {
         for (item of list) {
             if (key.id == item.id) {
                 target.innerHTML +=
@@ -131,4 +131,36 @@ function adder(data) {
         }
     }
     document.getElementById("total-money").innerHTML = "Total Price: " + total + "$";
+    // location.reload()
 }
+
+function sendOrder() {
+
+}
+
+// Get the form element
+const formOrder = document.getElementById("cart_form");
+
+// Add 'submit' event handler
+formOrder.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const itemArray = [{1: 'one', 2: 'two'}]
+    const prePayload = new FormData(formOrder)
+    prePayload.append("itemArray", JSON.stringify(itemArray))
+    const payload = new URLSearchParams(prePayload);
+    console.log([...payload])
+
+
+    fetch('http://68.183.181.77:8080/order/cart', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+          },
+        body: prePayload,
+    })
+    .then(res => res.json())
+    .then(data => console.log('success', data))
+    .catch(err => console.log('error', err))
+    // sendOrder();
+});

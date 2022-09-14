@@ -87,7 +87,7 @@
                         <input id="search_input" type="text" name="text" placeholder="Enter address here!">
                     </div>
 
-                    <div id="map"></div>
+                    <!-- <div id="map"></div> -->
 
                     <div class="address_btn">
                         <a href="./menu.html"><input type="button" onclick="" value="Continue as guest" name="post_address"
@@ -304,9 +304,9 @@
     <script>
         $('.num').countUp();
     </script>
-    <script
+    <!-- <script
         src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpjeHEMJ0UlaQHFwGOZ9R8gqLID5eJlFo&callback=initMap"
-        async defer></script>
+        async defer></script> -->
 
     <script>
         $(document).ready(function() {
@@ -604,6 +604,7 @@
                 .then((data) => {
                     console.log(data)
                     $.each(data.content, function (i, v) {
+                        console.log(i + v)
                         if (v.id == id) {
                             var item =
                                 '<!--DISH DESCRIPTION-->'+  

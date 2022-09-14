@@ -213,6 +213,11 @@ body{
     padding: var(--card_padding);
     position: relative;
     transition: all 0.5s ease-in-out;
+    color: black !important;
+}
+
+.upload_address {
+    color: black;
 }
 
 .upload_address .form_title {
@@ -247,6 +252,10 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.address_btn p {
+    color: black;
 }
 
 .post_address {

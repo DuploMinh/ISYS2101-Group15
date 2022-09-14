@@ -173,14 +173,14 @@
     <script src="/js/shoppingCart.js"></script>
 
 
-    <script
+    <!-- <script
         src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpjeHEMJ0UlaQHFwGOZ9R8gqLID5eJlFo&callback=initMap"
         async defer></script>
-    <script src="/js/menu.js"></script>
+    <script src="/js/menu.js"></script> -->
 
 
     <!--Data-->
-    <script src="/js/data.json" type="module"></script>
+    <!-- <script src="/js/data.json" type="module"></script> -->
 
 
     <!--Relevant Cart JS Files-->
@@ -193,10 +193,12 @@
                 $(".category").removeClass("active")
                 $("#item__category").empty()
                 $(this).addClass("active")
-                $.getJSON('/js/menu.json', data => {
-                    $.each(data.dishes, function (i, v) {
-                        // console.log(v.categories)
-                        // console.log($(".category.active").attr("id"))
+
+                fetch('http://68.183.181.77:8080/food/all')
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                    $.each(data.content, function (i, v) {
                         if (v.categories === $(".category.active").attr("id")) {
                             var item =
                                 '<div class="dish__by_cate col-4 d-flex flex-column justify-content-center align-items-center text-center">' +
@@ -210,21 +212,6 @@
                     });
                 });
             })
-
-            $.getJSON('/js/menu.json', function (data) {
-                $.each(data.dishes, (i, v) => {
-                    if (v.categories === "appetizer") {
-                        var item =
-                            '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
-                            '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-                            '<h2 class="cate__text">' + v.name + '</h2>' +
-                            '<p>Price: $' + v.price + '</p>' +
-                            '<button type="button" class="btn btn_primary cate_btn" onclick="addItem(' + v.id +  ');">Order' + '</button>' +
-                                '</div>'
-                        $("#item__category").append(item);
-                    }
-                });
-            });
         });
     </script>
 </body>

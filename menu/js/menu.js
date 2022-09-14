@@ -84,6 +84,21 @@ function goToVoucher() {
     window.location.assign("../voucher/voucher.html");
 }
 
+//ORDER PART
+var transfer = false;
+var jsonList = JSON.parse(sessionStorage.getItem('list'));
+
+//Check if customer ordered from the menu
+function start() {
+    if (jsonList.length != 0 && list.length == 0) {
+        transfer = true;
+        for (key of jsonList) {
+            addItem(key.id);
+        }
+    }
+}
+
+start();
 
 function addItem(x) {
     let url = 'http://68.183.181.77:8080/food/all';
@@ -116,7 +131,7 @@ function addItem(x) {
         });
     }
 
-    for (key of data) {
+    for (key of data.content) {
         if(key.id == x) {
             if (!exist) {
                 let id = key.id;

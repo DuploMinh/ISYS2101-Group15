@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="cart.css">
 
     <!-- JavaScript -->
-    <script src="cart.js"></script>
+    <!-- <script src="cart.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -27,7 +27,7 @@
 <body>
     <header></header>
     <div class="container py-4">
-        <form class="row gx-md-5 p-3">
+        <form class="row gx-md-5 p-3" id="cart_form" enctype="multipart/form-data">
             <div class="row col-md-9 gx-md-5">
                 <h1 class="text-center">My shopping cart (1)</h1>
                 <hr>
@@ -55,25 +55,25 @@
                     <h4>More Spices</h4>
                     <div class="row bg-light rounded-3 m-2 p-2 shadow mb-4">
                         <div class="form-check col-md-6">
-                            <input class="form-check-input" type="checkbox" name="chiliSauce" value="" id="chiliSauce">
+                            <input class="form-check-input" type="checkbox" name="spices" value="chiliSauce" id="chiliSauce">
                             <label class="form-check-label" for="chiliSauce">
                               Chilli Sauce
                             </label>
                         </div>
                         <div class="form-check col-md-6">
-                            <input class="form-check-input" type="checkbox" name="ketchup" value="" id="ketchup">
+                            <input class="form-check-input" type="checkbox" name="spices" value="ketchup" id="ketchup">
                             <label class="form-check-label" for="ketchup">
                                 Ketchup
                             </label>
                         </div>
                         <div class="form-check col-md-6">
-                            <input class="form-check-input" type="checkbox" name="spoon" value="" id="spoon">
+                            <input class="form-check-input" type="checkbox" name="spices" value="spoon" id="spoon">
                             <label class="form-check-label" for="spoon">
                                 Spoon, fork
                             </label>
                         </div>
                         <div class="form-check col-md-6">
-                            <input class="form-check-input" type="checkbox" name="silverPaper" value="" id="silverPaper">
+                            <input class="form-check-input" type="checkbox" name="spices" value="silverPaper" id="silverPaper">
                             <label class="form-check-label" for="silverPaper">
                                 Silver paper
                             </label>
@@ -118,7 +118,7 @@
                         <p class="fw-bold">Expected delivery:</p>
                         <p>time</p>
                     </div>
-                    <a href="../checkout/checkout.html"><button class="btn btn_primary rounded-pill m-4 w-75">Checkout</button></a>
+                    <button type="submit" class="btn btn_primary rounded-pill m-4 w-75">Checkout</button>
                 </div>
             </div>
         </form>
@@ -132,5 +132,7 @@
             $('footer').load('../footer/footer.html')
         })
     </script>
+
+    <script src="cart.js"></script>
 </body>
 </html>

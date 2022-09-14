@@ -93,7 +93,7 @@ function removeItem(x) {
 
 function addItem() {
 
-    fetch("/js/menu.json")
+    fetch("http://68.183.181.77:8080/food/all")
         .then(response => response.json())
         .then(data => {
             adder(data);
@@ -106,7 +106,7 @@ function addItem() {
 function adder(data) {
     var target = document.getElementById("cart");
     let total = 0;
-    for (key of data) {
+    for (key of data.content) {
         for (item of list) {
             if (key.id == item.id) {
                 target.innerHTML +=
@@ -132,3 +132,20 @@ function adder(data) {
     }
     document.getElementById("total-money").innerHTML = "Total Price: " + total + "$";
 }
+
+// const data = { username: 'example' };
+
+// fetch('https://example.com/profile', {
+//   method: 'POST', // or 'PUT'
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify(data),
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log('Success:', data);
+//   })
+//   .catch((error) => {
+//     console.error('Error:', error);
+//   });
