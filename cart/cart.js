@@ -4,12 +4,12 @@ var jsonList = JSON.parse(sessionStorage.getItem('list'));
 
 
 function start() {
-    if (jsonList.length != 0 && list.length == 0) {
-        list = jsonList;
+    if (jsonList == null) {
         addItem()
     }
     else {
-        addItem();
+        list = jsonList;
+        addItem()
     }
 }
 start();
@@ -140,25 +140,44 @@ const formOrder = document.getElementById("cart_form");
 formOrder.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    //Handle form data
     const prePayload = new FormData(formOrder)
-    const itemArray = []
+    const itemArray = [] //array of item ids
     for (let k in jsonList) {
         for (let i = 0; i < jsonList[k].amount; i++) {
             itemArray.push(jsonList[k].id)
         }
     }
+    //Format API
     var cart = {};
     cart['itemList'] = itemArray;
     prePayload.forEach((value, key) => cart[key] = value);
-    var json = JSON.stringify(cart);
-
     
-    prePayload.append("itemList", JSON.stringify(itemArray))
-    const payload = new URLSearchParams(prePayload);
-    console.log([...payload])
-    console.log(prePayload)
-    console.log(json)
+    prePayload.append("itemList", itemArray)
+    
+    if (cart.spoon === "spoon") {
+        cart.spoon = true;
+    } else {
+        cart.spoon = false;
+    }
+    if (cart.ketchup === "ketchup") {
+        cart.ketchup = true;
+    } else {cart.ketchup = false;}
+    if (cart.silverPaper === "silverPaper") {
+        cart.silverPaper = true;
+    } else {cart.silverPaper = false;}
+    if (cart.chiliSauce === "chiliSauce") {
+        cart.chiliSauce = true;
+    } else {cart.chiliSauce = false;}
 
+    var json = JSON.stringify(cart);
+    const payload = new URLSearchParams(prePayload);
+    // console.log([...payload])
+    // console.log(prePayload)
+    // console.log(cart)
+    // console.log(cart.spoon)
+
+    //POST new order to API
     fetch('http://68.183.181.77:8080/order/cart', {
         method: "POST",
         headers: {
@@ -167,6 +186,11 @@ formOrder.addEventListener("submit", (event) => {
         body: json,
     })
     .then(res => res.json())
-    .then(data => console.log('success', data))
+    .then(data => alert("Successfull order items!"))
     .catch(err => console.log('error', err))
+
+    //Return to menu page
+    window.location = "../menu/menu.html";
+    window.location.href = "../menu/menu.html";
+    window.location.assign("../menu/menu.html");
 });

@@ -9,68 +9,107 @@ document.addEventListener("DOMContentLoaded",  () => {
     });
 });
 
+//Fetch food api
+let url_food = 'http://68.183.181.77:8080/food/all';
+fetch(url_food)
+.then(responseFood => responseFood.json())
+.then(dataFood => {
+write_food(dataFood);
+})
+.catch((errorFood) => {
+console.error(errorFood);
+})
 
+function write_food(dataFood) {
+    for (key of dataFood.content) {
+        document.getElementById("dishes_info").innerHTML += 
+        '<tr>' +
+            '<!--Assign data for each element of the row -->'+
+            '<td>' + key.name + '</td>'+
+            '<td>'+ key.category +'</td>'+
+            '<td>'+ key.description +'</td>'+
+            '<td>'+ key.price +'</td>'+
+            '<td class="profile_picture" ><img src="' + key.imgPath + '" alt=""></td>'+
+            '<td>'+ key.id +'</td>'+
+            '<td>'+
+                '<button class="btn btn_primary">Edit</button>'+
+                '<button class="btn btn_primary">Delete</button>'+
+            '</td>'+
+        '</tr>';
+    }
+}
 
-// <?php
-//                     $rows = 0;
-//                     //Read file from the bottom (the most recent registered first)
-//                     if (count($users) != 0) {
-//                         //Check the remain user for last page
-//                         $remain = count($users) % $user_per_page;
-//                         if ($remain != 0) {
-//                             //if its last page print remain users
-//                             if ($page == $number_of_page) {
-//                                 $user_per_page = $remain;
-//                             }
-//                         }
+//Fetch user api
+let url_user = 'http://68.183.181.77:8080/userEs';
+fetch(url_user)
+.then(response => response.json())
+.then(data => {
+write_user(data);
+console.log(data)
+})
+.catch((error) => {
+console.error(error);
+})
 
-//                         //Check if the search box has any value
-//                         if (isset($_GET['search'])) {
-//                             $filte_value = $_GET['search']; //Value you enter the search box
-                        
-//                             //Loop form bottom, each page has 5 user
-//                             for ($i = (count($users) - $page_first_record); $i > (count($users) - $page_first_record) - $user_per_page; $i--) {
+function write_user(data) {
+    for (key of data._embedded.userEs) {
+        document.getElementById("user_info").innerHTML += 
+        '<tr>' +
+            '<!--Assign data for each element of the row -->'+
+            '<td>' + key.firstName + '</td>'+
+            '<td>'+ key.lastName +'</td>'+
+            '<td>'+ key.email +'</td>'+
+            '<td>'+ key.password +'</td>'+
+            '<td class="profile_picture" ><img src="' + key.imgPath + '" alt=""></td>'+
+            '<td>'+ key.userName +'</td>'+
+            '<td>'+
+                '<button class="btn btn_primary">Edit</button>'+
+                '<button class="btn btn_primary">Delete</button>'+
+            '</td>'+
+        '</tr>';
+    }
+}
 
-//                                 //Check the search value for first name, last name, and email (case-insensitive)
-//                                 if (stripos($users[$i - 1]['first_name'], $filte_value) !== false || stripos($users[$i - 1]['last_name'], $filte_value) !== false || stripos($users[$i - 1]['email'], $filte_value) !== false) {
-//                                     ?>
-//                                         <!-- Link to details page for each row (passing userid as superglobal GET) -->
-//                                         <tr data-href="details.php?userid=<?php echo $users[$i - 1]['userid']; ?>">
-//                                          <!--Assign data for each element of the row -->
-//                                          <td><?php echo $users[$i - 1]['first_name']; ?></td>
-//                                          <td><?php echo $users[$i - 1]['last_name']; ?></td>
-//                                          <td><?php echo $users[$i - 1]['email']; ?></td>
-//                                          <td><?php echo $users[$i - 1]['password']; ?></td>
-//                                          <td class="profile_picture" ><img src="<?php echo "profile_images/" . $users[$i -1]['profile_img']['name']; ?>" alt=""></td>
-//                                          <td><?php echo $users[$i - 1]['userid']; ?></td>
-//                                         </tr>
-//                                     <?php
-//                                     $rows += 1;
-//                                 }
-//                             }
-//                             //Check if there is no matching value
-//                             if ($rows == 0) {
-//                                 ?>
-//                                 <tr>
-//                                     <td>No records!</td>
-//                                 </tr>
-//                                 <?php
-//                             }    
-//                         } else {
-//                             //Loop from bottom, each page has 5 user
-//                             for ($i = (count($users) - $page_first_record); $i > (count($users) - $page_first_record) - $user_per_page; $i--) {
-//                                 ?>
-//                                 <!-- Link to details page for each row (passing userid as superglobal GET) -->
-//                                 <tr data-href="details.php?userid=<?php echo $users[$i - 1]['userid']; ?>">
-//                                     <!--Assign data for each element of the row -->
-//                                     <td><?php echo $users[$i - 1]['first_name']; ?></td>
-//                                     <td><?php echo $users[$i - 1]['last_name']; ?></td>
-//                                     <td><?php echo $users[$i - 1]['email']; ?></td>
-//                                     <td class="profile_picture" ><img src="<?php echo "profile_images/" . $users[$i -1]['profile_img']['name']; ?>" alt=""></td>
-//                                     <td><?php echo $users[$i - 1]['userid']; ?></td>
-//                                 </tr>
-//                                 <?php
-//                             }
-//                         }
-//                     }
-//                 ?>
+//Fetch order api
+let url_Order = 'http://68.183.181.77:8080/orderEntities';
+fetch(url_Order)
+.then(response => response.json())
+.then(data => {
+write_order(data);
+console.log(data)
+})
+.catch((error) => {
+console.error(error);
+})
+
+function write_order(data) {
+    for (key of data._embedded.orderEntities) {
+        let moreS = [];
+        if(key.spoon === true) {
+            moreS.push("Spoon")
+        }
+        if(key.silverPaper === true) {
+            moreS.push("Silver Paper")
+        }
+        if(key.ketchup === true) {
+            moreS.push("Ketchup")
+        }
+        if(key.chiliSauce === true) {
+            moreS.push("Chili Sauce")
+        }
+        document.getElementById("order_info").innerHTML += 
+        '<tr>' +
+            '<!--Assign data for each element of the row -->'+
+            '<td>' + key.user + '</td>'+
+            '<td>'+ key.itemList +'</td>'+
+            '<td>'+ key.address +'</td>'+
+            '<td>'+ key.voucher +'</td>'+
+            '<td>' + key.requirement + '</td>'+
+            '<td>'+ moreS +'</td>'+
+            '<td>'+
+                '<button class="btn btn_primary">Edit</button>'+
+                '<button class="btn btn_primary">Delete</button>'+
+            '</td>'+
+        '</tr>';
+    }
+}
