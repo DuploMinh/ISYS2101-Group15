@@ -3,6 +3,7 @@ import com.example.isys2101group15.entity.FoodItem;
 import com.example.isys2101group15.entity.OrderEntity;
 import com.example.isys2101group15.repository.FoodItemRepository;
 import com.example.isys2101group15.repository.OrderRepository;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -27,9 +28,17 @@ public class OrderController {
     return "cart";
   }
   @PostMapping("/cart")
-  public boolean makeOrder(@RequestBody List<Long> ids){
+  public boolean makeOrder(
+      @RequestBody List<Long> itemList,
+      @RequestBody String requirement,
+      @RequestBody String voucher,
+      @RequestBody String address,
+      @RequestBody Boolean spoon,
+      @RequestBody Boolean ketchup,
+      @RequestBody Boolean chiliSauce,
+      @RequestBody Boolean silverPaper){
     List<FoodItem> foodItems = new ArrayList<>();
-    for (Long id: ids
+    for (Long id: itemList
     ) {
       Optional<FoodItem> food = foodRepo.findById(id);
         if (food.isEmpty()){
@@ -39,6 +48,14 @@ public class OrderController {
     }
     OrderEntity o = new OrderEntity();
     o.setFoodItems(foodItems);
+    o.setAddress(address);
+    o.setRequirement(requirement);
+    o.setVoucher(voucher);
+    o.setSpoon(spoon);
+    o.setKetchup(ketchup);
+    o.setChiliSauce(chiliSauce);
+    o.setSilverPaper(silverPaper);
+    o.setOrderCreationTime(ZonedDateTime.now());
     orderRepo.save(o);
     return true;
   }
