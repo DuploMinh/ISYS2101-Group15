@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -34,7 +35,7 @@ public class FoodItemController {
     return repository.findAllByCategory(category,pageable);
   }
   @GetMapping("/search")
-  Page<FoodItem> searchByName(Pageable pageable, @RequestBody String query){
+  Page<FoodItem> searchByName(Pageable pageable, @RequestParam String query){
     return repository.searchFoodItemByName(query, PageRequest.of(0, Integer.MAX_VALUE));
   }
 

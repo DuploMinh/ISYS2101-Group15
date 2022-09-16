@@ -32,6 +32,9 @@ public class UserEntity {
   @Setter
   @Getter
   private boolean isEnabled;
+  @Getter
+  @Setter
+  private String address;
   private Boolean tokenExpired;
 
 
