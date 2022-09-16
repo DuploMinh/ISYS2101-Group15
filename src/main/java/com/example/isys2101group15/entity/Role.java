@@ -38,7 +38,7 @@ public class Role {
   @Setter
   private String name;
   @ManyToMany
-  private Collection<UserEntity> users;
+  private Collection<UserE> users;
   @ManyToMany(fetch = FetchType.EAGER)
   @Setter
   @Getter

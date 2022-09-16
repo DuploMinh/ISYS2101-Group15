@@ -1,5 +1,7 @@
 package com.example.isys2101group15.entity;
 
+import java.math.BigDecimal;
+import java.time.ZonedDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
@@ -40,5 +42,29 @@ public class OrderEntity {
   @ManyToOne
   @Getter
   @Setter
-  private UserEntity user;
+  private UserE user;
+  @Getter
+  @Setter
+  private BigDecimal totalCost;
+  @Getter
+  @Setter
+  private String voucher, requirement;
+  @Getter
+  @Setter
+  private String address;
+  @Getter
+  @Setter
+  private boolean chiliSauce;
+  @Getter
+  @Setter
+  private boolean ketchup;
+  @Getter
+  @Setter
+  private boolean silverPaper;
+  @Getter
+  @Setter
+  private boolean spoon;
+  @Getter
+  @Setter
+  private ZonedDateTime orderCreationTime;
 }
