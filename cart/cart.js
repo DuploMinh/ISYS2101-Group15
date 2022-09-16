@@ -131,11 +131,6 @@ function adder(data) {
         }
     }
     document.getElementById("total-money").innerHTML = "Total Price: " + total + "$";
-    // location.reload()
-}
-
-function sendOrder() {
-
 }
 
 // Get the form element
@@ -145,22 +140,33 @@ const formOrder = document.getElementById("cart_form");
 formOrder.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const itemArray = [{1: 'one', 2: 'two'}]
     const prePayload = new FormData(formOrder)
-    prePayload.append("itemArray", JSON.stringify(itemArray))
+    const itemArray = []
+    for (let k in jsonList) {
+        for (let i = 0; i < jsonList[k].amount; i++) {
+            itemArray.push(jsonList[k].id)
+        }
+    }
+    var cart = {};
+    cart['itemList'] = itemArray;
+    prePayload.forEach((value, key) => cart[key] = value);
+    var json = JSON.stringify(cart);
+
+    
+    prePayload.append("itemList", JSON.stringify(itemArray))
     const payload = new URLSearchParams(prePayload);
     console.log([...payload])
-
+    console.log(prePayload)
+    console.log(json)
 
     fetch('http://68.183.181.77:8080/order/cart', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
           },
-        body: prePayload,
+        body: json,
     })
     .then(res => res.json())
     .then(data => console.log('success', data))
     .catch(err => console.log('error', err))
-    // sendOrder();
 });

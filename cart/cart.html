@@ -52,28 +52,28 @@
                 
 
                 <div class="col-md-6">
-                    <h4>More Spices</h4>
+                    <h4>More Items</h4>
                     <div class="row bg-light rounded-3 m-2 p-2 shadow mb-4">
                         <div class="form-check col-md-6">
-                            <input class="form-check-input" type="checkbox" name="spices" value="chiliSauce" id="chiliSauce">
+                            <input class="form-check-input" type="checkbox" name="chiliSauce" value="chiliSauce" id="chiliSauce" onchange="addMore(e)">
                             <label class="form-check-label" for="chiliSauce">
                               Chilli Sauce
                             </label>
                         </div>
                         <div class="form-check col-md-6">
-                            <input class="form-check-input" type="checkbox" name="spices" value="ketchup" id="ketchup">
+                            <input class="form-check-input" type="checkbox" name="ketchup" value="ketchup" id="ketchup" addMore(e)>
                             <label class="form-check-label" for="ketchup">
                                 Ketchup
                             </label>
                         </div>
                         <div class="form-check col-md-6">
-                            <input class="form-check-input" type="checkbox" name="spices" value="spoon" id="spoon">
+                            <input class="form-check-input" type="checkbox" name="spoon" value="spoon" id="spoon" addMore(e)>
                             <label class="form-check-label" for="spoon">
                                 Spoon, fork
                             </label>
                         </div>
                         <div class="form-check col-md-6">
-                            <input class="form-check-input" type="checkbox" name="spices" value="silverPaper" id="silverPaper">
+                            <input class="form-check-input" type="checkbox" name="silverPaper" value="silverPaper" id="silverPaper" addMore(e)>
                             <label class="form-check-label" for="silverPaper">
                                 Silver paper
                             </label>
@@ -81,7 +81,7 @@
                     </div>
                     <p>If you'd like to add toppings, remove ingredients due to allergies, or anything we can do to help you enjoy your food, please let us know.</p>
                     <div class="row align-items-center justify-content-center bg-light rounded-3 p-3 shadow mb-4">
-                        <textarea id="notes" name="notes" class="rounded-3" style="height: 100px;" placeholder="Enter your requirement here"></textarea>
+                        <textarea id="requirement" name="requirement" class="rounded-3" style="height: 100px;" placeholder="Enter your requirement here"></textarea>
                     </div>
                     <h4>E-voucher</h4>
                     <p>Enter your voucher code (if any)</p>
@@ -108,15 +108,17 @@
                     <div class="col m-2">
                         <h4>Instant Delivery (1)</h4>
                         <hr>
-                        <div class="m-2">
+                        <!-- <div class="m-2">
                             <p>Total application:</p>
                             <p>Shipping cost:</p>
-                        </div>
+                        </div> -->
                         <p class="fw-bold mb-3 text-danger" id="total-money">Total amount:</p>
                         <p class="fw-bold">Delivery to address:</p>                            
-                        <p>address</p>
-                        <p class="fw-bold">Expected delivery:</p>
-                        <p>time</p>
+                        <div class="m-3">
+                            <input type="text" name="address" class="form-control" id="address" placeholder="Enter address">
+                        </div>
+                        <!-- <p class="fw-bold">Expected delivery:</p>
+                        <p>time</p> -->
                     </div>
                     <button type="submit" class="btn btn_primary rounded-pill m-4 w-75">Checkout</button>
                 </div>
