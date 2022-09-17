@@ -186,7 +186,6 @@ main .container .left .profile {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: 5rem;
     bottom: 0;
     margin: 0 auto;
     width: 100%;
@@ -280,18 +279,24 @@ main .container .left .profile {
 }
 
 /* Pagination part */
-.user_table .pagination {
+.user_table #user_pagination, .user_table #order_pagination, .user_table #food_pagination {
     display: flex;
     border: 1px solid #3a114c;
     border-radius: 4px;
     overflow: hidden;
+    margin-bottom: 10rem;
 }
 
-.user_table .pagination a {
+.user_table #user_pagination button, .user_table #food_pagination button, .user_table #order_pagination button {
     width: 30px;
     background-color: white;
     border-right: 1px solid #3a114c;
     text-align: center;
+}
+
+.user_table #user_pagination button:hover, .user_table #order_pagination button:hover, .user_table #food_pagination button:hover {
+    background-color: #3a114c;
+    color: white;
 }
 
 /* RESET PASSWORD SECTION */
