@@ -44,14 +44,14 @@
                         <span><i class="fa-solid fa-table"></i></span>
                         <h3>Order Infor</h3>
                     </a>
-                    <a href="admin_emp.html" class="menu_item" id="emp">
+                    <!-- <a href="admin_emp.html" class="menu_item" id="emp">
                         <span><i class="fa-solid fa-people-carry-box"></i></span>
                         <h3>Employee Infor</h3>
                     </a>
                     <a href="admin_stat.html" class="menu_item" id="stat">
                         <span><i class="fa-solid fa-chart-line"></i></span>
                         <h3>Statistics</h3>
-                    </a>
+                    </a> -->
                 </div>
             </aside>
         
@@ -61,9 +61,9 @@
                 <h1>User's table</h1>
         
                 <div class="search_data">
-                    <form action="" method="get">
+                    <form>
                         <!-- Get search value as superglobal $GET -->
-                        <input type="search" name="search" class="search_user" value="" id="search" placeholder="Search for user">
+                        <input type="search" name="searchBox" class="search_user" value="" id="searchBox" placeholder="Search for user" onkeyup="search()">
                         <button type="submit" name="submit" class="btn btn_primary">Search</button>
                     </form>
                 </div>
@@ -76,7 +76,7 @@
                         <th>Email</th>
                         <th>Password</th>
                         <th>Image profile</th>
-                        <th>User ID</th>
+                        <th>User Name</th>
                         <th>Actions</th>
                         </tr>
                     </thead>

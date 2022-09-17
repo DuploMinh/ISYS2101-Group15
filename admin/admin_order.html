@@ -44,14 +44,14 @@
                         <span><i class="fa-solid fa-table"></i></span>
                         <h3>Order Infor</h3>
                     </a>
-                    <a href="admin_emp.html" class="menu_item" id="emp">
+                    <!-- <a href="admin_emp.html" class="menu_item" id="emp">
                         <span><i class="fa-solid fa-people-carry-box"></i></span>
                         <h3>Employee Infor</h3>
                     </a>
                     <a href="admin_stat.html" class="menu_item" id="stat">
                         <span><i class="fa-solid fa-chart-line"></i></span>
                         <h3>Statistics</h3>
-                    </a>
+                    </a> -->
                 </div>
             </aside>
         
@@ -63,7 +63,7 @@
                 <div class="search_data">
                     <form action="" method="get">
                         <!-- Get search value as superglobal $GET -->
-                        <input type="search" name="search" class="search_user" value="" id="search" placeholder="Search for user">
+                        <input type="search" name="search" class="search_user" value="" id="searchBox" placeholder="Search for order" onkeyup="search()">
                         <button type="submit" name="submit" class="btn btn_primary">Search</button>
                     </form>
                 </div>
@@ -91,32 +91,6 @@
         
                 <div id="order_pagination">
  
-                </div>
-
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                    Launch demo modal
-                </button>
-                
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                        <div class="modal-body">
-                        ...
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                    </div>
                 </div>
             </div>
         </div>

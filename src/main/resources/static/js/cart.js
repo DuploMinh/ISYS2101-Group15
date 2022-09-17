@@ -1,18 +1,21 @@
 //Retrieve From Order Page
 var list = []
 var jsonList = JSON.parse(sessionStorage.getItem('list'));
+const badge = document.getElementById("badge");
+// badge.innerHTML = jsonList.length;
 
 
-start();
 function start() {
-    if (jsonList.length != 0 && list.length == 0) {
-        list = jsonList;
+    if (jsonList == null) {
         addItem()
     }
     else {
+        list = jsonList;
         addItem();
     }
 }
+start();
+
 
 function decrease(x) {
     let amount = document.getElementById("amount" + x);
@@ -133,6 +136,84 @@ function adder(data) {
     document.getElementById("total-money").innerHTML = "Total Price: " + total + "$";
 }
 
+
+//generates random id;
+let guid = () => {
+    let s4 = () => {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    //return id of format 'aaaaaaaa'-'aaaa'-'aaaa'-'aaaa'-'aaaaaaaaaaaa'
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+
+console.log(guid());
+
+// Get the form element
+const formOrder = document.getElementById("cart_form");
+
+// Add 'submit' event handler
+formOrder.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    //Handle form data
+    const prePayload = new FormData(formOrder)
+    const itemArray = [] //array of item ids
+    for (let k in jsonList) {
+        for (let i = 0; i < jsonList[k].amount; i++) {
+            itemArray.push(jsonList[k].id)
+        }
+    }
+    //Format API
+    var cart = {};
+    cart['itemList'] = itemArray;
+    // cart['id'] = guid();
+    prePayload.forEach((value, key) => cart[key] = value);
+    
+    prePayload.append("itemList", itemArray)
+    
+    if (cart.spoon === "spoon") {
+        cart.spoon = true;
+    } else {
+        cart.spoon = false;
+    }
+    if (cart.ketchup === "ketchup") {
+        cart.ketchup = true;
+    } else {cart.ketchup = false;}
+    if (cart.silverPaper === "silverPaper") {
+        cart.silverPaper = true;
+    } else {cart.silverPaper = false;}
+    if (cart.chiliSauce === "chiliSauce") {
+        cart.chiliSauce = true;
+    } else {cart.chiliSauce = false;}
+
+    var json = JSON.stringify(cart);
+    const payload = new URLSearchParams(prePayload);
+    // console.log([...payload])
+    // console.log(prePayload)
+    // console.log(cart)
+    // console.log(cart.spoon)
+
+    //POST new order to API
+    fetch('http://68.183.181.77:8080/order/cart', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+          },
+        body: json,
+    })
+    .then(res => res.json())
+    .then(data => alert("Successfull order items!"))
+    .catch(err => console.log('error', err))
+
+    //Return to menu page
+    window.location = "../menu.html";
+    window.location.href = "../menu.html";
+    window.location.assign("../menu.html");
+
+    sessionStorage.setItem('list', "")
+});
 // const data = { username: 'example' };
 
 // fetch('https://example.com/profile', {

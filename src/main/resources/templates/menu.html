@@ -33,8 +33,8 @@
         <section class="carousel">
             <div class="carousel__content">
                 <h1>OUR MENU</h1>
-                <a href="/">HOME</a>
-                <a href="/delivery">DISHES</a>
+                <a href="home.html">HOME</a>
+                <a href="delivery.html">DISHES</a>
             </div>
         </section>
         <!-- NUMBERS -->
@@ -77,7 +77,7 @@
         
             <!--ADD ADDRESS FORM-->
             <div id="overlay">
-                <form action="" method="POST" class="upload_address" id="address_form">
+                <form action="index.html" method="POST" class="upload_address" id="address_form">
                     <div class="form_title">
                         <h3>Enter your address</h3>
                         <i class="fa-regular fa-circle-xmark" id="close_btn"></i>
@@ -87,13 +87,13 @@
                         <input id="search_input" type="text" name="text" placeholder="Enter address here!">
                     </div>
 
-                    <!-- <div id="map"></div> -->
+                    <div id="map"></div>
 
                     <div class="address_btn">
-                        <a href="./menu.html"><input type="button" onclick="" value="Continue as guest" name="post_address"
+                        <a href="menu.html"><input type="button" onclick="" value="Continue as guest" name="post_address"
                             class="btn btn_primary post_address"></a>
                         <p>or</p>
-                        <a href="/login"><input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address"></a>
+                        <a href="login.html"><input type="button" onclick="" value="Login" name="login" class="btn btn_primary post_address"></a>
                     </div>
 
                 </form>
@@ -128,23 +128,23 @@
                 <h1>CATEGORIES</h1>
                 <div class="menu__categories">
                     <div class="category active" id="appetizer">
-                        <img src="/image/appe1.jpg" alt="appe_1">
+                        <img src="image/appe1.jpg" alt="appe_1">
                         <h3>Appetizer</h3>
                     </div>
                     <div class="category" id="main-dish">
-                        <img src="/image/main-dish1.jpg" alt="main_dish_1">
+                        <img src="image/main-dish1.jpg" alt="main_dish_1">
                         <h3>Main dishes</h3>
                     </div>
                     <div class="category" id="salad">
-                        <img src="/image/salad1.jpg" alt="appe_1">
+                        <img src="image/salad1.jpg" alt="appe_1">
                         <h3>Salad</h3>
                     </div>
                     <div class="category" id="dessert">
-                        <img src="/image/des1.jpg" alt="appe_1">
+                        <img src="image/des1.jpg" alt="appe_1">
                         <h3>Dessert</h3>
                     </div>
                     <div class="category" id="drink">
-                        <img src="/image/drink1.jpg" alt="appe_1">
+                        <img src="image/drink1.jpg" alt="appe_1">
                         <h3>Drinks</h3>
                     </div>
                 </div>
@@ -196,8 +196,8 @@
                     <div class="modal-body">
                         <div class="feedback__form">
                             <form action="">
-                                <input type="text" placeholder="Name">
-                                <input type="email" placeholder="Email">
+                                <input type="text" name="feedback" placeholder="Name">
+                                <input type="email" name="email_feedback" placeholder="Email">
                                 <textarea cols="30" rows="10" placeholder="What is your suggestion?..."></textarea>
                             </form>
                         </div>
@@ -217,7 +217,7 @@
         
         <!-- SHOPPING CART LOGO -->
 
-        <a href="/cart" class="cart_logo cd-top1 text-replace js-cd-top1" onclick="checkout();">
+        <a class="cart_logo cd-top1 text-replace js-cd-top1" onclick="checkOut();">
             <i class="fa fa-shopping-cart"><div class="position-absolute start-100 translate-middle bg-danger badge border border-light rounded-circle" id="cart-quantity">0</div></i>
         </a>
 
@@ -294,13 +294,16 @@
     <!-- jquery waypoint -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
     <!-- countup JS -->
-    <script src="/js/jquery.countup.js"></script>
+    <!-- <script src="./js/jquery.countup.js"></script> -->
 
     <!-- Back to Top JS -->
-    <script src="/js/util.js"></script>
-    <script src="/js/main-backToTop.js"></script>
-    <script src="/js/shoppingCart.js"></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/main-backToTop.js"></script>
+    <script src="./js/shoppingCart.js"></script>
 
+
+    <!-- countup JS -->
+    <script src="./js/jquery.countup.js"></script>
     <script>
         $('.num').countUp();
     </script>
@@ -310,12 +313,12 @@
 
     <script>
         $(document).ready(function() {
-            $('header').load('./header.html')
-            $('footer').load('./footer.html')
+            $('header').load('header.html')
+            $('footer').load('footer.html')
         })
     </script>
 
-    <script src="/js/chatbox.js"></script>
+    <script src="./js/chatbox.js"></script>
 
     <script>
 
@@ -323,148 +326,34 @@
         $(function () {
             var menu = [];
             $(".category").click(function () {
-                
-                window.location.href = "./delivery.html"
-                // $(".category").removeClass("active")
-                // $("#item__category").empty()
-                // $(this).addClass("active")
-                // $.getJSON('menu.json', function (data) {
-                //     $.each(data.dishes, function (i, v) {
-                //         // console.log(v.categories)
-                //         // console.log($(".category.active").attr("id"))
-                //         if (v.categories === $(".category.active").attr("id")) {
-                //             var item =
-                //                 '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
-                //                 '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-                //                 '<h2 class="cate__text">' + v.name + '</h2>' +
-                //                 '<p>Price: $' + v.price + '</p>' +
-                //                 '</div>'
-                //             $("#item__category").append(item);
-                //         }
-                //     });
-                // });
+                window.location.href = "../delivery.html"
             })
-
-        //     $.getJSON('menu.json', function (data) {
-        //         $.each(data.dishes, function (i, v) {
-        //             if (v.categories === "appetizer") {
-        //                 var item =
-        //                     '<div class="dish__by_cate col-4 d-flex flex-column justify-content-start align-items-center text-center">' +
-        //                     '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
-        //                     '<h2 class="cate__text">' + v.name + '</h2>' +
-        //                     '<p>Price: $' + v.price + '</p>' +
-        //                     '</div>'
-        //                 $("#item__category").append(item);
-        //             }
-        //         });
-        //     });
         });
-
-        // Dish description part for cate
-        // $(function() {
-        //     $("#item__category").on('click', ".dish__by_cate", function (event) {
-        //         event.stopPropagation();
-        //         event.stopImmediatePropagation();
-        //         event.preventDefault();
-        //         var name = $(this).find('h2').text();
-        //         console.log(name)
-        //         $.getJSON('menu.json', function (data) {
-        //             $.each(data.dishes, function (i, v) {
-            
-        //                 if (v.name === name) {
-        //                     var item =
-        //                         '<!--DISH DESCRIPTION-->'+  
-        //                         '<div id="overlay2">'+
-        //                             '<form action="index.html" method="POST" class="upload_description" id="description_form">'+
-        //                                 '<div class="form_title">' +
-        //                                     '<h3>Description</h3>'+
-        //                                     '<i class="fa-regular fa-circle-xmark" id="close_btn_2"></i>'+
-        //                                 '</div>'+
-
-        //                                 '<div class="form_content">'+
-        //                                     '<div class="dish_des">'+
-        //                                         '<h2>' + v.name + '</h2>'+
-        //                                         '<img src="' + v.image + '" alt="">'+
-        //                                         '<p>' + v.description + '</p>'+
-        //                                     '</div>'+
-        //                                     '<div class="custom_dish">'+
-        //                                         '<h2>Size</h2>'+
-        //                                         '<input type="radio" id="m" name="sizes" value="M">'+
-        //                                         '<label for="m">M</label><br>'+
-        //                                         '<input type="radio" id="l" name="sizes" value="L">'+
-        //                                         '<label for="l">L</label><br>'+
-        //                                         '<input type="radio" id="xl" name="sizes" value="XL">'+
-        //                                         '<label for="xl">XL</label>'+
-
-        //                                         '<h2>Add topping</h2>'+
-        //                                         '<input type="checkbox" id="cheese" name="cheese" value="Cheese">'+
-        //                                         '<label for="cheese"> Cheese</label><br>'+
-        //                                         '<input type="checkbox" id="basil_sauce" name="basil_sauce" value="Basil_sauce">'+
-        //                                         '<label for="basil_sauce"> Basil sauce</label><br>'+
-        //                                         '<input type="checkbox" id="milk_cream" name="milk_cream" value="Milk_cream">'+
-        //                                         '<label for="milk_cream"> Milk cream</label>'+
-        //                                     '</div>'+
-        //                                 '</div>'+
-
-        //                                 '<div class="description_btn">'+
-        //                                     '<input type="button" onclick="" value="Add to cart >>>" name="post_address"'+
-        //                                         'class="btn btn_primary post_address">'+
-        //                                 '</div>'+
-
-        //                             '</form>'+
-        //                         '</div>';
-        //                     $("#item_description").append(item);
-        //                 }
-        //             });
-        //         })
-
-        //         $("#item_description").on('click', "#overlay2", function (event) {
-        //             event.stopPropagation();
-        //             event.stopImmediatePropagation();
-        //             event.preventDefault();
-        //             if (event.target.id == 'overlay2') {
-        //                 $(this).css("display", "none")
-        //             } 
-        //         })
-
-        //         $("#item_description").on('click', "#close_btn_2", function (event) {
-        //             event.stopPropagation();
-        //             event.stopImmediatePropagation();
-        //             event.preventDefault();
-        //             // if (event.target.id == 'close_btn_2') {
-        //                 $("#overlay2").css("display", "none")
-        //             // } 
-        //         })
-        //     })
-        // })
 
         // new dishes part
         $(function() {
-            fetch('/food/all')
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                $.each(data.content, function (i, v) {
-                    if (v.new === true) {
-                        var item =
-                        '<div class="menu__item">' +
-                            '<img src="' + v.image + '" alt="' + v.name +'">' +
-                            '<div class="menu__text">' +
-                                '<h3>' + v.name + '</h3>' +
-                                '<p>' + v.description + '</p>' +
-                                '<p class="purchase">' +
-                                    '<span>$' + v.price + '</span>' +
-                                    '<button id="' + v.id + '" class="btn btn_primary">Order</button>' +
-                                '</p>' +
-                            '</div>' +
-                        '</div>'
-                        $(".menu__content").append(item);
-                    }
+            fetch('http://68.183.181.77:8080/food/all')
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    $.each(data.content, function (i, v) {
+                        if (v.new === true) {
+                            var item =
+                            '<div class="menu__item">' +
+                                '<img src="' + v.image + '" alt="' + v.name +'">' +
+                                '<div class="menu__text">' +
+                                    '<h3>' + v.name + '</h3>' +
+                                    '<p>' + v.description + '</p>' +
+                                    '<p class="purchase">' +
+                                        '<span>$' + v.price + '</span>' +
+                                        '<button id="' + v.id + '" class="btn btn_primary">Order</button>' +
+                                    '</p>' +
+                                '</div>' +
+                            '</div>'
+                            $(".menu__content").append(item);
+                        }
+                    });
                 });
-            });
-            // $.getJSON('/js/menu.json', function (data) {
-                
-            // });
         })
 
         // Dish description part for new dishes
@@ -475,8 +364,7 @@
                 event.preventDefault();
                 var id = $(this).attr("id");
                 console.log(id)
-                
-                fetch('/food/all')
+                fetch('http://68.183.181.77:8080/food/all')
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data)
@@ -568,7 +456,7 @@
             .then((data) => {
                 console.log(data)
                 $.each(data.content, function (i, v) {
-                    if (v.recommend === true) {
+                    if (v.recommended === true) {
                         var item =
                             '<div class="recommend__item">' +
                                 '<img src="' + v.image + '" alt="' + v.name +'">' +
@@ -684,8 +572,8 @@
                 })
         })
     </script>
-    <script src="/js/menu.js"></script>
-    <script src="/js/chatbox.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/chatbox.js"></script>
 </body>
 
 </html>

@@ -193,13 +193,12 @@
                 $(".category").removeClass("active")
                 $("#item__category").empty()
                 $(this).addClass("active")
-
                 fetch('http://68.183.181.77:8080/food/all')
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data)
                     $.each(data.content, function (i, v) {
-                        if (v.categories === $(".category.active").attr("id")) {
+                        if (v.category === $(".category.active").attr("id")) {
                             var item =
                                 '<div class="dish__by_cate col-4 d-flex flex-column justify-content-center align-items-center text-center">' +
                                 '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
@@ -212,6 +211,24 @@
                     });
                 });
             })
+
+            fetch('http://68.183.181.77:8080/food/all')
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                    $.each(data.content, function (i, v) {
+                        if (v.category === "appetizer") {
+                            var item =
+                                '<div class="dish__by_cate col-4 d-flex flex-column justify-content-center align-items-center text-center">' +
+                                '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
+                                '<h2 class="cate__text">' + v.name + '</h2>' +
+                                '<p>Price: $' + v.price + '</p>' +
+                                '<button type="button" class="btn btn_primary cate_btn" onclick="addItem(' + v.id +  ');">Order' + '</button>' +
+                                '</div>'
+                            $("#item__category").append(item);
+                        }
+                    });
+                });
         });
     </script>
 </body>

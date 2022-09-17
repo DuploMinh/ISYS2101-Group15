@@ -2,7 +2,7 @@
 var list = []
 var jsonList = JSON.parse(sessionStorage.getItem('list'));
 const badge = document.getElementById("badge");
-badge.innerHTML = jsonList.length;
+// badge.innerHTML = jsonList.length;
 
 
 function start() {
@@ -136,6 +136,20 @@ function adder(data) {
     document.getElementById("total-money").innerHTML = "Total Price: " + total + "$";
 }
 
+
+//generates random id;
+let guid = () => {
+    let s4 = () => {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    //return id of format 'aaaaaaaa'-'aaaa'-'aaaa'-'aaaa'-'aaaaaaaaaaaa'
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+
+console.log(guid());
+
 // Get the form element
 const formOrder = document.getElementById("cart_form");
 
@@ -154,6 +168,7 @@ formOrder.addEventListener("submit", (event) => {
     //Format API
     var cart = {};
     cart['itemList'] = itemArray;
+    // cart['id'] = guid();
     prePayload.forEach((value, key) => cart[key] = value);
     
     prePayload.append("itemList", itemArray)
@@ -196,4 +211,6 @@ formOrder.addEventListener("submit", (event) => {
     window.location = "../menu/menu.html";
     window.location.href = "../menu/menu.html";
     window.location.assign("../menu/menu.html");
+
+    sessionStorage.setItem('list', "")
 });
