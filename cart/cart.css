@@ -84,3 +84,8 @@ body, .container{
 .shoppingCart__item .price__item {
     width: 35%!important;
 }
+
+#cart {
+    overflow-y: scroll;
+    height: 70vh;
+}

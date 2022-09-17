@@ -53,10 +53,6 @@
     border-radius: var(--card_border_radius);
 }
 
-/* .cart-item-amount {
-
-} */
-
 
 @media only screen and (min-width:576px) and (max-width: 1200px) {
     #chatBox {

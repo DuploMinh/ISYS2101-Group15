@@ -16,10 +16,10 @@
 		});
 
 		//smooth scroll to top
-		shoppingCart.addEventListener('click', function(event) {
-			// event.preventDefault();
-			// (!window.requestAnimationFrame) ? window.scrollTo(0, 0) : Util.scrollTo(0, scrollDuration);
-		});
+		// shoppingCart.addEventListener('click', function(event) {
+		// 	event.preventDefault();
+		// 	(!window.requestAnimationFrame) ? window.scrollTo(0, 0) : Util.scrollTo(0, scrollDuration);
+		// });
 	}
 
 

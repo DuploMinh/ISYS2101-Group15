@@ -1,6 +1,8 @@
 //Retrieve From Order Page
 var list = []
 var jsonList = JSON.parse(sessionStorage.getItem('list'));
+const badge = document.getElementById("badge");
+badge.innerHTML = jsonList.length;
 
 
 function start() {
@@ -9,10 +11,11 @@ function start() {
     }
     else {
         list = jsonList;
-        addItem()
+        addItem();
     }
 }
 start();
+
 
 function decrease(x) {
     let amount = document.getElementById("amount" + x);
