@@ -217,7 +217,7 @@
         
         <!-- SHOPPING CART LOGO -->
 
-        <a href="../cart/cart.html" class="cart_logo cd-top1 text-replace js-cd-top1" onclick="checkout();">
+        <a class="cart_logo cd-top1 text-replace js-cd-top1" onclick="checkOut();">
             <i class="fa fa-shopping-cart"><div class="position-absolute start-100 translate-middle bg-danger badge border border-light rounded-circle" id="cart-quantity">0</div></i>
         </a>
 
@@ -294,7 +294,7 @@
     <!-- jquery waypoint -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
     <!-- countup JS -->
-    <script src="./js/jquery.countup.js"></script>
+    <!-- <script src="./js/jquery.countup.js"></script> -->
 
     <!-- Back to Top JS -->
     <script src="./js/util.js"></script>
@@ -475,9 +475,11 @@
                 event.preventDefault();
                 var id = $(this).attr("id");
                 console.log(id)
-                $.getJSON('menu.json', function (data) {
-                    $.each(data.dishes, function (i, v) {
-            
+                fetch('http://68.183.181.77:8080/food/all')
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                    $.each(data.content, function (i, v) {
                         if (v.id == id) {
                             var item =
                                 '<!--DISH DESCRIPTION-->'+  
@@ -524,7 +526,7 @@
                             $("#overlay2").css("display", "grid");
                         }
                     });
-                })
+                });
 
                 $("#item_description").on('click', "#overlay2", function (event) {
                     event.stopPropagation();
@@ -560,9 +562,12 @@
 
         // recommendation part
         $(function() {
-            $.getJSON('menu.json', function (data) {
-                $.each(data.dishes, function (i, v) {
-                    if (v.recommend === true) {
+            fetch('http://68.183.181.77:8080/food/all')
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                $.each(data.content, function (i, v) {
+                    if (v.recommended === true) {
                         var item =
                             '<div class="recommend__item">' +
                                 '<img src="' + v.image + '" alt="' + v.name +'">' +
@@ -592,9 +597,13 @@
                 event.preventDefault();
                 var id = $(this).attr("id");
                 console.log(id)
-                $.getJSON('menu.json', function (data) {
-                    $.each(data.dishes, function (i, v) {
-            
+
+                fetch('http://68.183.181.77:8080/food/all')
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                    $.each(data.content, function (i, v) {
+                        console.log(i + v)
                         if (v.id == id) {
                             var item =
                                 '<!--DISH DESCRIPTION-->'+  
@@ -641,9 +650,7 @@
                             $("#overlay2").css("display", "grid");
                         }
                     });
-                })
-
-
+                });
             })
             $("#item_description").on('click', "#overlay2", function (event) {
                     event.stopPropagation();

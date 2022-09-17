@@ -1,18 +1,21 @@
 //Retrieve From Order Page
 var list = []
 var jsonList = JSON.parse(sessionStorage.getItem('list'));
+const badge = document.getElementById("badge");
+badge.innerHTML = jsonList.length;
 
 
 function start() {
-    if (jsonList.length != 0 && list.length == 0) {
-        list = jsonList;
+    if (jsonList == null) {
         addItem()
     }
     else {
+        list = jsonList;
         addItem();
     }
 }
 start();
+
 
 function decrease(x) {
     let amount = document.getElementById("amount" + x);
@@ -131,11 +134,6 @@ function adder(data) {
         }
     }
     document.getElementById("total-money").innerHTML = "Total Price: " + total + "$";
-    // location.reload()
-}
-
-function sendOrder() {
-
 }
 
 // Get the form element
@@ -145,22 +143,57 @@ const formOrder = document.getElementById("cart_form");
 formOrder.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const itemArray = [{1: 'one', 2: 'two'}]
+    //Handle form data
     const prePayload = new FormData(formOrder)
-    prePayload.append("itemArray", JSON.stringify(itemArray))
+    const itemArray = [] //array of item ids
+    for (let k in jsonList) {
+        for (let i = 0; i < jsonList[k].amount; i++) {
+            itemArray.push(jsonList[k].id)
+        }
+    }
+    //Format API
+    var cart = {};
+    cart['itemList'] = itemArray;
+    prePayload.forEach((value, key) => cart[key] = value);
+    
+    prePayload.append("itemList", itemArray)
+    
+    if (cart.spoon === "spoon") {
+        cart.spoon = true;
+    } else {
+        cart.spoon = false;
+    }
+    if (cart.ketchup === "ketchup") {
+        cart.ketchup = true;
+    } else {cart.ketchup = false;}
+    if (cart.silverPaper === "silverPaper") {
+        cart.silverPaper = true;
+    } else {cart.silverPaper = false;}
+    if (cart.chiliSauce === "chiliSauce") {
+        cart.chiliSauce = true;
+    } else {cart.chiliSauce = false;}
+
+    var json = JSON.stringify(cart);
     const payload = new URLSearchParams(prePayload);
-    console.log([...payload])
+    // console.log([...payload])
+    // console.log(prePayload)
+    // console.log(cart)
+    // console.log(cart.spoon)
 
-
+    //POST new order to API
     fetch('http://68.183.181.77:8080/order/cart', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
           },
-        body: prePayload,
+        body: json,
     })
     .then(res => res.json())
-    .then(data => console.log('success', data))
+    .then(data => alert("Successfull order items!"))
     .catch(err => console.log('error', err))
-    // sendOrder();
+
+    //Return to menu page
+    window.location = "../menu/menu.html";
+    window.location.href = "../menu/menu.html";
+    window.location.assign("../menu/menu.html");
 });

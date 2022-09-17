@@ -2,7 +2,6 @@ package com.example.isys2101group15.entity;
 
 import java.util.Collection;
 import java.util.Objects;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,7 +19,7 @@ import org.hibernate.annotations.FetchMode;
 
 
 @Entity
-public class UserEntity {
+public class UserE {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -104,7 +103,7 @@ public class UserEntity {
     if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
       return false;
     }
-    UserEntity user = (UserEntity) o;
+    UserE user = (UserE) o;
     return id != null && Objects.equals(id, user.id);
   }
 

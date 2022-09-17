@@ -2,7 +2,7 @@ package com.example.isys2101group15.service;
 
 import com.example.isys2101group15.entity.Privilege;
 import com.example.isys2101group15.entity.Role;
-import com.example.isys2101group15.entity.UserEntity;
+import com.example.isys2101group15.entity.UserE;
 import com.example.isys2101group15.repository.RolesRepository;
 import com.example.isys2101group15.repository.UserEntityRepository;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class CustomUserDetailService implements UserDetailsService {
   private final RolesRepository rolesRepository;
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    UserEntity user= userEntityRepository.findByUserName(username);
+    UserE user= userEntityRepository.findByUserName(username);
     if (user == null){
       return new User(" ", " ", true, true, true, true,
           getAuthorities(Arrays.asList(
@@ -63,7 +63,7 @@ public class CustomUserDetailService implements UserDetailsService {
     }
     return authorities;
   }
-  private User buildAuthUser(UserEntity user, Collection<? extends GrantedAuthority> authorities){
+  private User buildAuthUser(UserE user, Collection<? extends GrantedAuthority> authorities){
     return new User(user.getUserName(),user.getPassword(),true,true,
         true,true,authorities);
   }

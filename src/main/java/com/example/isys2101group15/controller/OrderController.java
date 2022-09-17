@@ -1,12 +1,13 @@
 package com.example.isys2101group15.controller;
 import com.example.isys2101group15.entity.FoodItem;
 import com.example.isys2101group15.entity.OrderEntity;
+import com.example.isys2101group15.model.OrderModel;
 import com.example.isys2101group15.repository.FoodItemRepository;
 import com.example.isys2101group15.repository.OrderRepository;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,19 +28,28 @@ public class OrderController {
     return "cart";
   }
   @PostMapping("/cart")
-  public boolean makeOrder(@RequestBody List<Long> ids){
+  public OrderEntity makeOrder(
+      @RequestBody OrderModel model
+    ){
     List<FoodItem> foodItems = new ArrayList<>();
-    for (Long id: ids
+    for (Long id: model.getItemList()
     ) {
       Optional<FoodItem> food = foodRepo.findById(id);
         if (food.isEmpty()){
-          return false;
+          return null;
         }
         foodItems.add(food.get());
     }
     OrderEntity o = new OrderEntity();
     o.setFoodItems(foodItems);
-    orderRepo.save(o);
-    return true;
+    o.setAddress(model.getAddress());
+    o.setRequirement(model.getRequirement());
+    o.setVoucher(model.getVoucher());
+    o.setSpoon(model.getSpoon());
+    o.setKetchup(model.getKetchup());
+    o.setChiliSauce(model.getChiliSauce());
+    o.setSilverPaper(model.getSilverPaper());
+    o.setOrderCreationTime(ZonedDateTime.now());
+    return orderRepo.save(o);
   }
 }

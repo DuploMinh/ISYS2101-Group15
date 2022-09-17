@@ -6,7 +6,7 @@ import com.example.isys2101group15.entity.Privilege;
 import com.example.isys2101group15.entity.Restaurant;
 import com.example.isys2101group15.entity.RestaurantTable;
 import com.example.isys2101group15.entity.Role;
-import com.example.isys2101group15.entity.UserEntity;
+import com.example.isys2101group15.entity.UserE;
 import com.example.isys2101group15.repository.FoodItemRepository;
 import com.example.isys2101group15.repository.PrivilegesRepository;
 import com.example.isys2101group15.repository.RestaurantRepository;
@@ -87,7 +87,7 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
       restaurantTableRepository.save(t);
     }
     Role adminRole = roleRepository.findByName("ROLE_ADMIN");
-    UserEntity user = new UserEntity();
+    UserE user = new UserE();
     user.setFirstName("Test");
     user.setLastName("Test");
     user.setPassword(passwordEncoder.encode("test"));

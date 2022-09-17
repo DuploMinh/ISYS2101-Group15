@@ -1,7 +1,7 @@
 package com.example.isys2101group15.controller;
 
 import com.example.isys2101group15.entity.Role;
-import com.example.isys2101group15.entity.UserEntity;
+import com.example.isys2101group15.entity.UserE;
 import com.example.isys2101group15.model.RegistrationModel;
 import com.example.isys2101group15.repository.RolesRepository;
 import com.example.isys2101group15.repository.UserEntityRepository;
@@ -49,7 +49,7 @@ public class AdminController {
     if (!Objects.equals(r_password, re_password)){
       return HttpStatus.BAD_REQUEST;
     }
-    UserEntity u = new UserEntity();
+    UserE u = new UserE();
     Role role = rolesRepository.findByName("ROLE_ADMIN");
     u.setFirstName(name);
     u.setLastName(name);
