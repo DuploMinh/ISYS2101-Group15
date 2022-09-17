@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,7 +28,7 @@ public class RegisterController
   public String registerPage(){
     return "registration";
   }
-  @PostMapping()
+  @PostMapping(consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
   public HttpStatus registerHandle(
       @ModelAttribute RegistrationModel registrationModel
       ){

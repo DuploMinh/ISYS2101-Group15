@@ -37,5 +37,6 @@ public class Reservation {
   private RestaurantTable restaurantTable;
   @Setter
   @Getter
-  private String timeSlot;
+  private String timeSlot,email,phoneNumber;
+
 }
