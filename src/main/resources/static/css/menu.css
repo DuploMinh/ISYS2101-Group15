@@ -136,7 +136,7 @@ body{
 }
 
 .voucher__content1{
-    background-image: url(../image/voucher.jpg);
+    background-image: url(/image/voucher.jpg);
     background-size: 100% 100%;
     height: 300px;
     width: 600px;
@@ -168,7 +168,7 @@ body{
 
 
 .voucher__content2{
-    background-image: url(../image/white.jpg);
+    background-image: url(/image/white.jpg);
     height: 300px;
     width: 250px;
     background-size: cover;

@@ -19,9 +19,9 @@ overlay.addEventListener('click', function(e) {
 })
 
 function goToVoucher() {
-    window.location = "../voucher/voucher.html";
-    window.location.href = "../voucher/voucher.html";
-    window.location.assign("../voucher/voucher.html");
+    window.location = "/voucher";
+    window.location.href = "/voucher";
+    window.location.assign("/voucher");
 }
 
 //ORDER PART
@@ -46,11 +46,11 @@ start();
 
 function checkOut() {
     sessionStorage.setItem('list', JSON.stringify(list));
-    window.location.href = "../cart/cart.html";
+    window.location.href = "/cart";
 }
 
 function addItem(x) {
-    let url = 'http://68.183.181.77:8080/food/all';
+    let url = '/food/all';
   fetch(url)
       .then(response => response.json())
       .then(data => {

@@ -13,7 +13,7 @@ let currentPage = 1;
 let rows = 5;
 
 //Fetch food api
-let url_food = 'http://68.183.181.77:8080/food/all';
+let url_food = '/food/all';
 fetch(url_food)
 .then(responseFood => responseFood.json())
 .then(dataFood => {
@@ -48,7 +48,7 @@ function write_food(dataFood) {
 }
 
 //Fetch user api
-let url_user = 'http://68.183.181.77:8080/userEs';
+let url_user = '/userEs';
 fetch(url_user)
 .then(response => response.json())
 .then(dataUser => {
@@ -82,7 +82,7 @@ function write_user(data) {
 }
 
 //Fetch order api
-let url_Order = 'http://68.183.181.77:8080/orderEntities/all';
+let url_Order = '/orderEntities/all';
 fetch(url_Order)
 .then(response => response.json())
 .then(dataOrder => {
@@ -132,7 +132,7 @@ function write_order(data) {
 
 
 //Fetch reservation api
-let url_Reser = 'http://68.183.181.77:8080/reservations';
+let url_Reser = '/reservations';
 fetch(url_Reser)
 .then(response => response.json())
 .then(dataReser => {
@@ -169,7 +169,7 @@ function deleteOrder(id) {
     if (!window.confirm("Do you want to delete this order??")) {
         return;
     }
-    let url = 'http://68.183.181.77:8080/orderEntities/' + id;
+    let url = '/orderEntities/' + id;
     fetch(url,{
     method:'DELETE'
     }).then(response=>{
@@ -185,7 +185,7 @@ function deleteFood(id) {
     if (!window.confirm("Do you want to delete this order??")) {
         return;
     }
-    let url = 'http://68.183.181.77:8080/foodItems/' + id;
+    let url = '//foodItems/' + id;
     fetch(url,{
     method:'DELETE'
     }).then(response=>{

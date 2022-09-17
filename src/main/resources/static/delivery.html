@@ -192,7 +192,7 @@
                 $(".category").removeClass("active")
                 $("#item__category").empty()
                 $(this).addClass("active")
-                fetch('http://68.183.181.77:8080/food/all')
+                fetch('/food/all')
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data)

@@ -38,6 +38,10 @@ public class AdminController {
   public String tablePage(){
     return "admin_table";
   }
+  @GetMapping("/food")
+  public String adminFood(){
+    return "admin_food";
+  }
   @PostMapping("/new")
   public HttpStatus newAdmin(
       @ModelAttribute RegistrationModel registrationModel

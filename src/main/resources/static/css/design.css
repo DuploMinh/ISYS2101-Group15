@@ -41,7 +41,7 @@ body{
 
 /* CAROUSEL */
 .carousel .carousel__content{
-    background-image: url(../../image/design1.jpg);
+    background-image: url(/image/design1.jpg);
     background-size: cover;
     background-position: center;
     height: 400px;

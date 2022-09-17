@@ -20,14 +20,16 @@ public class PagesController {
   public String deliveryPage(){
     return "delivery";
   }
-  @GetMapping("/privacy")
-  public String privacyPage(){
-    return "delivery";
-  }
   @GetMapping("/story")
   public String story(){
     return "story";
   }
+  @GetMapping("/provision")
+  public String provision(){return "provision";}
+  @GetMapping("/privacy")
+  public String privacy(){return "privacy";}
+  @GetMapping("/chatbox")
+  public String chatBox(){return "chatbox";}
   @GetMapping("/reservation")
   public String reservation(){
     return "reservation";
@@ -38,6 +40,10 @@ public class PagesController {
   public String header(){return "header";}
   @GetMapping("/footer")
   public String footer(){return "footer";}
+  @GetMapping("/home_header")
+  public String homeHeader(){return "home_header";}
   @GetMapping("/cart")
   public String cart(){return "cart";}
+  @GetMapping("/voucher")
+  public String voucher(){return "voucher";}
 }

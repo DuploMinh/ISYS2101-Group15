@@ -27,6 +27,8 @@ public class OrderController {
   public String cart(){
     return "cart";
   }
+  @GetMapping("/checkout")
+  public String checkOut(){return "checkout";}
   @PostMapping("/cart")
   public OrderEntity makeOrder(
       @RequestBody OrderModel model

@@ -96,7 +96,7 @@ function removeItem(x) {
 
 function addItem() {
 
-    fetch("http://68.183.181.77:8080/food/all")
+    fetch("/food/all")
         .then(response => response.json())
         .then(data => {
             adder(data);
@@ -196,7 +196,7 @@ formOrder.addEventListener("submit", (event) => {
     // console.log(cart.spoon)
 
     //POST new order to API
-    fetch('http://68.183.181.77:8080/order/cart', {
+    fetch('//order/cart', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -208,9 +208,9 @@ formOrder.addEventListener("submit", (event) => {
     .catch(err => console.log('error', err))
 
     //Return to menu page
-    window.location = "../menu.html";
-    window.location.href = "../menu.html";
-    window.location.assign("../menu.html");
+    window.location = "/menu";
+    window.location.href = "/menu";
+    window.location.assign("/menu");
 
     sessionStorage.setItem('list', "")
 });
