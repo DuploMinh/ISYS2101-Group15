@@ -38,4 +38,14 @@ public class Reservation {
   @Setter
   @Getter
   private String timeSlot;
+
+  @Override
+  public String toString() {
+    return "Reservation{" +
+        "id=" + id +
+        ", restaurant=" + restaurant +
+        ", restaurantTable=" + restaurantTable +
+        ", timeSlot='" + timeSlot + '\'' +
+        '}';
+  }
 }
