@@ -42,6 +42,8 @@ public ResponseEntity<String> makeBooking(@ModelAttribute ReservationModel reser
     r.setRestaurant(restaurantTable.get().getRestaurant());
     r.setRestaurantTable(restaurantTable.get());
     r.setTimeSlot(String.valueOf(reservationModel.getTime()));
+    r.setEmail(reservationModel.getEmail());
+    r.setPhoneNumber(reservationModel.getPhoneNumber());
     reservationRepository.save(r);
     return new ResponseEntity<>("true", HttpStatus.OK);
   }

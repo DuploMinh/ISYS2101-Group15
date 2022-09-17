@@ -37,15 +37,6 @@ public class Reservation {
   private RestaurantTable restaurantTable;
   @Setter
   @Getter
-  private String timeSlot;
+  private String timeSlot,email,phoneNumber;
 
-  @Override
-  public String toString() {
-    return "Reservation{" +
-        "id=" + id +
-        ", restaurant=" + restaurant +
-        ", restaurantTable=" + restaurantTable +
-        ", timeSlot='" + timeSlot + '\'' +
-        '}';
-  }
 }
