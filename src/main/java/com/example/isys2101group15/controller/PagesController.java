@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @RequiredArgsConstructor
 public class PagesController {
-  private final ReservationRepository reservationRepository;
-  private final UserEntityRepository userEntityRepository;
-  private final OrderRepository orderRepository;
+
   @GetMapping("/delivery")
   public String deliveryPage(){
     return "delivery";
@@ -42,18 +40,4 @@ public class PagesController {
   public String footer(){return "footer";}
   @GetMapping("/cart")
   public String cart(){return "cart";}
-  @GetMapping("/reservation/all")
-  public Page<Reservation> allReservation(Pageable pageable)
-  {
-    return reservationRepository.findAll(pageable);
-  }
-  @GetMapping("/userEs/all")
-  public Page<UserE> allUser(Pageable pageable)
-  {
-    return userEntityRepository.findAll(pageable);
-  }
-  @GetMapping("/orderEntities/all")
-  public Page<OrderEntity> allOrder(Pageable pageable){
-    return orderRepository.findAll(pageable);
-  }
 }
