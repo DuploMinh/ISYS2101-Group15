@@ -24,8 +24,8 @@ private final RestaurantTableRepository restaurantTableRepository;
   @PostMapping("/makeBooking")
   public boolean makeBooking(@ModelAttribute ReservationModel reservationModel){
     Optional<RestaurantTable> restaurantTable = Optional.ofNullable(
-        restaurantTableRepository.findByTableName(
-            String.valueOf(reservationModel.getTableID())));
+        restaurantTableRepository.findByTableName("Table "+
+            (reservationModel.getTableID())));
     if (restaurantTable.isEmpty()){
       return false;
     }
