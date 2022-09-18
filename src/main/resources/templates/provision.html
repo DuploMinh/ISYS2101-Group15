@@ -27,30 +27,6 @@
 
 <body>
     <header></header>
-    <!-- Header-->
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/" id="h_logo">
-                <img src="image/logo.JPG" alt="logo" class="rounded-circle">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarHead"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navBarHead">
-                <form class="d-flex mx-auto" id="search">
-                    <input class="form-control me-2" type="search" placeholder="Search...">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </form>
-                <ul class="nav nav-pills m-md-auto justify-content-center">
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Menu</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Delivery</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Reservation</a> </li>
-                    <li class="nav-item text-uppercase text-break"> <a class="nav-link" href="#">Login</a> </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <!-- CAROUSEL -->
     <section class="carousel">
         <div class="carousel__content">
@@ -168,22 +144,13 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFoot">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse justify-content-end" id="navBarFoot">
-                <ul class="nav nav-pills">
-                    <li class="nav-item"> <a class="nav-link" href="#">Feedback</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">About Us</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Privacy</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
-                </ul>
-            </div>
         </div>
     </nav>
 
     <footer></footer>
     <script>
         $(document).ready(function() {
-            $('header').load('./header.html')
+            $('header').load('/home_header')
             $('footer').load('/footer')
         })
     </script>

@@ -35,7 +35,9 @@ nav {
     color: #0e6dfd!important;
 } */
 .btn_aboutus {
-  color: #0e6dfd;
+  color: #0e6dfd!important;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600!important;
 }
 
 .dropbtn {
