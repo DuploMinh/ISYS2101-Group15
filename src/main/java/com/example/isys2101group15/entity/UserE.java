@@ -1,5 +1,7 @@
 package com.example.isys2101group15.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -26,6 +28,7 @@ public class UserE {
   @Column(name = "id", nullable = false)
   private Long id;
   private String userName;
+
   private String password;
   private String email;
   @Setter
@@ -86,6 +89,7 @@ public class UserE {
   @Getter
   @ManyToMany(fetch = FetchType.LAZY)
   @Fetch(FetchMode.JOIN)
+  @JsonIgnore
   @JoinTable(
       name = "users_roles",
       joinColumns = @JoinColumn(

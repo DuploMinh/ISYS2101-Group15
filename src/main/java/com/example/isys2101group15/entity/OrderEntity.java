@@ -1,5 +1,6 @@
 package com.example.isys2101group15.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.Collection;
@@ -42,6 +43,7 @@ public class OrderEntity {
   @ManyToOne
   @Getter
   @Setter
+  @JsonIgnore
   private UserE user;
   @Getter
   @Setter

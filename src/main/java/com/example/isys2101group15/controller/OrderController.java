@@ -4,6 +4,8 @@ import com.example.isys2101group15.entity.OrderEntity;
 import com.example.isys2101group15.model.OrderModel;
 import com.example.isys2101group15.repository.FoodItemRepository;
 import com.example.isys2101group15.repository.OrderRepository;
+import com.example.isys2101group15.repository.UserEntityRepository;
+import java.security.Principal;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
  private final FoodItemRepository foodRepo;
  private final OrderRepository orderRepo;
+ private final UserEntityRepository userEntityRepository;
   @GetMapping("/cart")
   public String cart(){
     return "cart";
@@ -31,7 +34,8 @@ public class OrderController {
   public String checkOut(){return "checkout";}
   @PostMapping("/cart")
   public OrderEntity makeOrder(
-      @RequestBody OrderModel model
+      @RequestBody OrderModel model,
+      Principal principal
     ){
     List<FoodItem> foodItems = new ArrayList<>();
     for (Long id: model.getItemList()
@@ -52,6 +56,7 @@ public class OrderController {
     o.setChiliSauce(model.getChiliSauce());
     o.setSilverPaper(model.getSilverPaper());
     o.setOrderCreationTime(ZonedDateTime.now());
-    return orderRepo.save(o);
+    o.setUser(userEntityRepository.findByUserName(principal.getName()));
+    return orderRepo.saveAndFlush(o);
   }
 }

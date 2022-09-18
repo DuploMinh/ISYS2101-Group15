@@ -1,5 +1,6 @@
 package com.example.isys2101group15.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,6 +39,7 @@ public class Role {
   @Setter
   private String name;
   @ManyToMany
+  @JsonBackReference
   private Collection<UserE> users;
   @ManyToMany(fetch = FetchType.EAGER)
   @Setter
