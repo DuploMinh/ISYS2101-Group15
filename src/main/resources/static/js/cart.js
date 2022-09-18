@@ -116,7 +116,7 @@ function adder(data) {
                 '<div class="shoppingCart__item row bg-light position-relative rounded-3 m-2 p-2 shadow" id="item' + key.id + '">' + 
                 '<h4>Description: </h4>' +
                 '<h6>' + key.description + '</h6>' + 
-                '<img class="img-fluid col-md-3 rounded-3" src="./'+ key.image + '">' + 
+                '<img class="img-fluid col-md-3 rounded-3" src="/'+ key.imgPath + '">' + 
                 '<div class="col">' + 
                 '<h4>' + key.name + '</h4>' +
                 '<p>Tax: 10%</p>' +
