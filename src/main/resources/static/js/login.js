@@ -22,9 +22,9 @@ loginForm.addEventListener("submit", (event) => {
 
     if(user.email === "admin" && user.password === "admin") {
         //Return to admin page
-        window.location = "/admin_user";
-        window.location.href = "/admin_user";
-        window.location.assign("/admin_user");
+        window.location = "/admin/user";
+        window.location.href = "/admin/user";
+        window.location.assign("/admin/user");
     }
 
     

@@ -28,7 +28,7 @@ public class AdminController {
   private final RolesRepository rolesRepository;
   @GetMapping
   public String mainPage(){
-  return "admin_user";
+  return "redirect:/admin/user";
 }
   @GetMapping("/user")
   public String userPage(){
@@ -41,6 +41,10 @@ public class AdminController {
   @GetMapping("/food")
   public String adminFood(){
     return "admin_food";
+  }
+  @GetMapping("/order")
+  public String adminOrder(){
+    return "admin_order";
   }
   @PostMapping("/new")
   public HttpStatus newAdmin(

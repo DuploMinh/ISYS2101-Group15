@@ -49,7 +49,7 @@ public class SecurityConfigurations {
         .antMatchers("/img/**").permitAll()
         .antMatchers("/login").permitAll()
         .antMatchers("/register/**").permitAll()
-        .antMatchers("/delivery/checkout/**").authenticated()
+        .antMatchers("/delivery/checkout/**","/order/**","/cart").authenticated()
         .antMatchers("/users/**", "/settings/**","/admin/**").hasAnyAuthority("WRITE_PRIVILEGE")
         .anyRequest().permitAll()
         .and()

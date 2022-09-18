@@ -185,7 +185,7 @@ function deleteFood(id) {
     if (!window.confirm("Do you want to delete this order??")) {
         return;
     }
-    let url = '//foodItems/' + id;
+    let url = '/foodItems/' + id;
     fetch(url,{
     method:'DELETE'
     }).then(response=>{
