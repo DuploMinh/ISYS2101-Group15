@@ -196,7 +196,7 @@ formOrder.addEventListener("submit", (event) => {
     // console.log(cart.spoon)
 
     //POST new order to API
-    fetch('//order/cart', {
+    fetch('/order/cart', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
