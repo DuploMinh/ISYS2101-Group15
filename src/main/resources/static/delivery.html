@@ -97,7 +97,7 @@
                     <div class="container-fluid d-flex justify-content-center category__title">
                         <h1 class="h1">My Cart</h1>
                     </div><hr>
-                    <div class="container-fluid" id="my-cart">
+                    <div id="my-cart">
                         <ul class="list-group d-flex mt-2" id="cart-list">
 
                             <!-- Example Reference-->
@@ -145,16 +145,17 @@
         <!-- BACK TO TOP -->
         <a href="#" class="backToTop cd-top text-replace js-cd-top"><i class="fa fa-angle-up"></i></a>
         <!-- SHOPPING CART LOGO -->
-        <a href="/cart" class="cart_logo cd-top1 text-replace js-cd-top1" onclick="checkOut();">
+        <a href="./cart.html" class="cart_logo cd-top1 text-replace js-cd-top1" onclick="checkOut();">
             <i class="fa fa-shopping-cart"><span id="badge2" class="position-absolute start-100 translate-middle bg-danger badge border border-light rounded-circle">0</span></i>
         </a>
     </main>
     <footer></footer>
 
+    <script src="/js/delivery.js"></script>
     <script>
         $(document).ready(function() {
-            $('header').load('/header.html')
-            $('footer').load('/footer.html')
+            $('header').load('/header')
+            $('footer').load('/footer')
         })
     </script>
     <!-- Jquery -->
@@ -174,8 +175,8 @@
 
     <!-- <script
         src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpjeHEMJ0UlaQHFwGOZ9R8gqLID5eJlFo&callback=initMap"
-        async defer></script> -->
-    <!-- <script src="/js/menu.js"></script> -->
+        async defer></script>
+    <script src="/js/menu.js"></script> -->
 
 
     <!--Data-->
@@ -183,7 +184,7 @@
 
 
     <!--Relevant Cart JS Files-->
-    <script src="/js/delivery.js"></script>
+    
     <script>
         // Categories part
         $(function () {
@@ -192,12 +193,12 @@
                 $(".category").removeClass("active")
                 $("#item__category").empty()
                 $(this).addClass("active")
-                fetch('/food/all')
+                fetch('http://68.183.181.77:8080/food/all')
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data)
                     $.each(data.content, function (i, v) {
-                        if (v.categories === $(".category.active").attr("id")) {
+                        if (v.category === $(".category.active").attr("id")) {
                             var item =
                                 '<div class="dish__by_cate col-4 d-flex flex-column justify-content-center align-items-center text-center">' +
                                 '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
@@ -210,6 +211,24 @@
                     });
                 });
             })
+
+            fetch('http://68.183.181.77:8080/food/all')
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                    $.each(data.content, function (i, v) {
+                        if (v.category === "appetizer") {
+                            var item =
+                                '<div class="dish__by_cate col-4 d-flex flex-column justify-content-center align-items-center text-center">' +
+                                '<img src="' + v.image + '" class="img-fluid rounded-3 h-50 w-100">' +
+                                '<h2 class="cate__text">' + v.name + '</h2>' +
+                                '<p>Price: $' + v.price + '</p>' +
+                                '<button type="button" class="btn btn_primary cate_btn" onclick="addItem(' + v.id +  ');">Order' + '</button>' +
+                                '</div>'
+                            $("#item__category").append(item);
+                        }
+                    });
+                });
         });
     </script>
 </body>
